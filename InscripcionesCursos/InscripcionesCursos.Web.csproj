@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40C97E91-62C5-4A41-A208-40506122125B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InscripcionesCursos</RootNamespace>
+    <AssemblyName>InscripcionesCursos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData">
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial">
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controles\wucCambioEmail.ascx" />
+    <Content Include="Controles\wucInscripcion.ascx" />
+    <Content Include="Controles\wucCarro.ascx" />
+    <Content Include="Controles\wcuMenuExtraccion.ascx" />
+    <Content Include="Controles\wucFormularioReenvioEmail.ascx" />
+    <Content Include="Controles\wucFormularioPassword.ascx" />
+    <Content Include="Controles\wucMenuNavegacion.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Errores\ErrorGenerico.aspx" />
+    <Content Include="Herramientas\Mantenimiento.aspx" />
+    <Content Include="Herramientas\RecuperoContrasenia.aspx" />
+    <Content Include="img\btnBlack.png" />
+    <Content Include="img\btnBlackBig.png" />
+    <Content Include="img\btnBlackBigHover.png" />
+    <Content Include="img\btnBlackHover.png" />
+    <Content Include="img\btnGreen.png" />
+    <Content Include="img\btnMenu.png" />
+    <Content Include="img\btnMenuHover.png" />
+    <Content Include="img\favicon\favicon.ico" />
+    <Content Include="img\fdo_body.jpg" />
+    <Content Include="img\fuschia_bg_Tab.png" />
+    <Content Include="img\fuschia_left_tab.png" />
+    <Content Include="img\fuschia_right_Tab.png" />
+    <Content Include="img\green_bg_header.png" />
+    <Content Include="img\header.gif" />
+    <Content Include="img\header_impresion.gif" />
+    <Content Include="img\header_mail.gif" />
+    <Content Include="img\ico_delete.gif" />
+    <Content Include="img\ico_detail.png" />
+    <Content Include="img\ico_detail_hover.png" />
+    <Content Include="img\ico_facebook.png" />
+    <Content Include="img\ico_loading.gif" />
+    <Content Include="img\ico_minus.png" />
+    <Content Include="img\ico_plus.png" />
+    <Content Include="img\ico_twitter.png" />
+    <Content Include="img\ico_loading2.gif" />
+    <Content Include="img\ico_upload.png" />
+    <Content Include="img\logo_footer.png" />
+    <Content Include="img\popUp_bg.png" />
+    <Content Include="img\underconstruction.gif" />
+    <Content Include="Privado\Alumnos\ActivacionCuenta.aspx" />
+    <Content Include="Privado\Alumnos\ConstanciaAlumnoRegular.aspx" />
+    <Content Include="Privado\Alumnos\MateriasRendidas.aspx" />
+    <Content Include="Privado\Alumnos\CambioContrasenia.aspx" />
+    <Content Include="Privado\Alumnos\InscripcionCursos.aspx" />
+    <Content Include="Privado\Alumnos\HistorialInscripcion.aspx" />
+    <Content Include="Privado\Alumnos\Inicio.aspx" />
+    <Content Include="Privado\Alumnos\ModificacionDatos.aspx" />
+    <Content Include="Privado\Alumnos\PlanDeEstudios.aspx" />
+    <Content Include="Privado\Alumnos\PreHistorialInscripcion.aspx" />
+    <Content Include="Privado\Alumnos\PreInscripcionCursos.aspx" />
+    <Content Include="Privado\Empleados\CambioContrasenia.aspx" />
+    <Content Include="Privado\Empleados\CambioEmail.aspx" />
+    <Content Include="Privado\Empleados\CambioTextos.aspx" />
+    <Content Include="Privado\Empleados\ChartInscripcion.aspx" />
+    <Content Include="Privado\Empleados\Consultas.aspx" />
+    <Content Include="Privado\Empleados\Herramientas.aspx" />
+    <Content Include="Privado\Empleados\GeneracionClave.aspx" />
+    <Content Include="Privado\Empleados\InscripcionCursos.aspx" />
+    <Content Include="Privado\Empleados\Proceso.aspx" />
+    <Content Include="Privado\Empleados\ReenvioEmail.aspx" />
+    <Content Include="Scripts\GeneralFunctions.js" />
+    <Content Include="Scripts\zeroClipBoard.js" />
+    <Content Include="Styles\SiteIE10.css" />
+    <Content Include="Styles\SiteIE7.css" />
+    <Content Include="Styles\SiteIE8.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\SiteIE9.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controles\wucCambioEmail.ascx.cs">
+      <DependentUpon>wucCambioEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucCambioEmail.ascx.designer.cs">
+      <DependentUpon>wucCambioEmail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wucInscripcion.ascx.cs">
+      <DependentUpon>wucInscripcion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucInscripcion.ascx.designer.cs">
+      <DependentUpon>wucInscripcion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wucCarro.ascx.cs">
+      <DependentUpon>wucCarro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucCarro.ascx.designer.cs">
+      <DependentUpon>wucCarro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wcuMenuExtraccion.ascx.cs">
+      <DependentUpon>wcuMenuExtraccion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wcuMenuExtraccion.ascx.designer.cs">
+      <DependentUpon>wcuMenuExtraccion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wucFormularioReenvioEmail.ascx.cs">
+      <DependentUpon>wucFormularioReenvioEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucFormularioReenvioEmail.ascx.designer.cs">
+      <DependentUpon>wucFormularioReenvioEmail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wucFormularioPassword.ascx.cs">
+      <DependentUpon>wucFormularioPassword.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucFormularioPassword.ascx.designer.cs">
+      <DependentUpon>wucFormularioPassword.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\wucMenuNavegacion.ascx.cs">
+      <DependentUpon>wucMenuNavegacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\wucMenuNavegacion.ascx.designer.cs">
+      <DependentUpon>wucMenuNavegacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas\RecuperoContrasenia.aspx.cs">
+      <DependentUpon>RecuperoContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Herramientas\RecuperoContrasenia.aspx.designer.cs">
+      <DependentUpon>RecuperoContrasenia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errores\ErrorGenerico.aspx.cs">
+      <DependentUpon>ErrorGenerico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errores\ErrorGenerico.aspx.designer.cs">
+      <DependentUpon>ErrorGenerico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas\Mantenimiento.aspx.cs">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Herramientas\Mantenimiento.aspx.designer.cs">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ActivacionCuenta.aspx.cs">
+      <DependentUpon>ActivacionCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ActivacionCuenta.aspx.designer.cs">
+      <DependentUpon>ActivacionCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ConstanciaAlumnoRegular.aspx.cs">
+      <DependentUpon>ConstanciaAlumnoRegular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ConstanciaAlumnoRegular.aspx.designer.cs">
+      <DependentUpon>ConstanciaAlumnoRegular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\MateriasRendidas.aspx.cs">
+      <DependentUpon>MateriasRendidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\MateriasRendidas.aspx.designer.cs">
+      <DependentUpon>MateriasRendidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\CambioContrasenia.aspx.cs">
+      <DependentUpon>CambioContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\CambioContrasenia.aspx.designer.cs">
+      <DependentUpon>CambioContrasenia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\InscripcionCursos.aspx.cs">
+      <DependentUpon>InscripcionCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\InscripcionCursos.aspx.designer.cs">
+      <DependentUpon>InscripcionCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\HistorialInscripcion.aspx.cs">
+      <DependentUpon>HistorialInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\HistorialInscripcion.aspx.designer.cs">
+      <DependentUpon>HistorialInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ModificacionDatos.aspx.cs">
+      <DependentUpon>ModificacionDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\ModificacionDatos.aspx.designer.cs">
+      <DependentUpon>ModificacionDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PlanDeEstudios.aspx.cs">
+      <DependentUpon>PlanDeEstudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PlanDeEstudios.aspx.designer.cs">
+      <DependentUpon>PlanDeEstudios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PreHistorialInscripcion.aspx.cs">
+      <DependentUpon>PreHistorialInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PreHistorialInscripcion.aspx.designer.cs">
+      <DependentUpon>PreHistorialInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PreInscripcionCursos.aspx.cs">
+      <DependentUpon>PreInscripcionCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Alumnos\PreInscripcionCursos.aspx.designer.cs">
+      <DependentUpon>PreInscripcionCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioContrasenia.aspx.cs">
+      <DependentUpon>CambioContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioContrasenia.aspx.designer.cs">
+      <DependentUpon>CambioContrasenia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioEmail.aspx.cs">
+      <DependentUpon>CambioEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioEmail.aspx.designer.cs">
+      <DependentUpon>CambioEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioTextos.aspx.cs">
+      <DependentUpon>CambioTextos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\CambioTextos.aspx.designer.cs">
+      <DependentUpon>CambioTextos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\ChartInscripcion.aspx.cs">
+      <DependentUpon>ChartInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\ChartInscripcion.aspx.designer.cs">
+      <DependentUpon>ChartInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\Consultas.aspx.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\Consultas.aspx.designer.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\Herramientas.aspx.cs">
+      <DependentUpon>Herramientas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\Herramientas.aspx.designer.cs">
+      <DependentUpon>Herramientas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\GeneracionClave.aspx.cs">
+      <DependentUpon>GeneracionClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\GeneracionClave.aspx.designer.cs">
+      <DependentUpon>GeneracionClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\InscripcionCursos.aspx.cs">
+      <DependentUpon>InscripcionCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\InscripcionCursos.aspx.designer.cs">
+      <DependentUpon>InscripcionCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\Proceso.aspx.cs">
+      <DependentUpon>Proceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\Proceso.aspx.designer.cs">
+      <DependentUpon>Proceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\ReenvioEmail.aspx.cs">
+      <DependentUpon>ReenvioEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\ReenvioEmail.aspx.designer.cs">
+      <DependentUpon>ReenvioEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Cryptography.cs" />
+    <Compile Include="Utils\LogWriter.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ImportFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InscripcionesCursos.BE\InscripcionesCursos.BE.csproj">
+      <Project>{413F7699-1F27-4410-936E-9B4D0A5ADFC3}</Project>
+      <Name>InscripcionesCursos.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InscripcionesCursos.DTO\InscripcionesCursos.DTO.csproj">
+      <Project>{59C0FDF6-34A9-4AC8-9998-6024F4DAFB34}</Project>
+      <Name>InscripcionesCursos.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppCustom.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50020</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

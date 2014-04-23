@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InscripcionesCursos.SiteMaster" %>
+<%@ Register src="~/Controles/wucMenuNavegacion.ascx" tagname="MenuNavegacion" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="~/Styles/SiteIE7.css" /><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="~/Styles/SiteIE8.css" /><![endif]-->
+    <!--[if IE 9]><link rel="stylesheet" type="text/css" href="~/Styles/SiteIE9.css" /><![endif]-->
+    <!--[if IE 10]><link rel="stylesheet" type="text/css" href="~/Styles/SiteIE10.css" /><![endif]-->
+    <!--[if IE 11]><link rel="stylesheet" type="text/css" href="~/Styles/SiteIE10.css" /><![endif]-->
+    <!--[if !IE]><!--><link rel="stylesheet" type="text/css" href="~/Styles/Site.css" /><!--<![endif]-->
+    <script type="text/javascript" src="../../Scripts/jquery-1.4.1-vsdoc.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/GeneralFunctions.js"></script>
+    <script type="text/javascript" src="../../Scripts/zeroClipBoard.js"></script>
+    <link rel="icon" type="image/png" href="~/img/favicon/favicon.ico" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="contenedorMaster">
+        <form runat="server">
+            <div class="header">
+                <div class="tituloHeader">
+                    <%= ConfigurationManager.AppSettings["ContentTextHeader"] %>
+                </div>
+            </div>
+            <div id="divLoginTools" runat="server" visible="false">
+                <ul id="button">
+                    <li><asp:Label id="lblUser" runat="server"></asp:Label></li>
+                    <li><asp:LinkButton ID="btnClaves" runat="server" onclick="btnClaves_Click" CausesValidation="false" ></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnInscription" runat="server" onclick="btnInscription_Click" CausesValidation="false" ></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnResend" runat="server" onclick="btnResend_Click" CausesValidation="false" Visible="false"></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnEmailChange" runat="server" CausesValidation="false" onclick="btnEmailChange_Click" Visible="false"></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnConsultas" runat="server" CausesValidation="false" Visible="false" onclick="btnConsultas_Click"></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnCambioTextos" runat="server" CausesValidation="false" Visible="false" onclick="btnCambioTextos_Click" ></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btnProceso" runat="server" CausesValidation="false" Visible="false" onclick="btnProceso_Click"></asp:LinkButton></li>
+                    <li><asp:LinkButton id="btnLogout" runat="server" onclick="btnLogout_Click" CausesValidation="false"></asp:LinkButton></li>
+                </ul>
+            </div>
+            <div class="main">
+                <uc1:MenuNavegacion id="menuAlumnos" runat="server" Visible="false"/>
+                <div id="divContent" runat="server">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="datosFooter">
+                    <p><%= String.Format(ConfigurationManager.AppSettings["ContentFooter"], "<a href=\"mailto:" + ConfigurationManager.AppSettings["MailToContact"] + "\">" + ConfigurationManager.AppSettings["MailToContact"] + "</a>")%></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

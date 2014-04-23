@@ -1,0 +1,1296 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    font-size: .80em;
+    font-family: Verdana, "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    text-align: center;
+    height: 100%;
+    background-color: #004275;
+	background-image: url("../img/fdo_body.jpg");
+	background-repeat: repeat-x;
+}
+
+.contenedorMaster
+{
+	width: 1004px;
+	margin: 0 auto;
+}
+
+a:link
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a:visited
+{
+	color: #94A29C;
+}
+
+a:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;   
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1
+{
+    font-size: 1.8em;
+    font-weight: 500;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-family: Verdana;
+}
+
+h2
+{
+    font-size: 1.6em;
+    font-weight: 600;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-family: Verdana;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+input[type="submit"]
+{
+	cursor: pointer;	
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.header
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url(../img/header.gif) no-repeat 0 0;
+    height: 101px;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    min-height: 420px;
+    width: 1004px;
+    margin-top: 25px;
+}
+
+.leftCol
+{
+    padding: 6px 0;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    width: 1004px;
+    height: 105px;
+    position: fixed;
+    bottom: 10px;
+    background: url(../img/logo_footer.png) no-repeat right top;
+    z-index: -1;
+}
+
+.footer a img
+{
+	border: none;
+}
+
+.datosFooter
+{
+    color: #FFFFFF;
+    font-size: .86em;
+}
+
+.datosFooter p
+{
+	padding: 65px 180px 0;
+    text-align: center;
+}
+
+.datosFooter a:link
+{
+    color: #66FFFF;
+    text-decoration: none;
+}
+
+.datosFooter a:visited
+{
+    color: #94A29C;
+}
+
+.datosFooter a:hover
+{
+    color: #66FFFF;
+    font-weight: bold;
+}
+
+.tituloHeader
+{
+    font-size: 2.3em;
+    font-style: italic;
+    font-weight: 600;
+    padding: 45px 20px 0;
+    text-align: left;
+}
+
+/* PAGINA DEFAULT  
+----------------------------------------------------------*/
+
+.textoAngosto
+{
+	width:600px;
+	padding: 45px 200px;
+}
+
+.textoAngosto p
+{
+	font-size: 1.2em;
+}
+
+.blackButtonBig
+{
+	background-image: url(../img/btnBlackBig.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+    border-style: none;
+    color: #FFFFFF;
+    font-family: verdana;
+    font-weight: bold;
+    height: 35px;
+    width: 135px;
+}
+
+.blackButtonBig:hover
+{
+	background-image: url(../img/btnBlackBigHover.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+.menuIzquierdo
+{
+	float: left;
+    width: 270px;
+}
+
+.cajaEstado
+{
+	margin: 38px auto 0 auto;
+}
+
+.menuIzquierdo input, .cajaEstado input
+{
+	background: url(../img/btnMenu.png)  no-repeat scroll 0 0 transparent;
+	border-style: none;
+	width: 260px;
+	height: 40px;
+	margin: 0 auto 5px auto;
+	color: #000000;
+}
+
+.menuIzquierdo input:hover
+{
+	background: url(../img/btnMenuHover.png)  no-repeat scroll 0 0 transparent;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.cajaEstado span
+{
+    /*background-color: #FFFCE7;*/
+    background: url(../img/btnMenuHover.png)  no-repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    height: 30px;
+    margin: 0 auto 5px;
+    padding-top: 10px;
+    width: 260px;
+}
+
+.contenidoCentral
+{
+	float: left;
+    width: 734px;
+}
+
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+	padding-left: 4px;
+}
+
+.loginDisplay a:visited
+{
+    color: #94A29C;
+}
+
+.loginDisplay a:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* PAGINA LOGIN  
+----------------------------------------------------------*/
+
+.loginBox
+{
+    float: left;
+    height: 300px;
+    margin-top: 50px;
+    width: 100%;
+    text-align:center;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.loginBox table
+{
+	margin-left: 112px;
+    margin-top: 24px;
+}
+
+.loginTexts
+{
+    color: #FFFFFF;
+    font-size: 1.2em;
+    font-weight: 200;
+    padding-right: 6px;
+}
+
+.loginTitle
+{
+    color: #FFFFFF;
+    font-weight: bold; 
+    font-size: 1.12em;
+    padding-bottom: 20px;
+}
+
+.blackButton
+{
+	background-image: url(../img/btnBlack.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+    border-style: none;
+    color: #FFFFFF;
+    font-weight: normal;
+    height: 24px;
+    margin: 6px 18px auto;
+    width: 76px;
+}
+
+.blackButton:hover
+{
+	background-image: url(../img/btnBlackHover.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+.errorText
+{
+	margin-top: 7px;
+	color: #EE3B3B;
+	font-weight: bold;
+}
+
+.changePasswordStatus
+{
+	margin: 10px 10px;
+	color: #EE3B3B;
+	font-weight: bold;
+	text-align: left;
+}
+
+.contenedorOlvido
+{
+	text-align: right;
+	padding: 10px 20px 0;
+}
+
+
+/*PAGINA GENERACIONCLAVE
+----------------------------------------------------------*/
+
+.contenedorFormGenerar
+{
+    height: 300px;
+    text-align:center;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #FFFFFF;
+    margin: 0 0 0 20px;
+}
+
+.contenedorFormGenerarEmployee
+{
+    float: left;
+    height: 300px;
+    margin-top: 50px;
+    width: 100%;
+    text-align:center;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #FFFFFF;
+}
+
+.contenedorFormGenerar a:link
+{
+    color: white;
+}
+
+.contenedorFormGenerar a:visited
+{
+    color: Gray;
+}
+
+.contenedorFormGenerar a:hover
+{
+    color: white;
+    font-weight: bold;
+}
+
+.tituloContenido
+{
+	margin-bottom: 30px;
+	font-size: 1.16em;
+	font-weight: bold;
+	color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    text-align: center;
+}
+
+.contenedorInput span
+{
+	margin-right: 4px;
+	font-weight: normal;
+	font-size: 1.12em;
+}
+
+.contenedorBotonGenerar
+{
+	margin-left: 168px;
+    margin-top: 10px;
+}
+
+.separador
+{
+    border-bottom: 2px solid #FFFFFF;
+    float: left;
+    margin: 30px 0px 30px 0px;
+    width: 100%;
+}
+
+.resultadosGen
+{
+	text-align: left;
+	margin-left: 10px;
+}
+
+.labelsResultadosGen
+{
+	display: inline-block;
+	font-size: 1.12em;
+    font-weight: normal;
+    width: 138px;
+}
+
+.inputsResultadosGen
+{
+	margin-left: 30px;
+	margin-bottom: 8px;
+}
+
+
+.divResultados
+{
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+/*PAGINA CAMBIOCONTRASENIA
+----------------------------------------------------------*/
+
+.labelsCambioPass
+{
+	display: inline-block;
+	font-size: 1em;
+    font-weight: normal;
+    width: 152px;
+}
+
+.labelsWarning
+{
+	display: inline-block;
+	font-size: 0.78em;
+    font-weight: normal;
+    width: 240px;
+}
+
+.contenedorBotonActualizar
+{
+    margin: 10px 94px 0 0;
+}
+
+.contenedorBotonActualizarEmployee
+{
+    margin: 10px 384px 0 0;
+}
+
+.infoCambioPass
+{
+	width:520px;
+	padding: 25px 0;
+	font-family: Verdana;
+}
+
+.infoCambioPassEmployee
+{
+	width:600px;
+	padding: 25px 200px;
+	font-family: Verdana;
+}
+
+.contenedorBotonesRecuperar
+{
+	margin-left: -10px;
+    margin-top: 20px;
+}
+
+/*PAGINA INSCRIPCIONCURSOS
+----------------------------------------------------------*/
+
+.textoAngostoAlumnos
+{
+	width:600px;
+	padding: 35px 50px;
+}
+
+.textoAngostoAlumnos p
+{
+	font-size: 1.2em;
+}
+
+.blackButtonInscripcion
+{
+	background-image: url(../img/btnBlack.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+    border-style: none;
+    color: #FFFFFF;
+    font-weight: normal;
+    height: 22px;
+    margin: 6px 0;
+    width: 76px;
+}
+
+.blackButtonInscripcion:hover
+{
+	background-image: url(../img/btnBlackHover.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+.gridResultados
+{
+	float:left;
+}
+
+.gridResultados table
+{
+    width: 714px;
+}
+
+.gridRowBack
+{
+    background-color: #FFFAF0;
+    color: #000000;
+}
+
+.gridHeader
+{
+    background-color: #941A63;
+    color: #FFFFFF;
+}
+
+.contenedorBtnInscripcion
+{
+    float: right;
+    margin: 10px 0px;
+}
+
+.mensajeNoDisponible
+{
+    margin: 90px 30px 0 30px;
+}
+
+.infoEstadoInscripcion
+{
+	text-align: center;
+	margin: 40px 0;
+}
+
+.displayCombos select
+{
+	width: 32%;	
+}
+
+.infoTextoEnProgreso
+{
+	margin-left:60px;
+}
+
+.contenedorFormInscripciones
+{
+    height: 268px;
+    text-align:center;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #FFFFFF;
+    margin: 0 0 0 20px;	
+}
+
+.contenedorComisiones
+{
+	width: 700px;
+	padding-left: 120px;	
+}
+
+/*CONTROL CARRO
+----------------------------------------------------------*/
+
+.contenedorCarro
+{
+	text-align:center;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #FFFFFF;
+    margin: 0 0 0 20px;
+}
+
+.tituloContenidoCarro
+{
+	font-size: 1.16em;
+	font-weight: bold;
+}
+
+.filaDeshabilitada
+{
+	background-color: #BFBFBF;
+	color: #000000;
+}
+
+.preText
+{
+	font-style: italic;
+	color: Gray;
+}
+
+/*CONSULTAS
+----------------------------------------------------------*/
+
+.legendChart
+{
+	float: left;
+	margin: 10px 0px 10px 0px;
+	text-align: left;
+}
+
+.chartColumnaDerecha
+{
+	float:right;
+}
+
+.legendChartIframe
+{
+	float:left;
+}
+
+.bodyIframe
+{
+	background-color: transparent;
+	background-image:none
+}
+
+.tableEstadisticas
+{
+	float:left;
+	text-align: left;
+}
+
+.tableEstadisticas table
+{
+	border: 1px solid #000000;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.tableEstadisticas td, th
+{
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+}
+
+.contenedorIframe
+{
+	width: 100%;
+	height: 13400px;
+}
+
+/*CAMBIO DE TEXTOS
+----------------------------------------------------------*/
+
+.labelCambioTexto
+{
+	text-align:left;
+	float:right
+}
+
+.labelCambioTexto span
+{
+	float: left;
+    margin: 30px 5px 0 50px;
+}
+
+.labelRadioButton
+{
+	text-align:left;
+	float:right
+}
+
+.labelRadioButton span
+{
+	float: left;
+    margin: 5px 5px 0 50px;
+}
+
+.radioButton
+{
+	float: left;
+	margin: 5px 165px;
+}
+
+.fixButtonCambioTextos
+{
+	margin-top:250px;
+}
+
+
+/*NEW MENU EMPLOYEE
+----------------------------------------------------------*/
+
+#divLoginTools
+{
+	margin-bottom: 70px;
+}
+
+#button
+{
+	padding: 0;
+}
+
+#button li
+{
+	display: inline;
+	margin-bottom: 90px;
+	font-family: Arial;
+	font-size:0.9em;
+}
+
+#button li a, li span
+{
+	font-weight:bold;
+	text-decoration: none;
+	float:left;
+	padding: 9px;
+	background-color: #FFFCE7;
+	color: #000000;
+}
+
+#button li span
+{	
+	font-weight:bold;
+	text-decoration: none;
+	float:left;
+	padding: 9px;
+	background-color: #941A63;
+	color: #FFFFFF;
+}
+
+#button li a:hover
+{
+	background-color: #941A63;
+	margin-top:-2px;
+	padding-bottom:12px;
+	color: #FFFFFF;
+}
+
+
+/*PLAN DE ESTUDIOS
+----------------------------------------------------------*/
+
+.planBox
+{
+    display:inline-block;
+    font-size: 0.8em;
+    font-family:Verdana, Arial;
+}
+        
+.planCodMat
+{
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 50px;
+    max-height: 50px;        	
+    background-color: #DD7DE8;
+    display:inline-block;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+        
+.planDescripMat
+{
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 50px;
+    max-height: 50px;
+    display:inline-block;
+    background-color: #FFFDE8;
+    color: #000000;
+    vertical-align: middle;
+    text-align:center;
+    white-space:pre-wrap
+}
+        
+.planCarga
+{
+    text-align:right;
+    font-size: 0.75em;
+    color: #DD7DE8;
+    font-weight: bold;
+    margin: 0px;
+}
+        
+.planCorrelativa
+{
+    font-size: 0.75em;
+    font-style: italic;
+    margin: 0px 0px 0px 8px;
+    text-align:left;
+}
+
+/*PROCESO
+----------------------------------------------------------*/
+.divTabContainer
+{
+	margin-top: -15px;
+}
+
+#tabContainer span
+{
+	color:#000000;
+}
+
+#tabContainer .ajax__tab_active span
+{
+	color:#FFFFFF;
+}
+
+ .fancy-fuschia .ajax__tab_header
+ {
+	background: url(../img/fuschia_bg_Tab.png) repeat-x;
+	cursor:pointer;
+ }
+ 
+ .fancy-fuschia .ajax__tab_hover .ajax__tab_outer, .fancy-fuschia .ajax__tab_active .ajax__tab_outer
+ {
+	background: url(../img/fuschia_left_Tab.png) no-repeat left top;
+	color: #FFFFFF;
+	font-weight: bold;
+ }
+ 
+ .fancy-fuschia .ajax__tab_hover .ajax__tab_inner, .fancy-fuschia .ajax__tab_active .ajax__tab_inner
+ {
+	background: url(../img/fuschia_right_Tab.png) no-repeat right top;
+ }
+ 
+ .fancy .ajax__tab_header
+ {
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000;
+	font-family: sans-serif;
+	text-align: left;
+ }
+ 
+ .fancy .ajax__tab_active .ajax__tab_outer, .fancy .ajax__tab_header .ajax__tab_outer, .fancy .ajax__tab_hover .ajax__tab_outer
+ {
+	height: 46px;
+ }
+ 
+ .fancy .ajax__tab_active .ajax__tab_inner, .fancy .ajax__tab_header .ajax__tab_inner, .fancy .ajax__tab_hover .ajax__tab_inner
+ {
+	height: 46px;
+	margin-left: 16px; /* offset the width of the left image */
+ }
+ 
+ .fancy .ajax__tab_active .ajax__tab_tab, .fancy .ajax__tab_hover .ajax__tab_tab, .fancy .ajax__tab_header .ajax__tab_tab
+ {
+	margin: 16px 16px 0px 0px;
+ }
+ 
+ .fancy .ajax__tab_hover .ajax__tab_tab, .fancy .ajax__tab_active .ajax__tab_tab
+ {
+	font-weight: bold;
+	color: #FFFFFF !important;
+ }
+ 
+ .fancy .ajax__tab_body
+ {
+	font-family: Arial;
+	font-size: 10pt;
+	border-top: 0;
+	border:4px solid #941A63;
+	padding: 8px;
+	background-color: #FFFCE7;
+	color: #000000;
+	text-align:left;
+ }
+ 
+ .ajax__tab_inner a:link
+ {
+ 	color: #000000;
+ }
+
+.procesoLineInfo
+{
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+
+.procesoLabelInfo
+{
+	width: 210px;
+	display: inline-block;
+}
+
+.icoPlusAction
+{
+	background-image: url(../img/ico_plus.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border-style:none;
+	cursor:pointer;
+	width:22px;
+	height: 22px;
+}
+
+.icoPlusAction:hover
+{
+	background-image: url(../img/ico_minus.png);
+}
+
+.icoMinusAction
+{
+	background-image: url(../img/ico_minus.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border-style:none;
+	cursor:pointer;
+	width:22px;
+	height: 22px;
+}
+
+.icoDetailAction
+{
+	background-image: url(../img/ico_detail.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border-style:none;
+	cursor:pointer;
+	width:22px;
+	height: 22px;
+}
+
+.icoDetailAction:hover
+{
+	background-image: url(../img/ico_detail_hover.png);
+}
+
+.gridProcess
+{
+	float:left;
+}
+
+.gridProcess table
+{
+    width: 980px;
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.gridProcessRowBack td
+{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.gridProcessRowBack
+{
+    background-color: #FFFAF0;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.gridProcessHeader
+{
+    background-image: url(../img/green_bg_header.png);
+    color: #FFFFFF;
+}
+
+.gridProcessHeader th
+{ 
+    border-style: solid;
+    border-collapse: collapse;
+    border-color: #000000;
+    border-width: 1px;
+}
+
+.gridProcessPager table
+{
+	margin: 30px 10px 30px 10px;
+	border-collapse: collapse;
+	border-style: none;
+	border-width: 0px;
+	width: auto;
+}
+
+.gridProcessPager td
+{
+	border-collapse: collapse;
+	border-style: none;
+	border-width: 0px;
+}
+
+.gridProcessPager a
+{
+	margin:auto 1%;
+	border-radius:50%;
+	background-color:#444;
+	padding:5px 10px 5px 10px;
+	color:#fff;
+	text-decoration:none;
+	-o-box-shadow:1px 1px 1px #111;
+	-moz-box-shadow:1px 1px 1px #111;
+	-webkit-box-shadow:1px 1px 1px #111;
+	box-shadow:1px 1px 1px #111;
+}
+
+.gridProcessPager a:hover
+{
+    background-color:#1e8d12;
+    color:#fff;
+}
+
+.greenButton
+{
+	background-image: url(../img/btnGreen.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+    border-style: none;
+    color: #FFFFFF;
+    font-weight: normal;
+    height: 24px;
+    margin: 20px 18px 0px 300px;
+    width: 76px;
+}
+
+.logErrorComboLine
+{
+	margin: 8px 8px;
+	float: left;
+	text-align: center;
+}
+
+.logErrorComboLine span
+{
+	display: inline-block;
+	width: 200px;
+	text-align: left;
+}
+
+.logErrorComboLine select
+{
+	margin: 0px 15px;
+	display: inline-block;
+	width: 130px;
+}
+
+.modalPopUp
+{
+    width:400px;
+    height:200px;
+    background-image: url(../img/popUp_bg.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: #000000;
+}
+
+.modalPopUpBG
+{
+    background-color: #666699;
+    filter: alpha(opacity=50);
+    opacity: 0.7;
+}
+
+.modalPopUpBody
+{
+    height: 110px;
+    margin-left: 20px;
+    margin-top: 30px;
+    overflow: auto;
+    text-align: center;
+    width: 360px;
+}
+
+.modalPopUpButtons
+{
+    margin-top: 20px;
+}
+
+.modalPopUpButtonsLoading
+{
+    margin-top: 5px;
+}
+
+#MainContent_tabContainer_tabPanelStart_asyncFile_ctl01
+{
+	background: url(../img/ico_upload.png)  no-repeat scroll 100% 1px transparent !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+    padding-top: 4px;
+}
+
+#MainContent_tabContainer_tabPanelStart_asyncFile_ctl01 input
+{
+	cursor: pointer !important;
+    width: 150px !important;
+    height: 16px !important;
+}
+
+.tableAsyncFileUpload
+{
+	border: 0px;
+}
+
+.tdFileInput
+{
+	padding-left: 6px;
+}
+
+.tdFileLoading
+{
+	padding-bottom: 7px;	
+}
