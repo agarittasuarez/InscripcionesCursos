@@ -122,6 +122,32 @@ namespace InscripcionesCursos.DTO
             }
         }
 
+        public static bool CheckEmployeeTest()
+        {
+            try
+            {
+                InscripcionDAO inscripcion = new InscripcionDAO(connectionString);
+                return inscripcion.CheckEmployeeTest();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void DeleteEmployeeTestInscription()
+        {
+            try
+            {
+                InscripcionDAO inscripcionDAO = new InscripcionDAO(connectionString);
+                inscripcionDAO.DeleteEmployeeTestIncription();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

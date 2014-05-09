@@ -419,6 +419,25 @@ namespace InscripcionesCursos.DAO
             }
         }
 
+        /// <summary>
+        /// Validate if exists any inscription of employee
+        /// </summary>
+        public bool CheckEmployeeTest()
+        {
+            var validation = Convert.ToBoolean(SqlClientUtility.ExecuteScalar(connectionStringName, CommandType.StoredProcedure, "InscripcionCheckEmployeeTest"));
+            SqlConnection.ClearAllPools();
+            return validation;
+        }
+
+        /// <summary>
+        /// Delete employee test inscriptions
+        /// </summary>
+        public void DeleteEmployeeTestIncription()
+        {
+            SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "InscripcionDeleteAllByEmployee");
+            SqlConnection.ClearAllPools();
+        }
+
 		/// <summary>
 		/// Creates a new instance of the Inscripcion class and populates it with data from the specified SqlDataReader.
 		/// </summary>

@@ -52,6 +52,9 @@ namespace InscripcionesCursos.Privado.Empleados
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
                 }
 
+                if (InscripcionDTO.CheckEmployeeTest())
+                    btnClean.Enabled = true;
+
                 FailureText.Visible = false;
                 divNoDisponible.Visible = false;
             }
@@ -143,6 +146,21 @@ namespace InscripcionesCursos.Privado.Empleados
             {
                 LogWriter log = new LogWriter();
                 log.WriteLog(ex.Message, "btnRequest_Click", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        protected void btnClean_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InscripcionDTO.DeleteEmployeeTestInscription();
+                btnClean.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "btnClean_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -297,7 +315,7 @@ namespace InscripcionesCursos.Privado.Empleados
             {
                 divResultados.Visible = true;
                 txtApellidoNombreResultado.Text = user.ApellidoNombre.ToUpper();
-                txtCarrera.Text = user.Carrera.ToUpper();
+                txtCarrera.Text = user.Carrera != null ? user.Carrera.ToUpper() : String.Empty;
                 txtEmail.Text = user.Email != null ? user.Email.ToUpper() : String.Empty;
 
                 if (user.Password != null && user.CambioPrimerLogin && user.CuentaActivada)

@@ -92,6 +92,7 @@
     <Content Include="img\btnBlack.png" />
     <Content Include="img\btnBlackBig.png" />
     <Content Include="img\btnBlackBigHover.png" />
+    <Content Include="img\btnBlackDisabled.png" />
     <Content Include="img\btnBlackHover.png" />
     <Content Include="img\btnGreen.png" />
     <Content Include="img\btnMenu.png" />

@@ -47,6 +47,22 @@ namespace InscripcionesCursos.DTO
             }
         }
 
+        /// <summary>
+        /// Obtiene las materias aprobadas del alumno segun DNI y carrera
+        /// </summary>
+        public static List<Materia> GetMateriasAprobadas(int DNI, int idCarrera)
+        {
+            try
+            {
+                AnaliticoDAO analiticoDAO = new AnaliticoDAO(connectionString);
+                return analiticoDAO.SelectByDNIAndCarrera(DNI, idCarrera);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

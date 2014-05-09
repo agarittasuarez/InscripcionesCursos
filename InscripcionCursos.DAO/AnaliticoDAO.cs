@@ -112,6 +112,30 @@ namespace InscripcionesCursos.DAO
         }
 
         /// <summary>
+        /// Selects all records from the Analitico table by dni and carrera.
+        /// </summary>
+        public List<Materia> SelectByDNIAndCarrera(int dni, int idCarrera)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+			{
+				new SqlParameter("@DNI", dni),
+                new SqlParameter("@idCarrera", idCarrera)
+			};
+
+            using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "AnaliticoSelectByUser", parameters))
+            {
+                List<Materia> materiasAprobadasList = new List<Materia>();
+                while (dataReader.Read())
+                {
+                    Materia materia = MapDataReaderMateria(dataReader);
+                    materiasAprobadasList.Add(materia);
+                }
+                SqlConnection.ClearAllPools();
+                return materiasAprobadasList;
+            }
+        }
+
+        /// <summary>
         /// Import Notas Analitico
         /// </summary>
         public void ImportNotas(string CatedraComision, string CodigoMovimiento, int DNI, DateTime Fecha, string Folio, string IdTipoInscripcion, int IdMateria, string Libro, double Nota, int Plan, string Resolucion, string SubFolio, string Tomo, DateTime TurnoInscripcion)
@@ -163,6 +187,17 @@ namespace InscripcionesCursos.DAO
 
 			return analitico;
 		}
+
+        /// <summary>
+        /// Creates a new instance of the Materia class and populates it with data from the specified SqlDataReader.
+        /// </summary>
+        private Materia MapDataReaderMateria(SqlDataReader dataReader)
+        {
+            Materia materia = new Materia();
+            materia.IdMateria = dataReader.GetInt32("IdMateria", 0);
+
+            return materia;
+        }
 
 		#endregion
     }

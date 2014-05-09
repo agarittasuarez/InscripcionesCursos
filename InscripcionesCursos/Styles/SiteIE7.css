@@ -501,6 +501,13 @@ div.accountInfo
 	background-color: transparent;
 }
 
+.blackButton:disabled
+{
+	background-image: url(../img/btnBlackDisabled.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
 .errorText
 {
 	margin-top: 7px;
@@ -572,6 +579,11 @@ div.accountInfo
 .contenedorBotonGenerar
 {
 	margin-left: 168px;
+    margin-top: 10px;
+}
+
+.contenedorBotonBuscar
+{
     margin-top: 10px;
 }
 
@@ -909,7 +921,7 @@ div.accountInfo
 	font-weight:bold;
 	text-decoration: none;
 	float:left;
-	padding: 9px;
+	padding: 8px;
 	background-color: #FFFCE7;
 	color: #000000;
 }
@@ -919,7 +931,7 @@ div.accountInfo
 	font-weight:bold;
 	text-decoration: none;
 	float:left;
-	padding: 9px;
+	padding: 8px;
 	background-color: #941A63;
 	color: #FFFFFF;
 }
@@ -961,7 +973,24 @@ div.accountInfo
     font-weight:bold;
     margin: 0px -5px 0px 8px;
 }
-        
+
+.planCodMatAprob
+{
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 50px;
+    max-height: 50px;        	
+    background-color: #4CBB17;
+    display:inline-block;
+    *display: inline;
+    zoom: 1;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+       
 .planDescripMat
 {
     min-width: 150px;

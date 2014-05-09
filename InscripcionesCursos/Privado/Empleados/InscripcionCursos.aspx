@@ -17,9 +17,9 @@
         <div class="errorText">
             <asp:Literal ID="FailureText" runat="server" Visible="false" ></asp:Literal>
         </div>
-        <div class="contenedorBotonGenerar">
-            <asp:Button ID="btnRequest" runat="server" Text="Buscar" CssClass="blackButton" 
-                onclick="btnRequest_Click" />
+        <div class="contenedorBotonBuscar">
+            <asp:Button ID="btnRequest" runat="server" Text="Buscar" CssClass="blackButton" onclick="btnRequest_Click" />
+            <asp:Button ID="btnClean" runat="server" Text="Limpiar" CssClass="blackButton" onclick="btnClean_Click" Enabled="false" CausesValidation="false" />
         </div>
         <div id="divResultados" runat="server" visible="false" class="divResultados">
             <br />

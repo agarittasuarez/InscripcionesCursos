@@ -51,7 +51,6 @@
                     </div>
                     <div id="buttonContainer" class="modalPopUpButtons" runat="server">
                         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
-                        <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" OnClick="btnCancelar_Click" Visible="false" />
 		            </div>
                 </asp:Panel>
 

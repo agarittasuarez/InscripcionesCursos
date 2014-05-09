@@ -503,25 +503,6 @@ namespace InscripcionesCursos
         /// <param name="e"></param>
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (btnAceptar.CommandArgument == "save")
-            {
-                SetProcess(importacion);
-                FillGrid(1);
-                mpeMessage.Hide();
-            }
-            else
-            {
-                mpeMessage.Hide();
-            }
-        }
-
-        /// <summary>
-        /// Event to cancel modal popup message
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
             mpeMessage.Hide();
         }
 
@@ -625,12 +606,13 @@ namespace InscripcionesCursos
                         if (ServicioImportacionDTO.ValidatePredecessor(importacion))
                         {
                             if (ServicioImportacionDTO.ValidateInscriptionOnCourse(importacion))
+                            {
                                 SetProcess(importacion);
+                                FillGrid(1);
+                            }
                             else
                             {
                                 lblMessagePopUp.Text = ConfigurationManager.AppSettings["MessageWarningActiveInscription"];
-                                btnAceptar.CommandArgument = "save";
-                                btnCancelar.Visible = true;
                                 mpeMessage.Show();
                             }
                         }
