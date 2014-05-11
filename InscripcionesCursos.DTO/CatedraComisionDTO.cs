@@ -18,12 +18,12 @@ namespace InscripcionesCursos.DTO
 
         #region Methods
 
-        public static List<CatedraComision> GetCatedraComisionFiltered(Usuario loggedUser, BusquedaFiltro filter)
+        public static List<CatedraComision> GetCatedraComisionFiltered(Usuario loggedUser, BusquedaFiltro filter, int rol)
         {
             try
             {
                 CatedraComisionDAO catedraComisionDAO = new CatedraComisionDAO(connectionString);
-                return catedraComisionDAO.SelectAllByIdSedeAndFilters(loggedUser.IdSede, filter.IdDepartamento, filter.IdCarrera, filter.IdMateria, filter.FechaActual);
+                return catedraComisionDAO.SelectAllByIdSedeAndFilters(loggedUser.IdSede, filter.IdDepartamento, filter.IdCarrera, filter.IdMateria, filter.FechaActual, rol);
             }
             catch (Exception ex)
             {

@@ -17,12 +17,12 @@ namespace InscripcionesCursos.DTO
 
         #region Methods
 
-        public static List<Materia> GetMateriasBySedeAndFilters(Usuario loggedUser, BusquedaFiltro filter)
+        public static List<Materia> GetMateriasBySedeAndFilters(Usuario loggedUser, BusquedaFiltro filter, int rol)
         {
             try
             {
                 MateriaDAO materiasDAO = new MateriaDAO(connectionString);
-                return materiasDAO.SelectAllBySedeAndFilters(loggedUser.IdSede, filter.IdDepartamento, filter.IdCarrera, filter.FechaActual);
+                return materiasDAO.SelectAllBySedeAndFilters(loggedUser.IdSede, filter.IdDepartamento, filter.IdCarrera, filter.FechaActual, rol);
             }
             catch (Exception ex)
             {

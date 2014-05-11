@@ -53,7 +53,7 @@ namespace InscripcionesCursos
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlStudentPasswordChange"]);
 
                     listInscripcionesActivas = new List<InscripcionActiva>();
-                    listInscripcionesActivas = InscripcionActivaDTO.ValidateInscipcionesActivas(DateTime.Now);
+                    listInscripcionesActivas = InscripcionActivaDTO.ValidateInscipcionesActivas(DateTime.Now, 2);
                     Session.Add("inscripcionesActivas", listInscripcionesActivas);
 
                     if (listInscripcionesActivas.Count != 0)

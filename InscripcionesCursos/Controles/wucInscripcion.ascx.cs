@@ -32,6 +32,7 @@ namespace InscripcionesCursos
 
         int maxSelection = Convert.ToInt32(ConfigurationManager.AppSettings["MaxInscriptionSelection"]);
         int maxInscriptions;
+        int rol;
 
         #endregion
 
@@ -232,11 +233,12 @@ namespace InscripcionesCursos
             {
                 loggedUser = new Usuario();
                 loggedUser = (Usuario)Session["user"];
+                rol = Session["userEmployee"] != null ? 1 : 2;
                 filtro = new BusquedaFiltro(Convert.ToInt32(comboDepartamento.SelectedValue), Convert.ToInt32(comboCarrera.SelectedValue), DateTime.Now);
-
+                
                 comboMateria.DataTextField = COMBOTEXTFIELDMATERIA;
                 comboMateria.DataValueField = COMBOVALUEFIELDMATERIA;
-                comboMateria.DataSource = MateriaDTO.GetMateriasBySedeAndFilters(loggedUser, filtro).Select(p => new { IdMateria = p.IdMateria, Descripcion = p.IdMateria.ToString() + "- " + p.Descripcion, IdDepartamento = p.IdDepartamento });
+                comboMateria.DataSource = MateriaDTO.GetMateriasBySedeAndFilters(loggedUser, filtro, rol).Select(p => new { IdMateria = p.IdMateria, Descripcion = p.IdMateria.ToString() + "- " + p.Descripcion, IdDepartamento = p.IdDepartamento });
                 comboMateria.DataBind();
                 comboMateria.Items.Insert(0, new ListItem(ConfigurationManager.AppSettings["ContentComboMateriaDefault"], "0"));
             }
@@ -262,8 +264,10 @@ namespace InscripcionesCursos
                     loggedUser = (Usuario)Session["user"];
                     SetEstado(false);
 
+                    rol = Session["userEmployee"] != null ? 1 : 2;
+
                     filtro = new BusquedaFiltro(Convert.ToInt32(comboDepartamento.SelectedValue), Convert.ToInt32(comboCarrera.SelectedValue), Convert.ToInt32(comboMateria.SelectedValue), DateTime.Now);
-                    catedras = new List<CatedraComision>(CatedraComisionDTO.GetCatedraComisionFiltered(loggedUser, filtro));
+                    catedras = new List<CatedraComision>(CatedraComisionDTO.GetCatedraComisionFiltered(loggedUser, filtro, rol));
 
                     Session.Add("catedras", catedras);
                     GridResultados.DataSource = catedras;

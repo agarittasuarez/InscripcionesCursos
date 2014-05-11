@@ -204,14 +204,15 @@ namespace InscripcionesCursos.DAO
         /// <summary>
         /// Selects all records from the Materia table by a foreign key.
         /// </summary>
-        public List<Materia> SelectAllBySedeAndFilters(int sede, int departamento, int carrera, DateTime fechaActual)
+        public List<Materia> SelectAllBySedeAndFilters(int sede, int departamento, int carrera, DateTime fechaActual, int rol)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
 				new SqlParameter("@IdSede", sede),
                 new SqlParameter("@IdDepartamento", departamento),
                 new SqlParameter("@IdCarrera", carrera),
-                new SqlParameter("@FechaActual", fechaActual)
+                new SqlParameter("@FechaActual", fechaActual),
+                new SqlParameter("@IdCargo", rol)
 
 			};
 

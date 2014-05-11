@@ -321,11 +321,12 @@ namespace InscripcionesCursos.DAO
         /// </summary>
         /// <param name="dateNow"></param>
         /// <returns></returns>
-        public List<InscripcionActiva> ValidateInscripcionesActivas(DateTime dateNow)
+        public List<InscripcionActiva> ValidateInscripcionesActivas(DateTime dateNow, int rol)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@FechaActual", dateNow)
+				new SqlParameter("@FechaActual", dateNow),
+                new SqlParameter("@IdCargo", rol)
 			};
 
             using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "InscripcionActivaValidateFecha", parameters))

@@ -287,7 +287,7 @@ namespace InscripcionesCursos.DAO
         /// <summary>
         /// Selects all records from the CatedraComision table by a foreign key.
         /// </summary>
-        public List<CatedraComision> SelectAllByIdSedeAndFilters(int idSede, int idDepartamento, int idCarrera, int idMateria, DateTime fechaActual)
+        public List<CatedraComision> SelectAllByIdSedeAndFilters(int idSede, int idDepartamento, int idCarrera, int idMateria, DateTime fechaActual, int rol)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
@@ -295,7 +295,8 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@IdDepartamento", idDepartamento),
                 new SqlParameter("@IdCarrera", idCarrera),
                 new SqlParameter("@IdMateria", idMateria),
-                new SqlParameter("@FechaActual", fechaActual)
+                new SqlParameter("@FechaActual", fechaActual),
+                new SqlParameter("@IdCargo", rol)
 			};
 
             using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "CatedraComisionSelectAllByFilter", parameters))

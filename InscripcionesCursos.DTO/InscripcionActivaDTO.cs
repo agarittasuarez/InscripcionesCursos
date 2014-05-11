@@ -17,12 +17,12 @@ namespace InscripcionesCursos.DTO
 
         #region Methods
 
-        public static List<InscripcionActiva> ValidateInscipcionesActivas(DateTime dateNow)
+        public static List<InscripcionActiva> ValidateInscipcionesActivas(DateTime dateNow, int rol)
         {
             try
             {
                 InscripcionActivaDAO inscripcionActivaDAO = new InscripcionActivaDAO(connectionString);
-                return inscripcionActivaDAO.ValidateInscripcionesActivas(dateNow);
+                return inscripcionActivaDAO.ValidateInscripcionesActivas(dateNow, rol);
             }
             catch (Exception ex)
             {
