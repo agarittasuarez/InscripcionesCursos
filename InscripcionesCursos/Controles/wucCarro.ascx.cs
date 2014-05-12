@@ -12,6 +12,7 @@ using InscripcionesCursos.DTO;
 using System.Data.SqlTypes;
 using System.IO;
 using System.Threading;
+using AjaxControlToolkit;
 
 namespace InscripcionesCursos
 {
@@ -379,20 +380,14 @@ namespace InscripcionesCursos
                     if (Session["userEmployee"] == null)
                         Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"] + "?result=ok&email=ok");
                     else
-                    {
-                        ClientScriptManager script = Page.ClientScript;
-                        script.RegisterStartupScript(this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
-                    }
+                        ToolkitScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
                 }
                 else
                 {
                     if (Session["userEmployee"] == null)
                         Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"] + "?result=ok&email=error");
                     else
-                    {
-                        ClientScriptManager script = Page.ClientScript;
-                        script.RegisterStartupScript(this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
-                    }
+                        ToolkitScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
                 }
             }
             catch (ThreadAbortException)

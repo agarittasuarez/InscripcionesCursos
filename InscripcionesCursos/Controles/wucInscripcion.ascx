@@ -2,7 +2,7 @@
 <%@ Register src="wucCarro.ascx" tagname="Carro" tagprefix="uc1" %>
 <div class="contenedorFormInscripciones">
     <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerCombos" />
-    <asp:UpdatePanel ID="updateCombos" runat="server">
+    <asp:UpdatePanel ID="updateCombos" runat="server" UpdateMode="Always">
         <ContentTemplate>
             <asp:Label ID="invisibleTarget" runat="server" Style="display: none" />
             <ajaxToolkit:ModalPopupExtender ID="mpeMessage" runat="server"

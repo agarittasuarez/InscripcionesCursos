@@ -17,7 +17,7 @@
             <div class="modalPopUpBody">
                 <asp:Label ID="lblMessagePopUpCart" runat="server" />
             </div>
-            <img src="/../img/ico_loading.gif" id="imgProcessing" align="middle" alt="loading" style="display:none" />
+            <img src="../../img/ico_loading.gif" id="imgProcessing" align="middle" alt="loading" style="display:none" />
             <div id="buttonContainerCart" class="modalPopUpButtonsLoading" runat="server">
                 <asp:Button ID="btnAceptarCart" Text="Aceptar" runat="server" OnClick="btnAceptarCart_Click" OnClientClick="Loading();" />
                 <asp:Button ID="btnCancelarCart" Text="Cancelar" runat="server" OnClick="btnCancelarCart_Click" />
