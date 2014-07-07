@@ -111,7 +111,7 @@ namespace InscripcionesCursos
                 dataPrint.Append("<img src=\"" + Page.ResolveUrl("~") + "img/header_impresion.gif\" alt=\"UNLZ\" />");
                 dataPrint.Append("<div><div style=\"display:inline\">Fecha Tramite: " + DateTime.Now.ToShortDateString() + "</div>");
                 dataPrint.Append("<div style=\"display:inline; float:right;\">Hora: " + DateTime.Now.ToShortTimeString() + "</div></div><br />");
-                dataPrint.Append("<div>DNI: " + user.DNI.ToString() + "</div><div>" + "Apellido y Nombre: " + user.ApellidoNombre + "</div><br /><div style=\"display:inline;\">" + "Contraseña: <div style=\"color:#FFFFFF; display:inline;\"/>" + user.Password + "</div><div><br />");
+                dataPrint.Append("<div>DNI: " + user.DNI.ToString() + "</div><div>" + "Apellido y Nombre: " + user.ApellidoNombre + "</div><br /><div style=\"display:inline;\">" + "Contraseña: <div style=\"color:#FFFFFF; font-weight: bold; display:inline;\"/>" + user.Password + "</div><div><br />");
                 dataPrint.Append(String.Format(ConfigurationManager.AppSettings["ContentPrintForm"], enter, enter, enter));
 
                 scriptingBuilder.Append("<script type='text/javascript'>");
