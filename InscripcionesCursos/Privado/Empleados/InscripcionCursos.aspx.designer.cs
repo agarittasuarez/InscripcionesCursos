@@ -22,6 +22,24 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
+        /// scriptManagerInscripciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager scriptManagerInscripciones;
+        
+        /// <summary>
+        /// upInscripciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upInscripciones;
+        
+        /// <summary>
         /// lblDni control.
         /// </summary>
         /// <remarks>

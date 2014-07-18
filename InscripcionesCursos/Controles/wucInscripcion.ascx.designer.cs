@@ -13,15 +13,6 @@ namespace InscripcionesCursos {
     public partial class wucInscripcion {
         
         /// <summary>
-        /// scriptManagerCombos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ToolkitScriptManager scriptManagerCombos;
-        
-        /// <summary>
         /// updateCombos control.
         /// </summary>
         /// <remarks>

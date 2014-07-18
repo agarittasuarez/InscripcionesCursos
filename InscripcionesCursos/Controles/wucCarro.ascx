@@ -70,4 +70,8 @@
             </div>
         </div>
     </ContentTemplate>
+    <Triggers>
+        <asp:PostBackTrigger ControlID="btnAceptarCart" />
+        <asp:PostBackTrigger ControlID="btnCancelarCart" />
+    </Triggers>
 </asp:UpdatePanel>

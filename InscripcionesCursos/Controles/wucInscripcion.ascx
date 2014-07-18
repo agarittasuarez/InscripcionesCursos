@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wucInscripcion.ascx.cs" Inherits="InscripcionesCursos.wucInscripcion" %>
 <%@ Register src="wucCarro.ascx" tagname="Carro" tagprefix="uc1" %>
 <div class="contenedorFormInscripciones">
-    <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerCombos" />
     <asp:UpdatePanel ID="updateCombos" runat="server" UpdateMode="Always">
         <ContentTemplate>
             <asp:Label ID="invisibleTarget" runat="server" Style="display: none" />

@@ -109,7 +109,7 @@
                                     oncheckedchanged="chkProgramar_CheckedChanged" />
                                 <asp:TextBox ID="txtFechaProgramada" runat="server" Enabled="False"></asp:TextBox>
                                 <ajaxToolkit:CalendarExtender ID="tktFecha" runat="server" 
-                                    TargetControlID="txtFechaProgramada" Format="dd/MM/yyyy HH:mm" Enabled="True" />                                    
+                                    TargetControlID="txtFechaProgramada" Format="dd/MM/yyyy hh:mm" Enabled="True" />                                    
                             </div>
                             <asp:Button id="btnGuardar" runat="server" Text="Guardar" 
                                 ValidationGroup="ArchivoImport" onclick="btnGuardar_Click" CssClass="greenButton" />

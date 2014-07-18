@@ -12,6 +12,8 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using System.Drawing;
+using System.Data;
+using System.Globalization;
 
 namespace InscripcionesCursos
 {
@@ -591,7 +593,7 @@ namespace InscripcionesCursos
                         importacion.IdTipoImportacion = cboTipoImportacion.SelectedValue;
                         importacion.FechaImportacion = DateTime.Now;
                         importacion.UsuarioImportador = ((Usuario)Session["userEmployee"]).DNI;
-                        importacion.FechaProgramadaImportacion = Convert.ToDateTime(txtFechaProgramada.Text);
+                        importacion.FechaProgramadaImportacion = Convert.ToDateTime(DateTime.Parse(txtFechaProgramada.Text).ToString("yyyy-MM-dd HH:mm:ss"));
                         importacion.ClaseFormato = SetClaseFormato(importacion.IdTipoImportacion);
 
                         if (importacion.IdTipoImportacion != PadronAalumnos && importacion.IdTipoImportacion != PadronCalificaciones)
