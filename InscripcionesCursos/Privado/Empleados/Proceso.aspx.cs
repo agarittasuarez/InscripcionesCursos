@@ -158,7 +158,7 @@ namespace InscripcionesCursos
                         turno == ("2/" + DateTime.Now.Year.ToString()) || turno == ("3/" + DateTime.Now.Year.ToString())).ToList();
                     cboTurnoInscripcion.DataBind();
 
-                    cboVueltaInscripcion.DataSource = ServicioImportacionDTO.GetServicioVueltaInscripcion().Where(vuelta => vuelta.IdVuelta != 0).ToList();
+                    cboVueltaInscripcion.DataSource = ServicioImportacionDTO.GetServicioVueltaInscripcion();
                     cboVueltaInscripcion.DataBind();
                 }
             }
