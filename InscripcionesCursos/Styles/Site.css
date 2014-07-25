@@ -1145,6 +1145,17 @@ div.accountInfo
 	background-image: url(../img/ico_detail_hover.png);
 }
 
+.icoCheck
+{
+	background-image: url(../img/ico_check.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border-style:none;
+	cursor:pointer;
+	width:22px;
+	height: 22px;
+}
+
 .gridProcess
 {
 	float:left;

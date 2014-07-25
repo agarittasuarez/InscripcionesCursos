@@ -184,14 +184,25 @@ namespace InscripcionesCursos
                     PlaceHolder pHolder = e.Row.FindControl("phButton") as PlaceHolder;
                     Button btnAction = new Button();
 
-                    if (Convert.ToBoolean(e.Row.Cells[9].Text))
+                    if (((ServicioImportacion)e.Row.DataItem).ProcesoActivo)
                     {
                         btnAction.CssClass = "icoPlusAction";
+                        btnAction.Attributes.Add("title", ConfigurationManager.AppSettings["LabelAltActiveProcess"]);
                     }
                     else
                     {
-                        btnAction.CssClass = "icoMinusAction";
-                        btnAction.Enabled = false;
+                        if (!((ServicioImportacion)e.Row.DataItem).ProcesoActivo && ((ServicioImportacion)e.Row.DataItem).LogError != null && ((ServicioImportacion)e.Row.DataItem).LogError.Trim().Length >0)
+                        {
+                            btnAction.CssClass = "icoMinusAction";
+                            btnAction.Attributes.Add("title", ConfigurationManager.AppSettings["LabelAltErrorProcess"]);
+                            btnAction.Enabled = false;
+                        }
+                        else
+                        {
+                            btnAction.CssClass = "icoCheck";
+                            btnAction.Attributes.Add("title", ConfigurationManager.AppSettings["LabelAltFinishProcess"]);
+                            btnAction.Enabled = false;
+                        }
                     }
 
                     btnAction.ID = "btnAction";
@@ -743,9 +754,11 @@ namespace InscripcionesCursos
                 {
                     case 1:
                         gridActiveProcess.DataSource = ServicioImportacionDTO.GetActiveProcess();
-                        gridActiveProcess.Columns[9].Visible = true; ;
+                        gridActiveProcess.Columns[9].Visible = true;
+                        gridActiveProcess.Columns[10].Visible = true;
                         gridActiveProcess.DataBind();
                         gridActiveProcess.Columns[9].Visible = false;
+                        gridActiveProcess.Columns[10].Visible = false;
                         break;
                     default:
                         importacion = new ServicioImportacion();

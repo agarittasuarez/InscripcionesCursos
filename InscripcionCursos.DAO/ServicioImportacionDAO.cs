@@ -385,6 +385,7 @@ namespace InscripcionesCursos.DAO
             process.TurnoInscripcion = dataReader.GetDateTime("TurnoInscripcion", new DateTime(0));
             process.UsuarioImportador = dataReader.GetInt32("UsuarioImportador", 0);
             process.IdTipoInscripcion = dataReader.GetString("IdTipoInscripcion", String.Empty);
+            process.LogError = dataReader.GetString("LogError", String.Empty);
 
             return process;
         }

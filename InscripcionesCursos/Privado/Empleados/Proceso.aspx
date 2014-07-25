@@ -148,6 +148,8 @@
                                         </asp:BoundField>
                                         <asp:BoundField DataField="ProcesoActivo" HeaderText="Activo">                                        
                                         </asp:BoundField>
+                                        <asp:BoundField DataField="LogError" HeaderText="Error">                                        
+                                        </asp:BoundField>
                                         <asp:TemplateField HeaderText="Estado" ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle">
                                             <ItemTemplate>
                                                 <asp:PlaceHolder ID="phButton" runat="server">

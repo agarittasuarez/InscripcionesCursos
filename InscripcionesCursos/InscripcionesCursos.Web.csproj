@@ -106,6 +106,7 @@
     <Content Include="img\header.gif" />
     <Content Include="img\header_impresion.gif" />
     <Content Include="img\header_mail.gif" />
+    <Content Include="img\ico_check.png" />
     <Content Include="img\ico_delete.gif" />
     <Content Include="img\ico_detail.png" />
     <Content Include="img\ico_detail_hover.png" />
