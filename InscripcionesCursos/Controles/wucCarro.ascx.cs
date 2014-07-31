@@ -636,8 +636,10 @@ namespace InscripcionesCursos
                 mailBody.Append("</body></html>");
 
                 //Impresion de comprobante para inscripciones realizadas por empleados de la Facultad
-                if (Session["userEmployee"] != null)
-                {
+                //Se quita la validación de empleado, para que los alumnos tambien puedan imprimir el comprobante debido a los problemas con el
+                //proveedor de correo
+                //if (Session["userEmployee"] != null)
+                //{
                     scriptingBuilder.Append("<script type='text/javascript'>");
                     scriptingBuilder.Append("var win=null;");
                     scriptingBuilder.Append("win = window.open();");
@@ -649,7 +651,7 @@ namespace InscripcionesCursos
                     scriptingBuilder.Append("win.close();");
                     scriptingBuilder.Append("window.location='" + ConfigurationManager.AppSettings["UrlStudentInscripcion"] + "';");
                     scriptingBuilder.Append("</script>");
-                }
+                //}
 
                 if (Utils.SendMail((Usuario)Session["user"], subject, mailBody.ToString()))
                     return true;

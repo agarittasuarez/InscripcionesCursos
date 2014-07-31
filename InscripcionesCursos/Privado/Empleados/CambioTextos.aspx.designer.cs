@@ -13,6 +13,24 @@ namespace InscripcionesCursos.Privado.Empleados {
     public partial class CambioTextos {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// updateProceso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updateProceso;
+        
+        /// <summary>
         /// lblTitulo control.
         /// </summary>
         /// <remarks>
@@ -20,6 +38,78 @@ namespace InscripcionesCursos.Privado.Empleados {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
+        
+        /// <summary>
+        /// invisibleTarget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label invisibleTarget;
+        
+        /// <summary>
+        /// mpeMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeMessage;
+        
+        /// <summary>
+        /// pnMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnMessage;
+        
+        /// <summary>
+        /// lblMessagePopUp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessagePopUp;
+        
+        /// <summary>
+        /// buttonContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttonContainer;
+        
+        /// <summary>
+        /// btnAceptar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
+        
+        /// <summary>
+        /// tabContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabContainer tabContainer;
+        
+        /// <summary>
+        /// tabPanelStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelStart;
         
         /// <summary>
         /// lblPreInscripcion1 control.
@@ -76,6 +166,24 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.TextBox txtPreHistorico;
         
         /// <summary>
+        /// tabPanelActivas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelActivas;
+        
+        /// <summary>
+        /// tabPanelLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelLog;
+        
+        /// <summary>
         /// lblHabilitaHistorico control.
         /// </summary>
         /// <remarks>
@@ -94,13 +202,22 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.RadioButtonList listRBHabilitaImprimirHistorico;
         
         /// <summary>
-        /// Label1 control.
+        /// imgEstadoHistorico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Image imgEstadoHistorico;
+        
+        /// <summary>
+        /// lblHabilitarPortal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHabilitarPortal;
         
         /// <summary>
         /// listRBHabilitaPortal control.
@@ -112,13 +229,22 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.RadioButtonList listRBHabilitaPortal;
         
         /// <summary>
-        /// Label2 control.
+        /// imgEstadoPortal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Image imgEstadoPortal;
+        
+        /// <summary>
+        /// lblHabilitarInscripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHabilitarInscripcion;
         
         /// <summary>
         /// listRBHabilitaInscripcion control.
@@ -128,6 +254,15 @@ namespace InscripcionesCursos.Privado.Empleados {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList listRBHabilitaInscripcion;
+        
+        /// <summary>
+        /// imgEstadoInscripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgEstadoInscripcion;
         
         /// <summary>
         /// btnGuardar control.

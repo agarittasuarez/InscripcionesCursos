@@ -51,9 +51,24 @@ namespace InscripcionesCursos.Privado.Empleados
 
         #region Events
 
+        /// <summary>
+        /// Event to save texts
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             ChangeTexts();
+        }
+
+        /// <summary>
+        /// Event to accept modal popup message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            mpeMessage.Hide();
         }
 
         #endregion
@@ -68,21 +83,39 @@ namespace InscripcionesCursos.Privado.Empleados
                 txtPreInscripcion1.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart1"];
                 txtPreInscripcion2.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart2"];
                 txtPreHistorico.Text = ConfigurationManager.AppSettings["ContentPreHistorialInscripcion"];
-                
+
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["InscriptionHistoricDisable"]))
+                {
                     listRBHabilitaImprimirHistorico.SelectedIndex = 1;
+                    imgEstadoHistorico.ImageUrl = "/../../img/ico_minus.png";
+                }
                 else
+                {
                     listRBHabilitaImprimirHistorico.SelectedIndex = 0;
+                    imgEstadoHistorico.ImageUrl = "/../../img/ico_plus.png";
+                }
 
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["MaintenanceFlag"]))
+                {
                     listRBHabilitaPortal.SelectedIndex = 0;
+                    imgEstadoPortal.ImageUrl = "/../../img/ico_plus.png";
+                }
                 else
+                {
                     listRBHabilitaPortal.SelectedIndex = 1;
+                    imgEstadoPortal.ImageUrl = "/../../img/ico_minus.png";
+                }
 
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["InscripcionDisable"]))
+                {
                     listRBHabilitaInscripcion.SelectedIndex = 1;
+                    imgEstadoInscripcion.ImageUrl = "/../../img/ico_minus.png";
+                }
                 else
-                    listRBHabilitaInscripcion.SelectedIndex = 0;                
+                {
+                    listRBHabilitaInscripcion.SelectedIndex = 0;
+                    imgEstadoInscripcion.ImageUrl = "/../../img/ico_plus.png";
+                }
             }
             catch (Exception ex)
             {

@@ -55,7 +55,10 @@
                 </asp:Panel>
 
                 <ajaxToolkit:TabContainer ID="tabContainer" runat="server" ActiveTabIndex="0" CssClass="fancy fancy-fuschia" Height="380px">
-                    <ajaxToolkit:TabPanel runat="server" HeaderText="Iniciar Proceso" ID="tabPanelStart" OnDemandMode="Once" >
+                    <ajaxToolkit:TabPanel runat="server" ID="tabPanelStart" OnDemandMode="Once" >
+                        <HeaderTemplate>
+                            <%= System.Configuration.ConfigurationManager.AppSettings["LabelTabIniciarProceso"]%>
+                        </HeaderTemplate>
                         <ContentTemplate>
                             <div class="procesoLineInfo">
                                 <asp:Label ID="lblTipoImportacion" runat="server" CssClass="procesoLabelInfo" ></asp:Label>
@@ -115,9 +118,9 @@
                                 ValidationGroup="ArchivoImport" onclick="btnGuardar_Click" CssClass="greenButton" />
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="tabPanelActivas" runat="server" HeaderText="Procesos Activos" OnDemandMode="Always" >
+                    <ajaxToolkit:TabPanel ID="tabPanelActivas" runat="server" OnDemandMode="Always" >
                         <HeaderTemplate>
-                            Procesos Activos
+                            <%= System.Configuration.ConfigurationManager.AppSettings["LabelTabProcesoActivo"]%>
                         </HeaderTemplate>
                         <ContentTemplate>
                             <div class="gridProcess">
@@ -163,7 +166,10 @@
                             </div>
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="tabPanelLog" runat="server" HeaderText="Log Proceso" OnDemandMode="Always" >
+                    <ajaxToolkit:TabPanel ID="tabPanelLog" runat="server" OnDemandMode="Always" >
+                        <HeaderTemplate>
+                            <%= System.Configuration.ConfigurationManager.AppSettings["LabelTabLogProceso"]%>
+                        </HeaderTemplate>
                         <ContentTemplate>
                             <div class="logErrorComboLine">
                                 <asp:Label id="lblTipoImportacionError" runat="server"/>

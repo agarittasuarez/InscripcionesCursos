@@ -212,7 +212,15 @@ namespace InscripcionesCursos
                     pHolder.Controls.Add(btnAction);
 
                     //Set Fromat TurnoInscripcion Field
-                    e.Row.Cells[7].Text = (Convert.ToDateTime(e.Row.Cells[7].Text)).Month.ToString() + "/" + (Convert.ToDateTime(e.Row.Cells[7].Text)).Year.ToString();
+                    if (((ServicioImportacion)e.Row.DataItem).Descripcion == ConfigurationManager.AppSettings["LabelPadronCalificaciones"] ||
+                        ((ServicioImportacion)e.Row.DataItem).IdTipoImportacion == ConfigurationManager.AppSettings["LabelPadronAlumnos"])
+                    {
+                        e.Row.Cells[6].Text = ConfigurationManager.AppSettings["LabelNoAplica"];
+                        e.Row.Cells[7].Text = ConfigurationManager.AppSettings["LabelNoAplica"];
+                        e.Row.Cells[8].Text = ConfigurationManager.AppSettings["LabelNoAplica"];
+                    }
+                    else
+                        e.Row.Cells[7].Text = (Convert.ToDateTime(e.Row.Cells[7].Text)).Month.ToString() + "/" + (Convert.ToDateTime(e.Row.Cells[7].Text)).Year.ToString();
                 }
             }
             catch (Exception ex)
