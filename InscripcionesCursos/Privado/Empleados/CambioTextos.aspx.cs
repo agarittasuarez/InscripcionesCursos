@@ -17,6 +17,8 @@ namespace InscripcionesCursos.Privado.Empleados
         #region Constants & Variables
 
         const int UserTypeEmployee = 1;
+        const string IcoPlus = "../../img/ico_plus.png";
+        const string IcoMinus = "../../img/ico_minus.png";
 
         #endregion
 
@@ -87,34 +89,34 @@ namespace InscripcionesCursos.Privado.Empleados
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["InscriptionHistoricDisable"]))
                 {
                     listRBHabilitaImprimirHistorico.SelectedIndex = 1;
-                    imgEstadoHistorico.ImageUrl = "/../../img/ico_minus.png";
+                    imgEstadoHistorico.ImageUrl = IcoMinus;
                 }
                 else
                 {
                     listRBHabilitaImprimirHistorico.SelectedIndex = 0;
-                    imgEstadoHistorico.ImageUrl = "/../../img/ico_plus.png";
+                    imgEstadoHistorico.ImageUrl = IcoPlus;
                 }
 
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["MaintenanceFlag"]))
                 {
                     listRBHabilitaPortal.SelectedIndex = 0;
-                    imgEstadoPortal.ImageUrl = "/../../img/ico_plus.png";
+                    imgEstadoPortal.ImageUrl = IcoPlus;
                 }
                 else
                 {
                     listRBHabilitaPortal.SelectedIndex = 1;
-                    imgEstadoPortal.ImageUrl = "/../../img/ico_minus.png";
+                    imgEstadoPortal.ImageUrl = IcoMinus;
                 }
 
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["InscripcionDisable"]))
                 {
                     listRBHabilitaInscripcion.SelectedIndex = 1;
-                    imgEstadoInscripcion.ImageUrl = "/../../img/ico_minus.png";
+                    imgEstadoInscripcion.ImageUrl = IcoMinus;
                 }
                 else
                 {
                     listRBHabilitaInscripcion.SelectedIndex = 0;
-                    imgEstadoInscripcion.ImageUrl = "/../../img/ico_plus.png";
+                    imgEstadoInscripcion.ImageUrl = IcoPlus;
                 }
             }
             catch (Exception ex)

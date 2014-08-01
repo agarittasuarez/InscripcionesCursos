@@ -213,7 +213,7 @@ namespace InscripcionesCursos
 
                     //Set Fromat TurnoInscripcion Field
                     if (((ServicioImportacion)e.Row.DataItem).Descripcion == ConfigurationManager.AppSettings["LabelPadronCalificaciones"] ||
-                        ((ServicioImportacion)e.Row.DataItem).IdTipoImportacion == ConfigurationManager.AppSettings["LabelPadronAlumnos"])
+                        ((ServicioImportacion)e.Row.DataItem).Descripcion == ConfigurationManager.AppSettings["LabelPadronAlumnos"])
                     {
                         e.Row.Cells[6].Text = ConfigurationManager.AppSettings["LabelNoAplica"];
                         e.Row.Cells[7].Text = ConfigurationManager.AppSettings["LabelNoAplica"];
