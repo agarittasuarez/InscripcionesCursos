@@ -54,7 +54,7 @@
 		            </div>
                 </asp:Panel>
 
-                <ajaxToolkit:TabContainer ID="tabContainer" runat="server" ActiveTabIndex="0" CssClass="fancy fancy-fuschia" Height="380px">
+                <ajaxToolkit:TabContainer ID="tabContainer" runat="server" ActiveTabIndex="0" CssClass="fancy fancy-fuschia" Height="400px">
                     <ajaxToolkit:TabPanel runat="server" ID="tabPanelStart" OnDemandMode="Once" >
                         <HeaderTemplate>
                             <%= System.Configuration.ConfigurationManager.AppSettings["LabelTabIniciarProceso"]%>
