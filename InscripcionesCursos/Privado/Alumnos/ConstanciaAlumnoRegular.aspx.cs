@@ -106,7 +106,7 @@ namespace InscripcionesCursos.Privado.Alumnos
                 if (text != ConfigurationManager.AppSettings["DefaultText"])
                 {
                     //Validate if the student has reincorporation or not
-                    if ((user.CuatrimestreAnioIngreso.IndexOf(PrimerCuatrimestre) != -1) && ((user.CuatrimestreAnioReincorporacion) == null || (user.CuatrimestreAnioReincorporacion == string.Empty)))
+                    if ((user.CuatrimestreAnioIngreso.Trim().IndexOf(PrimerCuatrimestre) != -1) && ((user.CuatrimestreAnioReincorporacion.Trim()) == null || (user.CuatrimestreAnioReincorporacion.Trim() == string.Empty)))
                     {
                         if (DateTime.Now.Month <= 3)
                         {
@@ -121,7 +121,7 @@ namespace InscripcionesCursos.Privado.Alumnos
                     }
                     else
                     {
-                        if ((user.CuatrimestreAnioIngreso.IndexOf(SegundoCuatrimestre) != -1) && ((user.CuatrimestreAnioReincorporacion) == null || (user.CuatrimestreAnioReincorporacion == string.Empty)))
+                        if ((user.CuatrimestreAnioIngreso.Trim().IndexOf(SegundoCuatrimestre) != -1) && ((user.CuatrimestreAnioReincorporacion.Trim()) == null || (user.CuatrimestreAnioReincorporacion.Trim() == string.Empty)))
                         {
                             if (DateTime.Now.Month <= 7)
                             {
@@ -136,7 +136,7 @@ namespace InscripcionesCursos.Privado.Alumnos
                         }
                         else
                         {
-                            if (user.CuatrimestreAnioReincorporacion.IndexOf(PrimerCuatrimestre) != -1)
+                            if (user.CuatrimestreAnioReincorporacion.Trim().IndexOf(PrimerCuatrimestre) != -1)
                             {
                                 if (DateTime.Now.Month <= 3)
                                 {
