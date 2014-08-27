@@ -71,6 +71,7 @@
     <Compile Include="CarreraDTO.cs" />
     <Compile Include="CatedraComisionDTO.cs" />
     <Compile Include="ConsultaDTO.cs" />
+    <Compile Include="MateriaCorrelativaDTO.cs" />
     <Compile Include="ServicioImportacionDTO.cs" />
     <Compile Include="DepartamentoDTO.cs" />
     <Compile Include="AnaliticoDTO.cs" />
