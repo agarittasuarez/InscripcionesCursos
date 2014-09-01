@@ -103,13 +103,112 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::AjaxControlToolkit.TabContainer tabContainer;
         
         /// <summary>
-        /// tabPanelStart control.
+        /// tabPanelStartPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tabPanelStart;
+        protected global::AjaxControlToolkit.TabPanel tabPanelStartPage;
+        
+        /// <summary>
+        /// lblTextoInicio1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextoInicio1;
+        
+        /// <summary>
+        /// txtPaginaInicio1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPaginaInicio1;
+        
+        /// <summary>
+        /// htmlExtenderTxtPaginaInicio1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender htmlExtenderTxtPaginaInicio1;
+        
+        /// <summary>
+        /// lblTextoInicio2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextoInicio2;
+        
+        /// <summary>
+        /// txtPaginaInicio2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPaginaInicio2;
+        
+        /// <summary>
+        /// htmlExtenderTxtPaginaInicio2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender htmlExtenderTxtPaginaInicio2;
+        
+        /// <summary>
+        /// tabPanelInicioInforme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelInicioInforme;
+        
+        /// <summary>
+        /// lblTextoInformacionAlumnos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTextoInformacionAlumnos;
+        
+        /// <summary>
+        /// txtInformacionAlumnos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtInformacionAlumnos;
+        
+        /// <summary>
+        /// HtmlEditorExtender4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender HtmlEditorExtender4;
+        
+        /// <summary>
+        /// tabPanelInscriptPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelInscriptPage;
         
         /// <summary>
         /// lblPreInscripcion1 control.
@@ -130,6 +229,15 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.TextBox txtPreInscripcion1;
         
         /// <summary>
+        /// htmlEditExt1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender htmlEditExt1;
+        
+        /// <summary>
         /// lblPreInscripcion2 control.
         /// </summary>
         /// <remarks>
@@ -146,6 +254,15 @@ namespace InscripcionesCursos.Privado.Empleados {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPreInscripcion2;
+        
+        /// <summary>
+        /// htmlEditExt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender htmlEditExt2;
         
         /// <summary>
         /// lblPreHistorico control.
@@ -166,22 +283,112 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.TextBox txtPreHistorico;
         
         /// <summary>
-        /// tabPanelActivas control.
+        /// htmlEditExt3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tabPanelActivas;
+        protected global::AjaxControlToolkit.HtmlEditorExtender htmlEditExt3;
         
         /// <summary>
-        /// tabPanelLog control.
+        /// tabPanelVouchers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tabPanelLog;
+        protected global::AjaxControlToolkit.TabPanel tabPanelVouchers;
+        
+        /// <summary>
+        /// lblPieComprobantePromo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPieComprobantePromo;
+        
+        /// <summary>
+        /// txtPieComprobantePromo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPieComprobantePromo;
+        
+        /// <summary>
+        /// HtmlEditorExtender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender HtmlEditorExtender1;
+        
+        /// <summary>
+        /// lblPieComprobanteVerano control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPieComprobanteVerano;
+        
+        /// <summary>
+        /// txtPieComprobanteVerano control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPieComprobanteVerano;
+        
+        /// <summary>
+        /// HtmlEditorExtender2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender HtmlEditorExtender2;
+        
+        /// <summary>
+        /// lblPieComprobanteExamen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPieComprobanteExamen;
+        
+        /// <summary>
+        /// txtPieComprobanteExamen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPieComprobanteExamen;
+        
+        /// <summary>
+        /// HtmlEditorExtender3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.HtmlEditorExtender HtmlEditorExtender3;
+        
+        /// <summary>
+        /// tabPanelComponents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.TabPanel tabPanelComponents;
         
         /// <summary>
         /// lblHabilitaHistorico control.

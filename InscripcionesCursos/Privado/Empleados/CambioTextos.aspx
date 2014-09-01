@@ -60,40 +60,172 @@
 		            </div>
                 </asp:Panel>
 
-                <ajaxToolkit:TabContainer ID="tabContainer" runat="server" ActiveTabIndex="0" CssClass="fancy fancy-fuschia" Height="380px">
-                    <ajaxToolkit:TabPanel runat="server" ID="tabPanelStart" OnDemandMode="Once" >
+                <ajaxToolkit:TabContainer ID="tabContainer" runat="server" ActiveTabIndex="0" CssClass="fancy fancy-fuschia" Height="420px">
+                    <ajaxToolkit:TabPanel runat="server" ID="tabPanelStartPage" OnDemandMode="Once">
                         <HeaderTemplate>
-                            <%= ConfigurationManager.AppSettings["LabelTabTextosPortal"]%>
+                            <%= ConfigurationManager.AppSettings["LabelTabTextosPaginaInicio"]%>
                         </HeaderTemplate>
                         <ContentTemplate>
-                            <div style="float:left">
+                            <div class="fixRichTextArea">
                                 <div class="labelCambioTexto">
-                                    <asp:Label ID="lblPreInscripcion1" runat="server"><%= ConfigurationManager.AppSettings["LabelPreInscripcion1"]%></asp:Label>
-                                    <asp:TextBox ID="txtPreInscripcion1" runat="server" Width="500px" Height="80px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                    <asp:Label ID="lblTextoInicio1" runat="server"><%= ConfigurationManager.AppSettings["LabelPaginaInicio1"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPaginaInicio1" runat="server" Width="540px" Height="150px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="htmlExtenderTxtPaginaInicio1" TargetControlID="txtPaginaInicio1" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
                                 </div>
                                 <br />
                                 <div class="labelCambioTexto">
-                                    <asp:Label ID="lblPreInscripcion2" runat="server"><%= ConfigurationManager.AppSettings["LabelPreInscripcion2"]%></asp:Label>
-                                    <asp:TextBox ID="txtPreInscripcion2" runat="server" Width="500px" Height="80px" Wrap="true" TextMode="MultiLine" style="resize:none" />
-                                </div>
-                                <br />
-                                <div class="labelCambioTexto">
-                                    <asp:Label ID="lblPreHistorico" runat="server"><%= ConfigurationManager.AppSettings["LabelPreHistorico"]%></asp:Label>
-                                    <asp:TextBox ID="txtPreHistorico" runat="server" Width="500px" Height="80px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                    <asp:Label ID="lblTextoInicio2" runat="server"><%= ConfigurationManager.AppSettings["LabelPaginaInicio2"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPaginaInicio2" runat="server" Width="540px" Height="150px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="htmlExtenderTxtPaginaInicio2" TargetControlID="txtPaginaInicio2" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
                                 </div>
                             </div>
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="tabPanelActivas" runat="server" OnDemandMode="Always" >
+                    <ajaxToolkit:TabPanel runat="server" ID="tabPanelInicioInforme" OnDemandMode="Once">
+                        <HeaderTemplate>
+                            <%= ConfigurationManager.AppSettings["LabelTabTextosPaginaInicioAlumnos"]%>
+                        </HeaderTemplate>
+                        <ContentTemplate>
+                            <div class="fixRichTextArea">
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblTextoInformacionAlumnos" runat="server"><%= ConfigurationManager.AppSettings["LabelInformacionAlumnos"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtInformacionAlumnos" runat="server" Width="540px" Height="150px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender4" TargetControlID="txtInformacionAlumnos" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                                <ajaxToolkit:JustifyCenter />
+                                                <ajaxToolkit:JustifyFull />
+                                                <ajaxToolkit:JustifyRight />
+                                                <ajaxToolkit:JustifyLeft />
+                                                <ajaxToolkit:CreateLink />
+                                                <ajaxToolkit:InsertImage />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                            </div>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel runat="server" ID="tabPanelInscriptPage" OnDemandMode="Once" >
+                        <HeaderTemplate>
+                            <%= ConfigurationManager.AppSettings["LabelTabTextosPaginaInscripcion"]%>
+                        </HeaderTemplate>
+                        <ContentTemplate>
+                            <div class="fixRichTextArea">
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPreInscripcion1" runat="server"><%= ConfigurationManager.AppSettings["LabelPreInscripcion1"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPreInscripcion1" runat="server" Width="540px" Height="120px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="htmlEditExt1" TargetControlID="txtPreInscripcion1" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPreInscripcion2" runat="server"><%= ConfigurationManager.AppSettings["LabelPreInscripcion2"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPreInscripcion2" runat="server" Width="540px" Height="120px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="htmlEditExt2" TargetControlID="txtPreInscripcion2" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPreHistorico" runat="server"><%= ConfigurationManager.AppSettings["LabelPreHistorico"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPreHistorico" runat="server" Width="540px" Height="120px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="htmlEditExt3" TargetControlID="txtPreHistorico" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                            </div>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel ID="tabPanelVouchers" runat="server" OnDemandMode="Always" >
                         <HeaderTemplate>
                             <%= ConfigurationManager.AppSettings["LabelTabTextosComprobantes"]%>
                         </HeaderTemplate>
                         <ContentTemplate>
-                            
-
+                            <div class="fixRichTextArea">
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPieComprobantePromo" runat="server"><%= ConfigurationManager.AppSettings["LabelPieComprobantePromo"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPieComprobantePromo" runat="server" Width="540px" Height="125px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender1" TargetControlID="txtPieComprobantePromo" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPieComprobanteVerano" runat="server"><%= ConfigurationManager.AppSettings["LabelPieComprobanteVerano"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPieComprobanteVerano" runat="server" Width="540px" Height="125px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender2" TargetControlID="txtPieComprobanteVerano" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="labelCambioTexto">
+                                    <asp:Label ID="lblPieComprobanteExamen" runat="server"><%= ConfigurationManager.AppSettings["LabelPieComprobanteExamen"]%></asp:Label>
+                                    <div class="fixRichTextArea">
+                                        <asp:TextBox ID="txtPieComprobanteExamen" runat="server" Width="540px" Height="125px" Wrap="true" TextMode="MultiLine" style="resize:none" />
+                                        <ajaxToolkit:HtmlEditorExtender ID="HtmlEditorExtender3" TargetControlID="txtPieComprobanteExamen" DisplaySourceTab="true" runat="server">
+                                            <Toolbar>
+                                                <ajaxToolkit:Bold />
+                                                <ajaxToolkit:Italic />
+                                                <ajaxToolkit:Underline />
+                                            </Toolbar>
+                                        </ajaxToolkit:HtmlEditorExtender>
+                                    </div>
+                                </div>
+                            </div>
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>
-                    <ajaxToolkit:TabPanel ID="tabPanelLog" runat="server" OnDemandMode="Always" >
+                    <ajaxToolkit:TabPanel ID="tabPanelComponents" runat="server" OnDemandMode="Always" >
                         <HeaderTemplate>
                             <%= ConfigurationManager.AppSettings["LabelTabPaginas"]%>
                         </HeaderTemplate>

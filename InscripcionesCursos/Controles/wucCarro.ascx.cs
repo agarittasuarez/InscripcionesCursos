@@ -532,8 +532,6 @@ namespace InscripcionesCursos
             try
             {
                 string enter = "<br />";
-                string boldOpen = "<b>";
-                string boldClose = "</b>";
                 string subject = ConfigurationManager.AppSettings["MailInscriptionSubject"];
                 StringBuilder mailBody = new StringBuilder();
                 StringBuilder css = new StringBuilder();
@@ -626,12 +624,12 @@ namespace InscripcionesCursos
                 mailBody.Append("</table><br /><br /><br />");
 
                 if (((listCarro[0].TurnoInscripcion.Month == 2) || (listCarro[0].TurnoInscripcion.Month == 5) || (listCarro[0].TurnoInscripcion.Month == 7) || (listCarro[0].TurnoInscripcion.Month == 10) || (listCarro[0].TurnoInscripcion.Month == 12)) && listCarro[0].IdTipoInscripcion != IdTipoInscripcionPromocion)
-                    mailBody.Append("<div>" + ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"] + "</div>");
+                    mailBody.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"]).ToString() + "</div>");
                 else
                     if (listCarro[0].TurnoInscripcion.Month == 3)
-                        mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailCursoVerano"], enter, ConfigurationManager.AppSettings["ContentFooterFechaHistoricoEmailCursoVerano"], enter, boldOpen, boldClose, enter));
+                        mailBody.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailCursoVerano"]).ToString());
                     else
-                        mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"], enter, ConfigurationManager.AppSettings["ContentFooterFechaHistoricoEmail"], enter, ConfigurationManager.AppSettings["ContentFooterFecha2HistoricoEmail"], boldOpen, boldClose, enter));
+                        mailBody.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"]).ToString());
 
                 mailBody.Append("</body></html>");
 

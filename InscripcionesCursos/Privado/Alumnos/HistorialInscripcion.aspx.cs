@@ -215,8 +215,6 @@ namespace InscripcionesCursos
                 if (user != null && inscripciones != null)
                 {
                     string enter = "<br />";
-                    string boldOpen = "<b>";
-                    string boldClose = "</b>";
 
                     StringBuilder scriptingBuilder = new StringBuilder();
                     StringBuilder dataPrint = new StringBuilder();
@@ -291,9 +289,9 @@ namespace InscripcionesCursos
                     dataPrint.Append("</table><br /><br /><br />");
 
                     if ((Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 2) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 5) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 7) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 10))
-                        dataPrint.Append("<div>" + ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"] + "</div>");
+                        dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"]).ToString() + "</div>");
                     else
-                        dataPrint.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentFooterHistorcioImpresion"], enter, ConfigurationManager.AppSettings["ContentFooterFechaHistorcioImpresion"].ToString(), enter, boldOpen, boldClose, enter));
+                        dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"]).ToString());
 
                     scriptingBuilder.Append("<script type='text/javascript'>");
                     scriptingBuilder.Append("var win=null;");

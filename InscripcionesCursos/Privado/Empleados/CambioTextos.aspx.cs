@@ -82,9 +82,14 @@ namespace InscripcionesCursos.Privado.Empleados
             try
             {
                 lblTitulo.Text = ConfigurationManager.AppSettings["TitleCambioTextos"];
+                txtPaginaInicio1.Text = ConfigurationManager.AppSettings["ContentDefaultBodyPart1"];
+                txtPaginaInicio2.Text = ConfigurationManager.AppSettings["ContentDefaultBodyPart2"];
                 txtPreInscripcion1.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart1"];
                 txtPreInscripcion2.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart2"];
                 txtPreHistorico.Text = ConfigurationManager.AppSettings["ContentPreHistorialInscripcion"];
+                txtPieComprobantePromo.Text = ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"];
+                txtPieComprobanteVerano.Text = ConfigurationManager.AppSettings["ContentFooterHistoricoEmailCursoVerano"];
+                txtPieComprobanteExamen.Text = ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"];
 
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["InscriptionHistoricDisable"]))
                 {
@@ -149,6 +154,18 @@ namespace InscripcionesCursos.Privado.Empleados
                                 break;
                             case "ContentPreHistorialInscripcion":
                                 childNode.Attributes["value"].Value = txtPreHistorico.Text;
+                                break;
+                            case "ContentFooterHistoricoEmail":
+                                childNode.Attributes["value"].Value = txtPieComprobantePromo.Text;
+                                break;
+                            case "ContentFooterHistoricoEmailCursoVerano":
+                                childNode.Attributes["value"].Value = txtPieComprobanteVerano.Text;
+                                break;
+                            case "ContentFooterHistoricoEmailExamen":
+                                childNode.Attributes["value"].Value = txtPieComprobanteExamen.Text;
+                                break;
+                            case "ContentInicioInformes":
+                                childNode.Attributes["value"].Value = txtInformacionAlumnos.Text;
                                 break;
                             case "InscriptionHistoricDisable":
                                 if (listRBHabilitaImprimirHistorico.SelectedIndex == 0)
