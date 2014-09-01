@@ -853,7 +853,8 @@ div.accountInfo
 .labelCambioTexto
 {
 	text-align:left;
-	float:right
+	float:right;
+	margin-bottom: 15px;
 }
 
 .labelCambioTexto span
@@ -886,6 +887,10 @@ div.accountInfo
 	margin-top:295px;
 }
 
+.fixRichTextArea
+{
+	float:left;
+}
 
 /*NEW MENU EMPLOYEE
 ----------------------------------------------------------*/
@@ -1011,7 +1016,7 @@ div.accountInfo
     max-width: 40px;
     min-height: 50px;
     max-height: 50px;        	
-    background-color: #00fff4;
+    background-color: #00FFF4;
     display:inline-block;
     text-align: center;
     vertical-align:middle;

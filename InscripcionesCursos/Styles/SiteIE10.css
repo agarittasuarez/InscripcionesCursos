@@ -870,6 +870,7 @@ div.accountInfo
 .labelCambioTexto
 {
 	text-align:left;
+	margin-bottom: 15px;
 }
 
 .labelCambioTexto span
@@ -900,6 +901,11 @@ div.accountInfo
 .fixButtonCambioTextos
 {
 	padding: 50px 200px 0 0;
+}
+
+.fixRichTextArea
+{
+	float:left;
 }
 
 /*NEW MENU
