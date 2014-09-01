@@ -30,6 +30,21 @@
         <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
     </div>
 
+    <div class="planLine" style="text-align:center" >
+        <div class="planBox">
+            <div class="planDescripMatMini"><br />Aprobadas</div>
+            <div id="divRef1" runat="server" class="planCodMatAprobMini"><br /></div>
+        </div>
+        <div class="planBox">
+            <div class="planDescripMatMini"><br />Habilitadas para cursar</div>
+            <div id="div1" runat="server" class="planCodMatMini"><br /></div>
+        </div>
+        <div class="planBox">
+            <div class="planDescripMatMini"><br />Bloqueadas por correlatividad</div>
+            <div id="div2" runat="server" class="planCodMatCorrelativaMini"><br /></div>
+        </div>
+    </div>
+
     <div id="contentContador" class="contentPlan" runat="server" visible="false">
 
         <div class="planLine">

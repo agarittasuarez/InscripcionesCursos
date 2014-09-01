@@ -59,19 +59,46 @@ namespace InscripcionesCursos.Privado.Alumnos
                         codCarrera = "A";
                     }
 
-                    #region Procesar materias aprobadas
+                    #region Procesar materias correlativas
 
                     Usuario user = (Usuario)Session["user"];
-                    List<Materia> materiasAprobadas = AnaliticoDTO.GetMateriasAprobadas(user.DNI, idCarrera);
+                    List<MateriaCorrelativa> materiasCorrelativas = MateriaCorrelativaDTO.GetMateriasCorrelativasByUser(user.DNI, idCarrera);
 
-                    // Procesar los controles de las materias aprobadas seteando el class = "planCodMatAprob"
-                    foreach (Materia materiaAprobada in materiasAprobadas)
+                    // Procesar los controles de las materias correlativas
+                    foreach (MateriaCorrelativa materiaCorrelativa in materiasCorrelativas)
                     {
-                        HtmlGenericControl control = (HtmlGenericControl)containerControl.FindControl(codCarrera + materiaAprobada.IdMateria.ToString());
-                        control.Attributes["Class"] = "planCodMatAprob";
+                        string cssClass = String.Empty;
+
+                        if (materiaCorrelativa.Estado == "A")
+                            cssClass = "planCodMatAprob";
+                        else if (materiaCorrelativa.Estado == "B")
+                            cssClass = "planCodMatBloqueada";
+                        else
+                            cssClass = "planCodMatHabilitada";
+
+                        HtmlGenericControl control = (HtmlGenericControl)containerControl.FindControl(codCarrera + materiaCorrelativa.IdMateria.ToString());
+
+                        if (control != null)
+                            control.Attributes["Class"] = cssClass;
+
                     }
 
                     #endregion
+
+
+                    //#region Procesar materias aprobadas
+
+                    ////Usuario user = (Usuario)Session["user"];
+                    //List<Materia> materiasAprobadas = AnaliticoDTO.GetMateriasAprobadas(user.DNI, idCarrera);
+
+                    //// Procesar los controles de las materias aprobadas seteando el class = "planCodMatAprob"
+                    //foreach (Materia materiaAprobada in materiasAprobadas)
+                    //{
+                    //    HtmlGenericControl control = (HtmlGenericControl)containerControl.FindControl(codCarrera + materiaAprobada.IdMateria.ToString());
+                    //    control.Attributes["Class"] = "planCodMatAprob";
+                    //}
+
+                    //#endregion
 
 
                 }
