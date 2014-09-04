@@ -958,8 +958,7 @@ div.accountInfo
 .planBox
 {
     display:inline-block;
-    *display: inline;
-    zoom: 1;
+    display: inline;
     font-size: 0.8em;
     font-family:Verdana, Arial;
 }
@@ -972,8 +971,7 @@ div.accountInfo
     max-height: 50px;        	
     background-color: #DD7DE8;
     display:inline-block;
-    *display: inline;
-    zoom: 1;
+    display: inline;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
@@ -989,13 +987,107 @@ div.accountInfo
     max-height: 50px;        	
     background-color: #4CBB17;
     display:inline-block;
-    *display: inline;
-    zoom: 1;
+    display: inline;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
     margin: 0px -5px 0px 8px;
+}
+
+.planCodMatAprobMini
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;        	
+    background-color: #4CBB17;
+    display:inline-block;
+    display: inline;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+
+.planCodMatCorrelativaMini
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;        	
+    background-color: #FF0000;
+    display:inline-block;
+    display: inline;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+
+.planCodMatMini
+{
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;        	
+    background-color: #00fff4;
+    display:inline-block;
+    display: inline;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+
+.planCodMatBloqueada
+{
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 50px;
+    max-height: 50px;        	
+    background-color: #ff0000;
+    display:inline-block;
+    display: inline;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+
+.planCodMatHabilitada
+{
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 50px;
+    max-height: 50px;        	
+    background-color: #00fff4;
+    display:inline-block;
+    display: inline;
+    text-align: center;
+    vertical-align:middle;
+    color: #FFFFFF;
+    font-weight:bold;
+    margin: 0px -5px 0px 8px;
+}
+
+.planDescripMatMini
+{
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 40px;
+    max-height: 40px;
+    background-color: #FFFDE8;
+    color: #000000;
+    vertical-align: middle;
+    text-align:center;
+    white-space:pre-wrap;
+    display:inline-block;
+    display: inline;
 }
        
 .planDescripMat
@@ -1010,8 +1102,7 @@ div.accountInfo
     text-align:center;
     white-space:pre-wrap;
     display:inline-block;
-    *display: inline;
-    zoom: 1;
+    display: inline;
 }
         
 .planCarga
