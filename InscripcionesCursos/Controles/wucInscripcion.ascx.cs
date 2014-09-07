@@ -26,7 +26,12 @@ namespace InscripcionesCursos
         const string CATEDRACOMISIONCERRADA = "N";
 
         string IdEstadoBajaModificacion = ConfigurationManager.AppSettings["IdEstadoBajaModificacion"];
+        string IdEstadoBajaErrorInscripcion = ConfigurationManager.AppSettings["IdEstadoBajaErrorInscripcion"];
         string IdEstadoInscripto = ConfigurationManager.AppSettings["IdEstadoAltaInscripcion"];
+        string IdEstadoBajaSorteo = ConfigurationManager.AppSettings["IdEstadoBajaSorteo"];
+        string IdEstadoBajaReglamentacion = ConfigurationManager.AppSettings["IdEstadoBajaReglamentacion"];
+        string IdEstadoBajaAprobada = ConfigurationManager.AppSettings["IdEstadoBajaAprobada"];
+        
         string resultProcessOk = "ok";
         string resultProcessError = "error";
 
@@ -402,7 +407,13 @@ namespace InscripcionesCursos
                             carro.IdEstadoInscripcion = IdEstadoInscripto;
                             carro.FechaDesdeHasta = catedras[count].FechaDesde;
 
-                            if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion != IdEstadoInscripto)) return false; else if (c.IdMateria == carro.IdMateria) return true; else return false; }) == null)
+                            if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && ((c.IdEstadoInscripcion != IdEstadoInscripto) ||
+                                (c.IdEstadoInscripcion == IdEstadoBajaErrorInscripcion && c.CatedraComision == carro.CatedraComision))
+                                && (c.IdEstadoInscripcion != IdEstadoBajaAprobada) && (c.IdEstadoInscripcion == IdEstadoBajaSorteo &&
+                                c.CatedraComision != carro.CatedraComision) && (c.IdEstadoInscripcion == IdEstadoBajaReglamentacion &&
+                                c.CatedraComision != carro.CatedraComision)) return false; else if (c.IdMateria == carro.IdMateria) return true;
+                                else return false;
+                            }) == null)
                             {
                                 listCarro.Add(carro);
                                 Session.Add("carro", listCarro);
@@ -412,8 +423,21 @@ namespace InscripcionesCursos
                             }
                             else
                             {
-                                lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
-                                mpeMessage.Show();
+                                //if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion == IdEstadoInscripto)) return true; else if (c.IdMateria == carro.IdMateria) return false; else return true; }) == null)
+                                //{
+                                //    lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
+                                //    mpeMessage.Show();
+                                //}
+                                //if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion == IdEstadoBajaAprobada)) return true; else if (c.IdMateria == carro.IdMateria) return false; else return true; }) == null)
+                                //{
+                                //    lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
+                                //    mpeMessage.Show();
+                                //}
+                                //if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion == IdEstadoBajaReglamentacion)) return true; else if (c.IdMateria == carro.IdMateria) return false; else return true; }) == null)
+                                //{
+                                    lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
+                                    mpeMessage.Show();
+                                //}
                             }
                         }
                     }
