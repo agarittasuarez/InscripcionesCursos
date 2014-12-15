@@ -590,7 +590,7 @@ namespace InscripcionesCursos
                         if ((listCarro[0].TurnoInscripcion.Month == 2) || (listCarro[0].TurnoInscripcion.Month == 5) || (listCarro[0].TurnoInscripcion.Month == 7) || (listCarro[0].TurnoInscripcion.Month == 10) || (listCarro[0].TurnoInscripcion.Month == 12))
                             mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentDataHistoricoExamen"], months[listCarro[0].TurnoInscripcion.Month] + "/" + listCarro[0].TurnoInscripcion.Year.ToString()) + "</div><br />");
                         else
-                            mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData1HistoricoImpresion"], ConfigurationManager.AppSettings["ContentDataHistoricoCursoVerano"], listCarro[0].TurnoInscripcion.Year.ToString()) + "</div><br />");
+                            mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData1HistoricoImpresion"], ConfigurationManager.AppSettings["ContentDataHistoricoCursoVerano"], (listCarro[0].TurnoInscripcion.Year + 1).ToString()) + "</div><br />");
                     }
                 }
 
