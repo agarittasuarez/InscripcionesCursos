@@ -84,6 +84,7 @@ namespace InscripcionesCursos.Privado.Empleados
                 lblTitulo.Text = ConfigurationManager.AppSettings["TitleCambioTextos"];
                 txtPaginaInicio1.Text = ConfigurationManager.AppSettings["ContentDefaultBodyPart1"];
                 txtPaginaInicio2.Text = ConfigurationManager.AppSettings["ContentDefaultBodyPart2"];
+                txtInformacionAlumnos.Text = ConfigurationManager.AppSettings["ContentInicioInformes"];
                 txtPreInscripcion1.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart1"];
                 txtPreInscripcion2.Text = ConfigurationManager.AppSettings["ContentPreInscripcionBodyPart2"];
                 txtPreHistorico.Text = ConfigurationManager.AppSettings["ContentPreHistorialInscripcion"];
@@ -146,6 +147,12 @@ namespace InscripcionesCursos.Privado.Empleados
                     {
                         switch (childNode.Attributes["key"].Value)
                         {
+                            case "ContentDefaultBodyPart1":
+                                childNode.Attributes["value"].Value = txtPaginaInicio1.Text;
+                                break;
+                            case "ContentDefaultBodyPart2":
+                                childNode.Attributes["value"].Value = txtPaginaInicio2.Text;
+                                break;
                             case "ContentPreInscripcionBodyPart1":
                                 childNode.Attributes["value"].Value = txtPreInscripcion1.Text;
                                 break;
