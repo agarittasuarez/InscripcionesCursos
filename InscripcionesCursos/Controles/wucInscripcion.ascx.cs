@@ -407,54 +407,8 @@ namespace InscripcionesCursos
                             carro.IdEstadoInscripcion = IdEstadoInscripto;
                             carro.FechaDesdeHasta = catedras[count].FechaDesde;
 
-                            #region NEW VALIDATION- UNCOMMENT BEFORE SUMMER CLASS
-                            //if (listCarro.Find(delegate(Carro selected)
-                            //{
-                            //    if (selected.IdMateria == carro.IdMateria && selected.CatedraComision != carro.CatedraComision
-                            //        && selected.IdVuelta != carro.IdVuelta && carro.IdEstadoInscripcion == IdEstadoBajaAprobada)
-                            //        return false;
-                            //    else if (selected.IdMateria == carro.IdMateria && selected.CatedraComision == carro.CatedraComision
-                            //        && selected.IdVuelta != carro.IdVuelta && (carro.IdEstadoInscripcion == IdEstadoBajaReglamentacion
-                            //        || carro.IdEstadoInscripcion == IdEstadoBajaSorteo))
-                            //        return false;
-                            //    else if (selected.IdMateria == carro.IdMateria)
-                            //        return true;
-                            //    else return false;
-                            //}) == null)
-                            //{
-                            //    listCarro.Add(carro);
-                            //    Session.Add("carro", listCarro);
-                            //    ((GridView)wucCarro.FindControl("GridCarro")).DataSource = listCarro;
-                            //    setGridCartHeaders();
-                            //    ((GridView)wucCarro.FindControl("GridCarro")).DataBind();
-                            //}
-
-                            //bool flag = false;
-                            //foreach (Carro selected in listCarro)
-                            //{
-                            //    if (carro.IdMateria == selected.IdMateria && carro.CatedraComision != selected.CatedraComision
-                            //        && carro.IdVuelta != selected.IdVuelta && selected.IdEstadoInscripcion == IdEstadoBajaAprobada)
-                            //    {
-                            //        flag = false;
-                            //        break;
-                            //    }
-                            //    else if (carro.IdMateria == selected.IdMateria && carro.CatedraComision == selected.CatedraComision
-                            //        && carro.IdVuelta != selected.IdVuelta && (selected.IdEstadoInscripcion == IdEstadoBajaReglamentacion
-                            //        || selected.IdEstadoInscripcion == IdEstadoBajaSorteo))
-                            //    {
-                            //        flag = false;
-                            //        break;
-                            //    }
-                            //    else if (carro.IdMateria == selected.IdMateria && selected.IdEstadoInscripcion == IdEstadoInscripto)
-                            //    {
-                            //        flag = false;
-                            //        break;
-                            //    }
-                            //    else
-                            //        flag = true;
-                            //}
-                            
-                            //if(flag)
+                            #region OLD VALIDATION
+                            //if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion != IdEstadoInscripto)) return false; else if (c.IdMateria == carro.IdMateria) return true; else return false; }) == null)
                             //{
                             //    listCarro.Add(carro);
                             //    Session.Add("carro", listCarro);
@@ -464,33 +418,40 @@ namespace InscripcionesCursos
                             //}
                             //else
                             //{
-                            //    foreach (Carro item in listCarro)
-                            //    {
-                            //        if (item.IdMateria == carro.IdMateria && item.CatedraComision == carro.CatedraComision && item.IdEstadoInscripcion == IdEstadoBajaReglamentacion)
-                            //        {
-                            //            lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaReglamentacion"];
-                            //            mpeMessage.Show();
-                            //        }
-                            //        else if (item.IdMateria == carro.IdMateria && item.CatedraComision == carro.CatedraComision && item.IdEstadoInscripcion == IdEstadoBajaSorteo)
-                            //        {
-                            //            lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaSorteo"];
-                            //            mpeMessage.Show();
-                            //        }
-                            //        else if (item.IdMateria == carro.IdMateria && item.IdEstadoInscripcion == IdEstadoBajaAprobada)
-                            //        {
-                            //            lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaAprobada"];
-                            //            mpeMessage.Show();
-                            //        }
-                            //        else if (item.IdMateria == carro.IdMateria && item.IdEstadoInscripcion == IdEstadoInscripto)
-                            //        {
-                            //            lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
-                            //            mpeMessage.Show();
-                            //        }
-                            //    }
+                            //    lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
+                            //    mpeMessage.Show();
                             //}
                             #endregion
 
-                            if (listCarro.Find(delegate(Carro c) { if ((c.IdMateria == carro.IdMateria) && (c.IdEstadoInscripcion != IdEstadoInscripto)) return false; else if (c.IdMateria == carro.IdMateria) return true; else return false; }) == null)
+                            #region NEW VALIDATION
+
+                            bool flag = false;
+                            foreach (Carro selected in listCarro)
+                            {
+                                if (carro.IdMateria == selected.IdMateria && carro.CatedraComision != selected.CatedraComision
+                                    && carro.IdVuelta != selected.IdVuelta && selected.IdEstadoInscripcion == IdEstadoBajaAprobada)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                                else if (carro.IdMateria == selected.IdMateria && carro.CatedraComision == selected.CatedraComision
+                                    && carro.IdVuelta != selected.IdVuelta && (selected.IdEstadoInscripcion == IdEstadoBajaReglamentacion
+                                    || selected.IdEstadoInscripcion == IdEstadoBajaSorteo))
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                                else if (carro.IdMateria == selected.IdMateria && selected.IdEstadoInscripcion == IdEstadoInscripto)
+                                {
+                                    flag = false;
+                                    break;
+                                }
+                                else
+                                    flag = true;
+                            }
+                            #endregion
+
+                            if (flag)
                             {
                                 listCarro.Add(carro);
                                 Session.Add("carro", listCarro);
@@ -500,8 +461,29 @@ namespace InscripcionesCursos
                             }
                             else
                             {
-                                lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
-                                mpeMessage.Show();
+                                foreach (Carro item in listCarro)
+                                {
+                                    if (item.IdMateria == carro.IdMateria && item.CatedraComision == carro.CatedraComision && item.IdEstadoInscripcion == IdEstadoBajaReglamentacion)
+                                    {
+                                        lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaReglamentacion"];
+                                        mpeMessage.Show();
+                                    }
+                                    else if (item.IdMateria == carro.IdMateria && item.CatedraComision == carro.CatedraComision && item.IdEstadoInscripcion == IdEstadoBajaSorteo)
+                                    {
+                                        lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaSorteo"];
+                                        mpeMessage.Show();
+                                    }
+                                    else if (item.IdMateria == carro.IdMateria && item.IdEstadoInscripcion == IdEstadoBajaAprobada)
+                                    {
+                                        lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterBajaAprobada"];
+                                        mpeMessage.Show();
+                                    }
+                                    else if (item.IdMateria == carro.IdMateria && item.IdEstadoInscripcion == IdEstadoInscripto)
+                                    {
+                                        lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorMessageMatterExistInCart"];
+                                        mpeMessage.Show();
+                                    }
+                                }
                             }
                         }
                     }
