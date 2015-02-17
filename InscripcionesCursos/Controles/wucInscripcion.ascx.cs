@@ -425,7 +425,12 @@ namespace InscripcionesCursos
 
                             #region NEW VALIDATION
 
-                            bool flag = false;
+                            bool flag;
+                            if (listCarro.Count > 0)
+                                flag = false;
+                            else
+                                flag = true;
+
                             foreach (Carro selected in listCarro)
                             {
                                 if (carro.IdMateria == selected.IdMateria && carro.CatedraComision != selected.CatedraComision
