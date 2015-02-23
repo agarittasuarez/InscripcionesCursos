@@ -211,6 +211,8 @@ namespace InscripcionesCursos
                 btnPlanes.Text = ConfigurationManager.AppSettings["BotonPlanes"];
                 btnRendidas.Text = ConfigurationManager.AppSettings["BotonRendidas"];
                 btnLogout.Text = ConfigurationManager.AppSettings["BotonLogout"];
+                btnOfertas.Text = ConfigurationManager.AppSettings["BotonOfertas"];
+                btnTalleres.Text = ConfigurationManager.AppSettings["BotonTalleres"];
 
                 if (Session["user"] != null)
                 {

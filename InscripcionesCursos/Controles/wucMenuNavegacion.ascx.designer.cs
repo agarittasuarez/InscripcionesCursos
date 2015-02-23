@@ -67,6 +67,24 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.WebControls.Button btnActualizarDatos;
         
         /// <summary>
+        /// btnOfertas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOfertas;
+        
+        /// <summary>
+        /// btnTalleres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTalleres;
+        
+        /// <summary>
         /// test control.
         /// </summary>
         /// <remarks>

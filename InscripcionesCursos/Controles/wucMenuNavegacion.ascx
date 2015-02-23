@@ -7,6 +7,8 @@
     <asp:Button ID="btnInscripciones" runat="server" Text="" CausesValidation="false" Enabled="true" onclick="btnInscripciones_Click"/>
     <asp:Button ID="btnHistorialInscrip" runat="server" Text="" CausesValidation="false" Enabled="true" onclick="btnHistorialInscrip_Click"/>
     <asp:Button ID="btnActualizarDatos" runat="server" Text="" CausesValidation="false" Enabled="false" onclick="btnActualizarDatos_Click"/>
+    <asp:Button ID="btnOfertas" runat="server" Text="" CausesValidation="false" Enabled="true" OnClientClick="window.open('http://www.seube.com.ar/lab/ofertaslaborales.asp', 'Ofertas');" />
+    <asp:Button ID="btnTalleres" runat="server" Text="" CausesValidation="false" Enabled="true" OnClientClick="window.open('http://www.seube.com.ar/idiomas/cursos/inscripcion1.asp', 'Talleres');" />
     <asp:LinkButton ID="test" runat="server" CausesValidation="false" />
     <div class="cajaEstado">
         <asp:Label ID="lblUser" runat="server" />
