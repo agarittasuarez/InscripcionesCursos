@@ -235,7 +235,7 @@ namespace InscripcionesCursos.Privado.Empleados
             {
                 List<string> list = new List<string>();
                 for (int i = 0; i < dataTable.Rows.Count; i++)
-                    list.Add(dataTable.Rows[i]["TurnoInscripcion"].ToString() + "- " + dataTable.Rows[i]["IdTipoInscripcion"].ToString());
+                    list.Add(dataTable.Rows[i]["TurnoInscripcionBreve"].ToString() + "- " + dataTable.Rows[i]["Descripcion"].ToString());
 
                 return list;
             }
