@@ -112,7 +112,7 @@ namespace InscripcionesCursos
         {
             try
             {
-                ddTurnosInscripcion.DataSource = ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion(((Usuario)Session["user"]).DNI)));
+                ddTurnosInscripcion.DataSource = ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion(((Usuario)Session["user"]).DNI))).GroupBy(i => i).Select(group => group.Key).ToList();
                 ddTurnosInscripcion.DataBind();
 
                 ddTurnosInscripcion.Items.Insert(0, new ListItem(ConfigurationManager.AppSettings["ContentComboTurnoDefault"], "0"));
