@@ -24,6 +24,8 @@ namespace InscripcionesCursos.Privado.Empleados
         private const string ObsoletDate = "01/07/2013";
         private const string ExceptObsoletDate = "01/02/2013";
         private const string ExceptObsoletDateCursoVerano = "01/03/2013";
+        private const string TipoExamenLibre = "Exámenes Libres";
+        private const string TipoPromocion = "Promoción";
 
         string coleccionDniExtract = ConfigurationManager.AppSettings["UserEmployeesExtract"];
 
@@ -55,10 +57,11 @@ namespace InscripcionesCursos.Privado.Empleados
             try
             {
                 if (ddTurnos.SelectedIndex != 0)
-                {
-                    DrawChartInscripciones(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2));
-                    DrawInscripcionesCarrera(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2));
-                    DrawInscripcionesComision(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2));
+                {                    
+                    var idTipoInscripcion = GetIdTipoInscripcion(ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2));
+                    DrawChartInscripciones(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), idTipoInscripcion);
+                    DrawInscripcionesCarrera(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), idTipoInscripcion);
+                    DrawInscripcionesComision(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), idTipoInscripcion);
                 }
             }
             catch (Exception ex)
@@ -66,6 +69,17 @@ namespace InscripcionesCursos.Privado.Empleados
                 LogWriter log = new LogWriter();
                 log.WriteLog(ex.Message, "btnConsultar_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
+            }
+        }
+
+        private string GetIdTipoInscripcion(string tipo)
+        {
+            switch (tipo)
+            {
+                case TipoExamenLibre:
+                    return "E";
+                default:
+                    return "P";
             }
         }
 
