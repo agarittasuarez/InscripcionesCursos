@@ -124,7 +124,7 @@ namespace InscripcionesCursos.Privado.Empleados
         {
             try
             {
-                ddTurnos.DataSource = CleanObsoletTurnos(ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion())));
+                ddTurnos.DataSource = ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion()));
 
                 ddTurnos.DataBind();
                 ddTurnos.Items.Insert(0, new ListItem(ConfigurationManager.AppSettings["ContentComboTurnoDefault"], "0"));
