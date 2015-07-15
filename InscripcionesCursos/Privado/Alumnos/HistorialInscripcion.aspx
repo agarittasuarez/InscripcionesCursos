@@ -43,6 +43,9 @@
                         </div>
                     </div>
                 </div>
+                <div id="divNoDisponible" runat="server" visible="false">
+                    <asp:Label ID="lblMsjNoDisponible" runat="server"/>
+                </div>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>

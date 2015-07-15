@@ -13,6 +13,24 @@ namespace InscripcionesCursos {
     public partial class ModificacionDatos {
         
         /// <summary>
+        /// upModDatos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upModDatos;
+        
+        /// <summary>
+        /// scriptManagerModificacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager scriptManagerModificacion;
+        
+        /// <summary>
         /// lblTitulo control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,33 @@ namespace InscripcionesCursos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailValidate;
+        
+        /// <summary>
+        /// lblCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCarrera;
+        
+        /// <summary>
+        /// txtCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCarrera;
+        
+        /// <summary>
+        /// ucRelevamientoMod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::InscripcionesCursos.Controles.wucRelevamientoLimitaciones ucRelevamientoMod;
         
         /// <summary>
         /// divMessage control.

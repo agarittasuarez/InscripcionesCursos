@@ -7,261 +7,216 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InscripcionesCursos {
+namespace InscripcionesCursos.Controles {
     
     
-    public partial class SiteMaster {
+    public partial class wucRelevamientoLimitaciones {
         
         /// <summary>
-        /// TitleContent control.
+        /// upRelevamiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContent;
+        protected global::System.Web.UI.UpdatePanel upRelevamiento;
         
         /// <summary>
-        /// HeadContent control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// divLoginTools control.
+        /// lblQuestion1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLoginTools;
+        protected global::System.Web.UI.WebControls.Label lblQuestion1;
         
         /// <summary>
-        /// lblUser control.
+        /// rbOption1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUser;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption1;
         
         /// <summary>
-        /// btnManagement control.
+        /// rbOption2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnManagement;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption2;
         
         /// <summary>
-        /// liPassword control.
+        /// lblQuestion2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liPassword;
+        protected global::System.Web.UI.WebControls.Label lblQuestion2;
         
         /// <summary>
-        /// btnPassword control.
+        /// rbOption3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnPassword;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption3;
         
         /// <summary>
-        /// liResend control.
+        /// rbOption4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liResend;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption4;
         
         /// <summary>
-        /// btnResend control.
+        /// lblQuestion3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnResend;
+        protected global::System.Web.UI.WebControls.Label lblQuestion3;
         
         /// <summary>
-        /// liEmailChange control.
+        /// rbOption5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liEmailChange;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption5;
         
         /// <summary>
-        /// btnEmailChange control.
+        /// rbOption6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnEmailChange;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption6;
         
         /// <summary>
-        /// liInscription control.
+        /// lblQuestion4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liInscription;
+        protected global::System.Web.UI.WebControls.Label lblQuestion4;
         
         /// <summary>
-        /// btnInscription control.
+        /// rbOption7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnInscription;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption7;
         
         /// <summary>
-        /// liTools control.
+        /// rbOption8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liTools;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption8;
         
         /// <summary>
-        /// btnTools control.
+        /// lblQuestion5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnTools;
+        protected global::System.Web.UI.WebControls.Label lblQuestion5;
         
         /// <summary>
-        /// liQueries control.
+        /// rbOption9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liQueries;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption9;
         
         /// <summary>
-        /// btnQueries control.
+        /// rbOption10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnQueries;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption10;
         
         /// <summary>
-        /// liTextsChange control.
+        /// lblQuestion6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liTextsChange;
+        protected global::System.Web.UI.WebControls.Label lblQuestion6;
         
         /// <summary>
-        /// btnTextsChange control.
+        /// rbOption11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnTextsChange;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption11;
         
         /// <summary>
-        /// liProcess control.
+        /// rbOption12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liProcess;
+        protected global::System.Web.UI.WebControls.RadioButton rbOption12;
         
         /// <summary>
-        /// btnProcess control.
+        /// lblQuestion7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnProcess;
+        protected global::System.Web.UI.WebControls.Label lblQuestion7;
         
         /// <summary>
-        /// liInterface control.
+        /// txtOtras control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liInterface;
+        protected global::System.Web.UI.WebControls.TextBox txtOtras;
         
         /// <summary>
-        /// btnInterface control.
+        /// btnEnviar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnInterface;
-        
-        /// <summary>
-        /// btnLogout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
-        
-        /// <summary>
-        /// menuAlumnos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::InscripcionesCursos.wucMenuNavegacion menuAlumnos;
-        
-        /// <summary>
-        /// menuSimulador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::InscripcionesCursos.wucMenuNavegacionSimulador menuSimulador;
-        
-        /// <summary>
-        /// divContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divContent;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
     }
 }

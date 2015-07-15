@@ -55,7 +55,11 @@ namespace InscripcionesCursos
                         FillComboTurnoInscripcion();
                     }
                     else
+                    {
                         divResultados.Visible = false;
+                        divNoDisponible.Visible = true;
+                        lblMsjNoDisponible.Text = ConfigurationManager.AppSettings["ContentHistorialInscripcionNoDisponible"];
+                    }
                 }
             }
             catch (ThreadAbortException)

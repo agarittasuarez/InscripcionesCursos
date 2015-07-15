@@ -50,6 +50,7 @@ namespace InscripcionesCursos.Privado.Empleados
                 {
                     if (!Utils.CheckLoggedUser(Session["userEmployee"], UserTypeEmployee))
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
+                    Session.Remove("user");
                 }
 
                 if (InscripcionDTO.CheckEmployeeTest())
@@ -226,26 +227,6 @@ namespace InscripcionesCursos.Privado.Empleados
                 throw ex;
             }
         }
-
-        ///// <summary>
-        ///// Method to check if the date and time is between the date and time of exporting and importing data
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool WindowIsOpened()
-        //{
-        //    TimeSpan start = new TimeSpan(Convert.ToInt32(ConfigurationManager.AppSettings["StartTimeWindowInscriptionClosed"]), 0, 0);
-        //    TimeSpan end = new TimeSpan(Convert.ToInt32(ConfigurationManager.AppSettings["EndTimeWindowInscriptionClosed"]), 0, 0);
-        //    TimeSpan now = DateTime.Now.TimeOfDay;
-
-        //    if ((Convert.ToDateTime(ConfigurationManager.AppSettings["StartDateWindowInscriptionClosed"]).Ticks < DateTime.Now.Ticks) &&
-        //        (Convert.ToDateTime(ConfigurationManager.AppSettings["EndDateWindowInscriptionClosed"]).Ticks > DateTime.Now.Ticks))
-        //        if ((now > start) && (now < end))
-        //            return false;
-        //        else
-        //            return true;
-        //    else
-        //        return true;
-        //}
 
         /// <summary>
         /// Set grid headers

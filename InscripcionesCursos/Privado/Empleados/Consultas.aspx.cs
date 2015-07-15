@@ -46,6 +46,7 @@ namespace InscripcionesCursos
                 {
                     SetUpPage();
                     DrawChartPadron();
+                    Session.Remove("user");
                 }
             }
             catch (ThreadAbortException)

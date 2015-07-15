@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InscripcionesCursos.SiteMaster" %>
 <%@ Register src="~/Controles/wucMenuNavegacion.ascx" tagname="MenuNavegacion" tagprefix="uc1" %>
+<%@ Register src="~/Controles/wucMenuNavegacionSimulador.ascx" tagname="MenuNavegacionSimulador" tagprefix="uc2" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -31,20 +32,38 @@
                 </div>
             </div>
             <div id="divLoginTools" runat="server" visible="false">
-                <ul id="button">
-                    <li><asp:Label id="lblUser" runat="server"></asp:Label></li>
-                    <li><asp:LinkButton ID="btnClaves" runat="server" onclick="btnClaves_Click" CausesValidation="false" ></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnInscription" runat="server" onclick="btnInscription_Click" CausesValidation="false" ></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnResend" runat="server" onclick="btnResend_Click" CausesValidation="false" Visible="false"></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnEmailChange" runat="server" CausesValidation="false" onclick="btnEmailChange_Click" Visible="false"></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnConsultas" runat="server" CausesValidation="false" Visible="false" onclick="btnConsultas_Click"></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnCambioTextos" runat="server" CausesValidation="false" Visible="false" onclick="btnCambioTextos_Click" ></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btnProceso" runat="server" CausesValidation="false" Visible="false" onclick="btnProceso_Click"></asp:LinkButton></li>
-                    <li><asp:LinkButton id="btnLogout" runat="server" onclick="btnLogout_Click" CausesValidation="false"></asp:LinkButton></li>
+                <ul id="HDropdown-fuschia-classic">
+                    <li>
+                        <asp:Label id="lblUser" runat="server"/>
+                    </li>
+                    <li>
+                        <asp:LinkButton runat="server" ID="btnManagement"/>
+                        <ul>
+                            <li id="liPassword" runat="server" Visible="False"><asp:LinkButton ID="btnPassword" runat="server" onclick="btnPassword_Click" CausesValidation="false"/></li>
+                            <li id="liResend" runat="server" Visible="False"><asp:LinkButton ID="btnResend" runat="server" onclick="btnResend_Click" CausesValidation="false"/></li>
+                            <li id="liEmailChange" runat="server" Visible="False"><asp:LinkButton ID="btnEmailChange" runat="server" CausesValidation="false" onclick="btnEmailChange_Click"/></li>
+                        </ul>
+                    </li>
+                    <li id="liInscription" runat="server"  Visible="False">
+                        <asp:LinkButton ID="btnInscription" runat="server" onclick="btnInscription_Click" CausesValidation="false"/>
+                    </li>
+                    <li id="liTools" runat="server" Visible="False">
+                        <asp:LinkButton runat="server" ID="btnTools"/>
+                        <ul>
+                            <li id="liQueries" runat="server" Visible="False"><asp:LinkButton ID="btnQueries" runat="server" CausesValidation="false" onclick="btnQueries_Click"/></li>
+                            <li id="liTextsChange" runat="server" Visible="False"><asp:LinkButton ID="btnTextsChange" runat="server" CausesValidation="false" onclick="btnTextsChange_Click"/></li>
+                            <li id="liProcess" runat="server" Visible="False"><asp:LinkButton ID="btnProcess" runat="server" CausesValidation="false" onclick="btnProcess_Click"/></li>
+                            <li id="liInterface" runat="server" Visible="False"><asp:LinkButton ID="btnInterface" runat="server" CausesValidation="false" onclick="btnInterface_Click"/></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <asp:LinkButton id="btnLogout" runat="server" onclick="btnLogout_Click" CausesValidation="false"/>
+                    </li>
                 </ul>
             </div>
             <div class="main">
                 <uc1:MenuNavegacion id="menuAlumnos" runat="server" Visible="false"/>
+                <uc2:MenuNavegacionSimulador id="menuSimulador" runat="server" Visible="false"/>
                 <div id="divContent" runat="server">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
                 </div>

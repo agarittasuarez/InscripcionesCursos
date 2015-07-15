@@ -34,7 +34,8 @@ namespace InscripcionesCursos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetUp();
+            if(!IsPostBack)
+                SetUp();
         }
 
         #endregion
@@ -46,7 +47,7 @@ namespace InscripcionesCursos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnClaves_Click(object sender, EventArgs e)
+        protected void btnPassword_Click(object sender, EventArgs e)
         {
             try
             {
@@ -59,7 +60,7 @@ namespace InscripcionesCursos
             catch (Exception ex)
             {
                 LogWriter log = new LogWriter();
-                log.WriteLog(ex.Message, "btnClaves_Click", Path.GetFileName(Request.PhysicalPath));
+                log.WriteLog(ex.Message, "btnPassword_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -138,7 +139,7 @@ namespace InscripcionesCursos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnCambioTextos_Click(object sender, EventArgs e)
+        protected void btnTextsChange_Click(object sender, EventArgs e)
         {
             try
             {
@@ -151,7 +152,7 @@ namespace InscripcionesCursos
             catch (Exception ex)
             {
                 LogWriter log = new LogWriter();
-                log.WriteLog(ex.Message, "btnCambioTextos_Click", Path.GetFileName(Request.PhysicalPath));
+                log.WriteLog(ex.Message, "btnTextsChange_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -161,7 +162,7 @@ namespace InscripcionesCursos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnConsultas_Click(object sender, EventArgs e)
+        protected void btnQueries_Click(object sender, EventArgs e)
         {
             try
             {
@@ -174,7 +175,7 @@ namespace InscripcionesCursos
             catch (Exception ex)
             {
                 LogWriter log = new LogWriter();
-                log.WriteLog(ex.Message, "btnConsultas_Click", Path.GetFileName(Request.PhysicalPath));
+                log.WriteLog(ex.Message, "btnQueries_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -184,7 +185,7 @@ namespace InscripcionesCursos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnProceso_Click(object sender, EventArgs e)
+        protected void btnProcess_Click(object sender, EventArgs e)
         {
             try
             {
@@ -197,7 +198,30 @@ namespace InscripcionesCursos
             catch (Exception ex)
             {
                 LogWriter log = new LogWriter();
-                log.WriteLog(ex.Message, "btnProceso_Click", Path.GetFileName(Request.PhysicalPath));
+                log.WriteLog(ex.Message, "btnProcess_Click", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Event to redirect to SimuladorAlumno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnInterface_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeSimulador"]);
+            }
+            catch (ThreadAbortException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "btnInterface_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -244,34 +268,36 @@ namespace InscripcionesCursos
                     if (loggedUser.IdCargo == UserTypeEmployee)
                     {
                         lblUser.Text = String.Format(ConfigurationManager.AppSettings["ContentLoginControl"], Utils.TruncateAtWord(loggedUser.ApellidoNombre, 12));
-                        btnClaves.Text = ConfigurationManager.AppSettings["BotonGenerarClave"];
+                        btnManagement.Text = ConfigurationManager.AppSettings["BotonGestionCuentas"];
+                        btnTools.Text = ConfigurationManager.AppSettings["BotonTools"];
+                        btnPassword.Text = ConfigurationManager.AppSettings["BotonGenerarClave"];
                         btnInscription.Text = ConfigurationManager.AppSettings["BotonInscribirAlumno"];
                         btnLogout.Text = ConfigurationManager.AppSettings["BotonLogout"];
+                        btnResend.Text = ConfigurationManager.AppSettings["BotonResend"];
+                        btnEmailChange.Text = ConfigurationManager.AppSettings["BotonEmailChange"];
+                        btnProcess.Text = ConfigurationManager.AppSettings["BotonProceso"];
+                        btnQueries.Text = ConfigurationManager.AppSettings["BotonConsultas"];
+                        btnTextsChange.Text = ConfigurationManager.AppSettings["BotonCambioTextos"];
+                        btnInterface.Text = ConfigurationManager.AppSettings["BotonInterfazAlumnos"];
+                        liPassword.Visible = liInscription.Visible  = true;
 
                         if (coleccionDniResend.IndexOf(loggedUser.DNI.ToString()) != -1)
-                        {
-                            btnResend.Text = ConfigurationManager.AppSettings["BotonResend"];
-                            btnEmailChange.Text = ConfigurationManager.AppSettings["BotonEmailChange"];
-                            btnProceso.Text = ConfigurationManager.AppSettings["BotonProceso"];
-                            btnResend.Visible = true;
-                            btnEmailChange.Visible = true;
-                            btnProceso.Visible = true;
-                        }
+                            liTools.Visible = liResend.Visible = liEmailChange.Visible = liProcess.Visible = true;
 
                         if (coleccionDniStatistics.IndexOf(loggedUser.DNI.ToString()) != -1)
-                        {
-                            btnConsultas.Text = ConfigurationManager.AppSettings["BotonConsultas"];
-                            btnCambioTextos.Text = ConfigurationManager.AppSettings["BotonCambioTextos"];
-                            btnConsultas.Visible = true;
-                            btnCambioTextos.Visible = true;                            
-                        }
-
+                            liQueries.Visible = liTextsChange.Visible = liInterface.Visible = true;
+                        
                         divLoginTools.Visible = true;
+                        if (Session["user"] != null && Session["userEmployee"] != null)
+                            menuSimulador.Visible = true;
                     }
                     else
                     {
                         menuAlumnos.Visible = true;
                         divContent.Attributes.Add("class", "contenidoCentral");
+
+                        if (!loggedUser.LimitacionRelevada)
+                            EnableButtons(false);
                     }
                 }
             }
@@ -281,6 +307,18 @@ namespace InscripcionesCursos
                 log.WriteLog(ex.Message, "SetUp", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
+        }
+
+        private void EnableButtons(bool enable)
+        {
+            ((Button)(menuAlumnos.FindControl("btnConstancia"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnPlanes"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnRendidas"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnInscripciones"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnHistorialInscrip"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnActualizarDatos"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnOfertas"))).Enabled = enable;
+            ((Button)(menuAlumnos.FindControl("btnTalleres"))).Enabled = enable;
         }
 
         #endregion

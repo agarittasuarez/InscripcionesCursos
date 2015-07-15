@@ -39,6 +39,7 @@ namespace InscripcionesCursos.Empleados
 
                 if (loggedUser.CambioPrimerLogin)
                     SetSuccessView();
+                Session.Remove("user");
             }
             catch (ThreadAbortException)
             {

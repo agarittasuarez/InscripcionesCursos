@@ -61,6 +61,7 @@ namespace InscripcionesCursos
                     SetUpPage();
                     ClearContents(asyncFile as Control);
                     asyncFile.Dispose();
+                    Session.Remove("user");
                 }
                 FillGrid(1);
                 FillGrid(2);

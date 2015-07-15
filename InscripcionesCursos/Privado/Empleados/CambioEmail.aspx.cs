@@ -29,6 +29,7 @@ namespace InscripcionesCursos.Privado.Empleados
 
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
+                Session.Remove("user");
             }
             catch (ThreadAbortException)
             {

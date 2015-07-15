@@ -24,7 +24,11 @@ namespace InscripcionesCursos.BE
 		/// <summary>
 		/// Initializes a new instance of the UsuarioDTO class.
 		/// </summary>
-		public Usuario(int dNI, string nombreApellido, string email, int idCargo, string password, bool cambioPrimerLogin, bool cuentaActivada, int codigoActivacion, int idSede, string estado, string carrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion)
+		public Usuario(int dNI, string nombreApellido, string email, int idCargo, string password,
+            bool cambioPrimerLogin, bool cuentaActivada, int codigoActivacion, int idSede, string estado,
+            string carrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion,
+            bool limitacionRelevada, string limitacion, string limitacionVision, string limitacionAudicion,
+            string limitacionMotriz, string limitacionHabla, string limitacionAgarre, string limitacionOtra)
 		{
 			this.DNI = dNI;
 			this.ApellidoNombre = nombreApellido;
@@ -39,6 +43,14 @@ namespace InscripcionesCursos.BE
             this.Carrera = carrera;
             this.CuatrimestreAnioIngreso = cuatrimestreAnioIngreso;
             this.CuatrimestreAnioReincorporacion = cuatrimestreAnioReincorporacion;
+		    this.LimitacionRelevada = limitacionRelevada;
+		    this.Limitacion = limitacion;
+		    this.LimitacionVision = limitacionVision;
+		    this.LimitacionAudicion = limitacionAudicion;
+		    this.LimitacionMotriz = limitacionMotriz;
+		    this.LimitacionHabla = limitacionHabla;
+		    this.LimitacionAgarre = limitacionAgarre;
+		    this.LimitacionOtra = limitacionOtra;
 		}
 
 		#endregion
@@ -108,6 +120,46 @@ namespace InscripcionesCursos.BE
         /// Gets or sets the CuatrimestreAnioReincorporacion value.
         /// </summary>
         public string CuatrimestreAnioReincorporacion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionRelevada value.
+        /// </summary>
+        public bool LimitacionRelevada { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Limitacion value.
+        /// </summary>
+        public string Limitacion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionVision value.
+        /// </summary>
+        public string LimitacionVision { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionAudicion value.
+        /// </summary>
+        public string LimitacionAudicion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionMotriz value.
+        /// </summary>
+        public string LimitacionMotriz { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionAgarre value.
+        /// </summary>
+        public string LimitacionAgarre { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionHabla value.
+        /// </summary>
+        public string LimitacionHabla { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionOtra value.
+        /// </summary>
+        public string LimitacionOtra { get; set; }
 
 		#endregion
 	}

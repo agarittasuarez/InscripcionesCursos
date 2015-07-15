@@ -64,6 +64,23 @@ namespace InscripcionesCursos.DTO
         }
 
         /// <summary>
+        /// Method to update the user limitations
+        /// </summary>
+        /// <param name="user"></param>
+        public static void UpdateLimitaciones(Usuario user)
+        {
+            try
+            {
+                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                usuarioDAO.UpdateLimitaciones(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Method to update the user data
         /// </summary>
         /// <param name="user"></param>

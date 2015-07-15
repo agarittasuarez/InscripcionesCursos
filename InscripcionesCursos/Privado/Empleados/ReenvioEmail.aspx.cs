@@ -34,6 +34,8 @@ namespace InscripcionesCursos
 
                 if (coleccionDniResend.IndexOf(((Usuario)Session["userEmployee"]).DNI.ToString()) == -1)
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
+
+                Session.Remove("user");
             }
             catch (ThreadAbortException)
             {

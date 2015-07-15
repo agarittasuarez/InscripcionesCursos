@@ -295,6 +295,13 @@ div.menu ul li a:active
 	color: #000000;
 }
 
+.menuIzquierdoBotonDisabled {
+    background: url(../img/btnMenuDisabled.png)  no-repeat scroll 0 0 transparent !important;
+    color: #000000 !important;
+    cursor: default !important;
+    font-weight: normal !important;
+}
+
 .menuIzquierdo input:hover
 {
 	background: url(../img/btnMenuHover.png)  no-repeat scroll 0 0 transparent;
@@ -892,8 +899,8 @@ div.accountInfo
 	float:left;
 }
 
-/*NEW MENU EMPLOYEE
-----------------------------------------------------------*/
+/*OLD MENU EMPLOYEE
+----------------------------------------------------------
 
 #divLoginTools
 {
@@ -940,7 +947,7 @@ div.accountInfo
 	padding-bottom:12px;
 	color: #FFFFFF;
 }
-
+*/
 
 /*PLAN DE ESTUDIOS
 ----------------------------------------------------------*/
@@ -1426,4 +1433,118 @@ div.accountInfo
 .tdFileLoading
 {
 	padding-bottom: 7px;	
+}
+
+/* NEW HORIZONTAL MENU */
+
+#HDropdown-fuschia-classic {
+    margin:0;
+    padding:0px;
+    list-style:none;
+    background:url(../img/horizontal_d_fuschia_classic_bg.png) repeat-x top;
+    height:28px;
+    width:100%;
+    border:solid 1px #941A63;
+    border-width:1px 1px 1px 0;
+}
+
+#HDropdown-fuschia-classic span {
+    font-weight: bold;
+    display:block;
+    float:left;
+    height:29px;
+    line-height:29px;
+    padding:0 25px;
+    text-decoration:none;
+    color:#FFFFFF;
+    border-left:solid 1px #941A63;
+}
+
+#HDropdown-fuschia-classic li {
+    display:inline;
+    position:relative;
+    float:left;
+}
+
+#HDropdown-fuschia-classic li a {
+    display:block;
+    float:left;
+    height:29px;
+    line-height:29px;
+    padding:0 25px;
+    text-decoration:none;
+    color:#FFFFFF;
+    font-weight:normal;
+    font-size:12px;
+    border-left:solid 1px #941A63;
+}
+
+#HDropdown-fuschia-classic li a:hover {
+    color:#941A63;
+    background:#FFFFFF;
+}
+
+#HDropdown-fuschia-classic li ul {
+    margin:0;
+    padding:0 5px;
+    line-height:none;
+    position:absolute;
+    top:29px;
+    left:0;
+    border:solid 1px #941A63;
+    border-width:0px 1px 1px 1px;
+    width:180px;
+    display:none;
+    background:#FFFFFF;
+}
+
+#HDropdown-fuschia-classic li:hover ul {
+    display:block;
+}
+
+#HDropdown-fuschia-classic li:hover a {
+    color:#941A63;
+    background:#FFFFFF;
+}
+
+#HDropdown-fuschia-classic li ul li {
+    display:block;
+    border-bottom:solid 1px #dbdcd9;
+    width:96%;
+    background:url(../img/d_horizontal_fuschia_classic_menu_arrow.png) no-repeat 3px 12px;
+    padding:0 0 0 10px;
+}
+
+#HDropdown-fuschia-classic li ul li:last-child {
+border-bottom:0px;
+}
+
+#HDropdown-fuschia-classic li ul a {
+        border-width:0px;
+    color:#909090;
+    padding:0 5px 0 0;
+    background-color:transparent;
+}
+
+#HDropdown-fuschia-classic li:hover ul li a {
+    color:#909090;
+}
+
+#HDropdown-fuschia-classic li ul li a:hover {
+    color:#941A63;
+}
+
+/*CUESTIONARIO */
+.contenedorPregunta {
+    width: 500px;
+}
+
+.contenedorCuestionario {
+    text-align: left;
+    display: flex;
+    margin-top: 5px;
+}
+
+.contenedorRadioButton {
+    margin-left: 8px;
 }

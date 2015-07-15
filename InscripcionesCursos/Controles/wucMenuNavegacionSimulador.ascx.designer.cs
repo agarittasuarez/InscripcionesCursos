@@ -10,114 +10,114 @@
 namespace InscripcionesCursos {
     
     
-    public partial class HistorialInscripcion {
+    public partial class wucMenuNavegacionSimulador {
         
         /// <summary>
-        /// scriptManagerCombos control.
+        /// btnConstancia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager scriptManagerCombos;
+        protected global::System.Web.UI.WebControls.Button btnConstancia;
         
         /// <summary>
-        /// updateCombo control.
+        /// btnPlanes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updateCombo;
+        protected global::System.Web.UI.WebControls.Button btnPlanes;
         
         /// <summary>
-        /// lblTitulo control.
+        /// btnRendidas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.Button btnRendidas;
         
         /// <summary>
-        /// divResultados control.
+        /// btnInscripciones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divResultados;
+        protected global::System.Web.UI.WebControls.Button btnInscripciones;
         
         /// <summary>
-        /// filtroTurno control.
+        /// btnHistorialInscrip control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl filtroTurno;
+        protected global::System.Web.UI.WebControls.Button btnHistorialInscrip;
         
         /// <summary>
-        /// lblTextSeleccion control.
+        /// btnActualizarDatos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTextSeleccion;
+        protected global::System.Web.UI.WebControls.Button btnActualizarDatos;
         
         /// <summary>
-        /// ddTurnosInscripcion control.
+        /// btnOfertas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddTurnosInscripcion;
+        protected global::System.Web.UI.WebControls.Button btnOfertas;
         
         /// <summary>
-        /// divGrid control.
+        /// btnTalleres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGrid;
+        protected global::System.Web.UI.WebControls.Button btnTalleres;
         
         /// <summary>
-        /// GridResultados control.
+        /// test control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridResultados;
+        protected global::System.Web.UI.WebControls.LinkButton test;
         
         /// <summary>
-        /// btnImprimir control.
+        /// lblUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnImprimir;
+        protected global::System.Web.UI.WebControls.Label lblUser;
         
         /// <summary>
-        /// divNoDisponible control.
+        /// lblEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNoDisponible;
+        protected global::System.Web.UI.WebControls.Label lblEstado;
         
         /// <summary>
-        /// lblMsjNoDisponible control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsjNoDisponible;
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

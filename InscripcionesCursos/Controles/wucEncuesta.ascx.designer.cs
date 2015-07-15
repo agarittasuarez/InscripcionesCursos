@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InscripcionesCursos {
+namespace InscripcionesCursos.Controles {
     
     
-    public partial class Inicio {
+    public partial class wucEncuesta {
         
         /// <summary>
-        /// scriptManagerInicio control.
+        /// rptSurvey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ToolkitScriptManager scriptManagerInicio;
-        
-        /// <summary>
-        /// ucRelevamiento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::InscripcionesCursos.Controles.wucRelevamientoLimitaciones ucRelevamiento;
+        protected global::System.Web.UI.WebControls.Repeater rptSurvey;
     }
 }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.IO;
 using System.Threading;
+using InscripcionesCursos.BE;
 
 namespace InscripcionesCursos
 {
@@ -24,11 +25,18 @@ namespace InscripcionesCursos
         {
             try
             {
-                if (!Utils.CheckLoggedUser(Session["user"], UserTypeStudent))
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
+                if (!IsPostBack)
+                {
+                    if (!Utils.CheckLoggedUser(Session["user"], UserTypeStudent))
+                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
 
-                if (!Utils.CheckAccountStatus(Session["user"], UserTypeStudent))
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlStudentPasswordChange"]);
+                    if (!Utils.CheckAccountStatus(Session["user"], UserTypeStudent))
+                        Response.Redirect(Page.ResolveUrl("~") +
+                                          ConfigurationManager.AppSettings["UrlStudentPasswordChange"]);
+
+                    if (((Usuario)Session["user"]).LimitacionRelevada)
+                        ucRelevamiento.Visible = false;
+                }
             }
             catch (ThreadAbortException)
             {

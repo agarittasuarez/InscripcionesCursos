@@ -86,6 +86,27 @@ namespace InscripcionesCursos.DAO
             SqlConnection.ClearAllPools();
 		}
 
+        public void UpdateLimitaciones(Usuario usuario)
+        {
+            ValidationUtility.ValidateArgument("usuario", usuario);
+
+            SqlParameter[] parameters = new SqlParameter[]
+			{
+				new SqlParameter("@DNI", usuario.DNI),
+				new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
+				new SqlParameter("@Limitacion", usuario.Limitacion),
+				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
+				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
+				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
+			};
+
+            SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioUpdateLimitaciones", parameters);
+            SqlConnection.ClearAllPools();
+        }
+
 		/// <summary>
 		/// Deletes a record from the Usuario table by its primary key.
 		/// </summary>
@@ -432,22 +453,32 @@ namespace InscripcionesCursos.DAO
 		/// </summary>
 		private Usuario MapDataReader(SqlDataReader dataReader)
 		{
-			Usuario Usuario = new Usuario();
-			Usuario.DNI = dataReader.GetInt32("DNI", 0);
-			Usuario.ApellidoNombre = dataReader.GetString("ApellidoNombre", null);
-			Usuario.Email = dataReader.GetString("Email", null);
-			Usuario.IdCargo = dataReader.GetInt32("IdCargo", 0);
-			Usuario.Password = dataReader.GetString("Password", null);
-			Usuario.CambioPrimerLogin = dataReader.GetBoolean("CambioPrimerLogin", false);
-			Usuario.CuentaActivada = dataReader.GetBoolean("CuentaActivada", false);
-			Usuario.CodigoActivacion = dataReader.GetInt32("CodigoActivacion", 0);
-			Usuario.IdSede = dataReader.GetInt32("IdSede", 0);
-            Usuario.Estado = dataReader.GetString("Descripcion", null);
-            Usuario.Carrera = dataReader.GetString("Nombre", null);
-            Usuario.CuatrimestreAnioIngreso = dataReader.GetString("CuatrimestreAnioIngreso", null);
-            Usuario.CuatrimestreAnioReincorporacion = dataReader.GetString("CuatrimestreAnioReincorporacion", null);
+		    var Usuario = new Usuario
+		    {
+		        DNI = dataReader.GetInt32("DNI", 0),
+		        ApellidoNombre = dataReader.GetString("ApellidoNombre", null),
+		        Email = dataReader.GetString("Email", null),
+		        IdCargo = dataReader.GetInt32("IdCargo", 0),
+		        Password = dataReader.GetString("Password", null),
+		        CambioPrimerLogin = dataReader.GetBoolean("CambioPrimerLogin", false),
+		        CuentaActivada = dataReader.GetBoolean("CuentaActivada", false),
+		        CodigoActivacion = dataReader.GetInt32("CodigoActivacion", 0),
+		        IdSede = dataReader.GetInt32("IdSede", 0),
+		        Estado = dataReader.GetString("Descripcion", null),
+		        Carrera = dataReader.GetString("Nombre", null),
+		        CuatrimestreAnioIngreso = dataReader.GetString("CuatrimestreAnioIngreso", null),
+		        CuatrimestreAnioReincorporacion = dataReader.GetString("CuatrimestreAnioReincorporacion", null),
+		        LimitacionRelevada = dataReader.GetBoolean("LimitacionRelevada", false),
+                Limitacion = dataReader.GetString("Limitacion", null),
+                LimitacionVision = dataReader.GetString("LimitacionVision", null),
+                LimitacionAudicion = dataReader.GetString("LimitacionAudicion", null),
+                LimitacionMotriz = dataReader.GetString("LimitacionMotriz", null),
+                LimitacionHabla = dataReader.GetString("LimitacionHabla", null),
+                LimitacionAgarre = dataReader.GetString("LimitacionAgarre", null),
+		        LimitacionOtra = dataReader.GetString("LimitacionOtra", null)
+		    };
 
-			return Usuario;
+		    return Usuario;
 		}
 
 		#endregion

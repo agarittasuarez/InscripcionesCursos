@@ -71,6 +71,8 @@
     <Compile Include="Carrera.cs" />
     <Compile Include="Carro.cs" />
     <Compile Include="CatedraComision.cs" />
+    <Compile Include="EncuestaResultado.cs" />
+    <Compile Include="Encuesta.cs" />
     <Compile Include="MateriaCorrelativa.cs" />
     <Compile Include="PlanCarrera.cs" />
     <Compile Include="Departamento.cs" />

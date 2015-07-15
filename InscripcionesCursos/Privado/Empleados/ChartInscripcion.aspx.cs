@@ -38,7 +38,10 @@ namespace InscripcionesCursos.Privado.Empleados
             try
             {
                 if (!IsPostBack)
+                {
+                    Session.Remove("user");
                     SetUpPage();
+                }
             }
             catch (Exception ex)
             {

@@ -16,6 +16,8 @@ namespace InscripcionesCursos
     {
         #region Constants & Variables
 
+        private const string SiValue = "S";
+        private const string NoValue = "N";
         const int UserTypeStudent = 2;
 
         #endregion
@@ -54,6 +56,38 @@ namespace InscripcionesCursos
 
         #endregion
 
+        #region Events
+
+        protected void btnEnviar_OnClick(object sender, EventArgs e)
+        {
+            var user = (Usuario)Session["user"];
+
+            user.Limitacion = ((RadioButton) ucRelevamientoMod.FindControl("rbOption1")).Checked ? SiValue : NoValue;
+            user.LimitacionVision = ((RadioButton) ucRelevamientoMod.FindControl("rbOption3")).Checked
+                ? SiValue
+                : NoValue;
+            user.LimitacionAudicion = ((RadioButton) ucRelevamientoMod.FindControl("rbOption5")).Checked
+                ? SiValue
+                : NoValue;
+            user.LimitacionMotriz = ((RadioButton) ucRelevamientoMod.FindControl("rbOption7")).Checked
+                ? SiValue
+                : NoValue;
+            user.LimitacionAgarre = ((RadioButton) ucRelevamientoMod.FindControl("rbOption9")).Checked
+                ? SiValue
+                : NoValue;
+            user.LimitacionHabla = ((RadioButton) ucRelevamientoMod.FindControl("rbOption11")).Checked
+                ? SiValue
+                : NoValue;
+            user.LimitacionOtra = ((TextBox) ucRelevamientoMod.FindControl("txtOtras")).Text;
+            user.LimitacionRelevada = true;
+
+            UsuarioDTO.UpdateLimitaciones(user);
+            Session.Add("user", user);
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
+
+        #endregion
+
         #region Methods
 
         /// <summary>
@@ -69,8 +103,7 @@ namespace InscripcionesCursos
                 txtDni.Text = loggedUser.DNI.ToString();
                 txtApellidoNombre.Text = loggedUser.ApellidoNombre;
                 txtEmail.Text = loggedUser.Email;
-                //txtNombre.Text = loggedUser.Nombre;
-                //txtApellido.Text = loggedUser.Apellido;
+                txtCarrera.Text = loggedUser.Carrera;
             }
             catch (Exception ex)
             {

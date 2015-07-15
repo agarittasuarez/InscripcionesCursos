@@ -10,7 +10,7 @@
     <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInscripciones" />
     <asp:UpdatePanel ID="upInscripciones" runat="server" UpdateMode="Always">
         <ContentTemplate>
-            <div style="width:720; text-align:center">
+            <div>
                 <div class="contenedorInput">
                     <asp:Label ID="lblDni" runat="server" Text=""><%= ConfigurationManager.AppSettings["LabelDNI"] %></asp:Label>
                     <asp:TextBox ID="txtDni" runat="server" MaxLength="8"></asp:TextBox>
