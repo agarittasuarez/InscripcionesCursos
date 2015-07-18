@@ -4,7 +4,7 @@
     <%= String.Format(ConfigurationManager.AppSettings["TitleGeneric"], ConfigurationManager.AppSettings["TitleModificacionDatos"])%>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:UpdatePanel ID="upModDatos" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="True">
+    <asp:UpdatePanel ID="upModDatos" runat="server" UpdateMode="Always" ChildrenAsTriggers="True">
         <ContentTemplate>
             <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerModificacion" />
             <div class="contenedorFormGenerar">
@@ -30,13 +30,15 @@
                         <asp:Label CssClass="labelsCambioPass" ID="lblCarrera" runat="server" Text=""><%= ConfigurationManager.AppSettings["LabelCarrera"]%></asp:Label>
                         <asp:TextBox CssClass="inputsResultadosGen" ID="txtCarrera" runat="server" Enabled="False"></asp:TextBox>
                     </div>
+                    <br />
                     <uc1:Relevamiento runat="server" ID="ucRelevamientoMod" />
                 </div>
                 <div id="divMessage" runat="server" class="changePasswordStatus" visible="false">
                     <asp:Label ID="FailureText" runat="server"></asp:Label>
                 </div>
                 <div class="contenedorBotonActualizar">
-                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="blackButton"/>
+                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" 
+                        CssClass="blackButton" onclick="btnActualizar_Click" />
                 </div>
             </div>
         </ContentTemplate>

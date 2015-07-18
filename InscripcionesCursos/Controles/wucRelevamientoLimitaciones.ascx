@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wucRelevamientoLimitaciones.ascx.cs" Inherits="InscripcionesCursos.Controles.wucRelevamientoLimitaciones" %>
-<asp:UpdatePanel ID="upRelevamiento" runat="server" UpdateMode="Conditional">
+<asp:UpdatePanel ID="upRelevamiento" runat="server" UpdateMode="Always">
     <ContentTemplate>
         <div class="tituloContenido">
             <asp:Label ID="lblTitulo" runat="server" Text=""><%= ConfigurationManager.AppSettings["ContentMainTitleCuestionarioLimitaciones"]%></asp:Label>

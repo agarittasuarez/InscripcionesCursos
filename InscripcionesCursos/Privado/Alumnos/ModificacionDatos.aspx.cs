@@ -58,29 +58,33 @@ namespace InscripcionesCursos
 
         #region Events
 
-        protected void btnEnviar_OnClick(object sender, EventArgs e)
+        protected void btnActualizar_Click(object sender, EventArgs e)
         {
             var user = (Usuario)Session["user"];
 
-            user.Limitacion = ((RadioButton) ucRelevamientoMod.FindControl("rbOption1")).Checked ? SiValue : NoValue;
-            user.LimitacionVision = ((RadioButton) ucRelevamientoMod.FindControl("rbOption3")).Checked
+            user.ApellidoNombre = txtApellidoNombre.Text;
+            user.Email = txtEmail.Text;
+
+            user.Limitacion = ((RadioButton)ucRelevamientoMod.FindControl("rbOption1")).Checked ? SiValue : NoValue;
+            user.LimitacionVision = ((RadioButton)ucRelevamientoMod.FindControl("rbOption3")).Checked
                 ? SiValue
                 : NoValue;
-            user.LimitacionAudicion = ((RadioButton) ucRelevamientoMod.FindControl("rbOption5")).Checked
+            user.LimitacionAudicion = ((RadioButton)ucRelevamientoMod.FindControl("rbOption5")).Checked
                 ? SiValue
                 : NoValue;
-            user.LimitacionMotriz = ((RadioButton) ucRelevamientoMod.FindControl("rbOption7")).Checked
+            user.LimitacionMotriz = ((RadioButton)ucRelevamientoMod.FindControl("rbOption7")).Checked
                 ? SiValue
                 : NoValue;
-            user.LimitacionAgarre = ((RadioButton) ucRelevamientoMod.FindControl("rbOption9")).Checked
+            user.LimitacionAgarre = ((RadioButton)ucRelevamientoMod.FindControl("rbOption9")).Checked
                 ? SiValue
                 : NoValue;
-            user.LimitacionHabla = ((RadioButton) ucRelevamientoMod.FindControl("rbOption11")).Checked
+            user.LimitacionHabla = ((RadioButton)ucRelevamientoMod.FindControl("rbOption11")).Checked
                 ? SiValue
                 : NoValue;
-            user.LimitacionOtra = ((TextBox) ucRelevamientoMod.FindControl("txtOtras")).Text;
+            user.LimitacionOtra = ((TextBox)ucRelevamientoMod.FindControl("txtOtras")).Text;
             user.LimitacionRelevada = true;
 
+            //Cambiar el metodo cuando se habilite la modificacion de datos
             UsuarioDTO.UpdateLimitaciones(user);
             Session.Add("user", user);
             Response.Redirect(Request.Url.AbsoluteUri);
@@ -104,6 +108,9 @@ namespace InscripcionesCursos
                 txtApellidoNombre.Text = loggedUser.ApellidoNombre;
                 txtEmail.Text = loggedUser.Email;
                 txtCarrera.Text = loggedUser.Carrera;
+
+                ucRelevamientoMod.ShowEnviarButton(false);
+                ucRelevamientoMod.ShowControlTitle(false);
             }
             catch (Exception ex)
             {

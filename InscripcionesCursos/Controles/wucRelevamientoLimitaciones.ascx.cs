@@ -18,17 +18,11 @@ namespace InscripcionesCursos.Controles
 
         #endregion
 
-        #region Properties
-
-        public EventHandler btnEnviarClick;
-
-        #endregion
-
         #region PageLoad
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(!IsPostBack)
                 SetUpControl();
         }
 
@@ -38,7 +32,6 @@ namespace InscripcionesCursos.Controles
 
         protected void btnEnviar_OnClick(object sender, EventArgs e)
         {
-            btnEnviarClick(sender, e);
             var user = (Usuario)Session["user"];
 
             user.Limitacion = rbOption1.Checked ? SiValue : NoValue;
@@ -73,28 +66,26 @@ namespace InscripcionesCursos.Controles
             }
             else
             {
-                rbOption3.Enabled = false;
-                rbOption4.Checked = true;
-                rbOption4.Enabled = false;
-                rbOption5.Enabled = false;
-                rbOption6.Checked = true;
-                rbOption6.Enabled = false;
-                rbOption7.Enabled = false;
-                rbOption8.Checked = true;
-                rbOption8.Enabled = false;
-                rbOption9.Enabled = false;
-                rbOption10.Checked = true;
-                rbOption10.Enabled = false;
-                rbOption11.Enabled = false;
-                rbOption12.Checked = true;
-                rbOption12.Enabled = false;
-                txtOtras.Enabled = false;
+                rbOption4.Checked = rbOption6.Checked = rbOption8.Checked = rbOption10.Checked = rbOption12.Checked = true;
+                rbOption3.Enabled = rbOption4.Enabled = rbOption5.Enabled = rbOption6.Enabled = rbOption7.Enabled = 
+                    rbOption8.Enabled = rbOption9.Enabled = rbOption10.Enabled = rbOption11.Enabled = 
+                    rbOption12.Enabled = txtOtras.Enabled = false;
             }
         }
 
         #endregion
 
         #region Methods
+
+        public void ShowEnviarButton(bool show)
+        {
+            btnEnviar.Visible = show;
+        }
+
+        public void ShowControlTitle(bool show)
+        {
+            lblTitulo.Visible = false;
+        }
 
         private void SetUpControl()
         {
