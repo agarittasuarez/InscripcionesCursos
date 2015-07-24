@@ -20,13 +20,15 @@ namespace InscripcionesCursos
     {
         #region Constants & Variables
 
-        string IdEstadoBajaModificacion = ConfigurationManager.AppSettings["IdEstadoBajaModificacion"];
-        string IdEstadoAltaInscripcion = ConfigurationManager.AppSettings["IdEstadoAltaInscripcion"];
-        string IdTipoInscripcionPromocion = ConfigurationManager.AppSettings["IdTipoInscripcionPromocion"];
-        string IdOrigenInscripcionWeb = ConfigurationManager.AppSettings["IdOrigenInscripcionWeb"];
-        string IdOrigenInscripcionFacu = ConfigurationManager.AppSettings["IdOrigenInscripcionFacu"];
-        StringBuilder scriptingBuilder;
-        int idVuelta = 0;
+        private string IdEstadoBajaModificacion = ConfigurationManager.AppSettings["IdEstadoBajaModificacion"];
+        private string IdEstadoAltaInscripcion = ConfigurationManager.AppSettings["IdEstadoAltaInscripcion"];
+        private string IdTipoInscripcionPromocion = ConfigurationManager.AppSettings["IdTipoInscripcionPromocion"];
+        private string IdOrigenInscripcionWeb = ConfigurationManager.AppSettings["IdOrigenInscripcionWeb"];
+        private string IdOrigenInscripcionFacu = ConfigurationManager.AppSettings["IdOrigenInscripcionFacu"];
+        private StringBuilder scriptingBuilder;
+        private int idVuelta = 0;
+        private string siValue = "S";
+        private string noValue = "N";
 
         #endregion
 
@@ -531,6 +533,7 @@ namespace InscripcionesCursos
         {
             try
             {
+                var user = ((Usuario) Session["user"]);
                 string enter = "<br />";
                 string subject = ConfigurationManager.AppSettings["MailInscriptionSubject"];
                 StringBuilder mailBody = new StringBuilder();
@@ -594,8 +597,8 @@ namespace InscripcionesCursos
                     }
                 }
 
-                mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData2HistoricoImpresion"], ((Usuario)Session["user"]).ApellidoNombre) + "</div>");
-                mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData3HistoricoImpresion"], ((Usuario)Session["user"]).DNI.ToString()) + "</div><br /><br />");
+                mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData2HistoricoImpresion"], user.ApellidoNombre) + "</div>");
+                mailBody.Append("<div>" + String.Format(ConfigurationManager.AppSettings["ContentData3HistoricoImpresion"], user.DNI.ToString()) + "</div><br /><br />");
                 mailBody.Append("<div>" + ConfigurationManager.AppSettings["ContentBodyTitleHistoricoImpresion"] + "</div><br />");
 
                 mailBody.Append("<table" + tableStyle + ">");
@@ -630,6 +633,25 @@ namespace InscripcionesCursos
                         mailBody.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailCursoVerano"]).ToString());
                     else
                         mailBody.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"]).ToString());
+
+                if (user.Limitacion == "S")
+                {
+                    string limitaciones = null;
+                    if (user.LimitacionVision == siValue)
+                        limitaciones += ConfigurationManager.AppSettings["LimitacionLeer"];
+                    if (user.LimitacionHabla == siValue)
+                        limitaciones += ", " + ConfigurationManager.AppSettings["LimitacionHablar"];
+                    if (user.LimitacionAudicion == siValue)
+                        limitaciones += ", " + ConfigurationManager.AppSettings["LimitacionOir"];
+                    if (user.LimitacionMotriz == siValue)
+                        limitaciones += ", " + ConfigurationManager.AppSettings["LimitacionCaminar"];
+                    if (user.LimitacionAgarre == siValue)
+                        limitaciones += ", " + ConfigurationManager.AppSettings["LimitacionAgarrar"];
+                    if (user.LimitacionOtra != string.Empty)
+                        limitaciones += ", " + ConfigurationManager.AppSettings["LimitacionOtra"] + user.LimitacionOtra;
+
+                    mailBody.Append("<div>" + ConfigurationManager.AppSettings["ContentFooterDificultades"] + limitaciones + "</div>");
+                }
 
                 mailBody.Append("</body></html>");
 

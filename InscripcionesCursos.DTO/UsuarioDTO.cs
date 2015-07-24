@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using InscripcionesCursos.DAO;
 using InscripcionesCursos.BE;
 
@@ -148,6 +149,24 @@ namespace InscripcionesCursos.DTO
         }
 
         /// <summary>
+        /// Method to get all users
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static List<Usuario> GetAllUsuario(int idCargo)
+        {
+            try
+            {
+                var usuarioDAO = new UsuarioDAO(connectionString);
+                return usuarioDAO.SelectAllByIdCargo(idCargo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Method to import users
         /// </summary>
         public static void ImportPadron(Usuario user)
@@ -155,7 +174,7 @@ namespace InscripcionesCursos.DTO
             try
             {
                 UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
-                usuarioDAO.ImportPadron(user.DNI, user.ApellidoNombre, user.IdSede, user.Estado, Convert.ToInt32(user.Carrera), user.CuatrimestreAnioIngreso, user.CuatrimestreAnioReincorporacion, user.IdCargo);
+                usuarioDAO.ImportPadron(user);
             }
             catch (Exception ex)
             {

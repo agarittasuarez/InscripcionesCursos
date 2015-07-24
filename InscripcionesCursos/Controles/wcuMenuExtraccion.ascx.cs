@@ -26,6 +26,7 @@ namespace InscripcionesCursos
         private const string C_FILE_TYPE = "text/plain";
         private const string IdTipoInscripcionPromocion = "P";
         private const string IdTipoInscripcionExamen = "E";
+        private const int IdCargoStudent = 2;
 
         private Stream sFile;
         private StreamReader srReadFile;
@@ -33,6 +34,7 @@ namespace InscripcionesCursos
         private string line;
         private string fileNameCatedraComision = ConfigurationManager.AppSettings["FileNameCatedraComision"];
         private string fileNameInscripcion = ConfigurationManager.AppSettings["FileNameInscripcion"];
+        private string fileNamePadronAlumnos = ConfigurationManager.AppSettings["FileNamePadronAlumno"];
 
         #endregion
 
@@ -76,6 +78,18 @@ namespace InscripcionesCursos
         protected void btnInscripciones_Click(object sender, EventArgs e)
         {
             SetInscripcionesFrame();
+        }
+
+        protected void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            filtroImportarPadron.Visible = false;
+            filtroCatedraComision.Visible = false;
+            filtroInscripcion.Visible = false;
+            filtroAlumno.Visible = true;
+            filtroImportarInscripciones.Visible = false;
+            filtroImportarCatedraComision.Visible = false;
+            filtroImportarAnalitico.Visible = false;
+            filtroImportarInscripcionActiva.Visible = false;
         }
 
         protected void btnImportarPadron_Click(object sender, EventArgs e)
@@ -146,6 +160,11 @@ namespace InscripcionesCursos
         #endregion
 
         #region FrameButtons
+
+        protected void btnExtraerAlumnos_Click(object sender, EventArgs e)
+        {
+            CreateExtractFile(3, fileNamePadronAlumnos);
+        }
 
         protected void btnExtraerCatedra_Click(object sender, EventArgs e)
         {
@@ -308,6 +327,7 @@ namespace InscripcionesCursos
                             sw.WriteLine(ExtractInscripciones());
                             break;
                         case 3:
+                            sw.WriteLine(ExtractPadronAlumnos());
                             break;
                     }
                     sw.Close();
@@ -423,6 +443,51 @@ namespace InscripcionesCursos
             {
                 LogWriter log = new LogWriter();
                 log.WriteLog(ex.Message, "ExtractInscripciones", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Method to extract all students
+        /// </summary>
+        /// <returns></returns>
+        private string ExtractPadronAlumnos()
+        {
+            try
+            {
+                var sbLine = new StringBuilder();
+                var sbFile = new StringBuilder();
+
+                var listAlumnos = UsuarioDTO.GetAllUsuario(IdCargoStudent);
+                for (int i = 0; i < listAlumnos.Count; i++)
+                {
+                    sbLine.Append(listAlumnos[i].DNI.ToString().PadLeft(8, '0') + ";");
+                    sbLine.Append(listAlumnos[i].ApellidoNombre + ";");
+                    sbLine.Append(listAlumnos[i].IdSede + ";");
+                    sbLine.Append(listAlumnos[i].Estado + ";");
+                    sbLine.Append(listAlumnos[i].Carrera.PadLeft(2, '0') + ";");
+                    sbLine.Append((listAlumnos[i].CuatrimestreAnioIngreso ?? "      ") + ";");
+                    sbLine.Append((listAlumnos[i].CuatrimestreAnioReincorporacion ?? "      ") + ";");
+                    sbLine.Append((listAlumnos[i].Email ?? "          ") + ";");
+                    sbLine.Append((listAlumnos[i].Limitacion ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionVision ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionAudicion ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionMotriz ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionAgarre ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionHabla ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].LimitacionOtra ?? " ") + ";");
+                    sbLine.Append(" ;");
+                    sbLine.Append("        ;");
+
+                    if (i < listAlumnos.Count - 1)
+                        sbLine.AppendLine();
+                }
+                return sbLine.ToString();
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "ExtractPadronAlumnos", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }

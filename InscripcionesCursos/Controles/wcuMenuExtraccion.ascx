@@ -2,7 +2,8 @@
 <div class="menuIzquierdo">
     <asp:Button ID="btnCatedras" runat="server" Text="" CausesValidation="false" onclick="btnCatedras_Click"/>
     <asp:Button ID="btnInscripciones" runat="server" Text="" CausesValidation="false" onclick="btnInscripciones_Click"/>
-    <asp:Button ID="btnUsuarios" runat="server" Text="" CausesValidation="false" Enabled="false"/>
+    <asp:Button ID="btnUsuarios" runat="server" Text="" CausesValidation="false" 
+        onclick="btnUsuarios_Click" />
     <asp:Button ID="btnImportarPadron" runat="server" Text="" CausesValidation="false" onclick="btnImportarPadron_Click"/>
     <asp:Button ID="btnImportarInscripciones" runat="server" Text="" CausesValidation="false" onclick="btnImportarInscripciones_Click" />
     <asp:Button ID="btnImportarComisiones" runat="server" Text="" CausesValidation="false" onclick="btnImportarComisiones_Click"/>
@@ -33,8 +34,8 @@
                 <div class="tituloContenido">
                     <asp:Label ID="lblExtraerAlumnos" runat="server" Text=""><%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionAlumnos"]%></asp:Label>
                 </div>
-                <asp:DropDownList ID="ddAlumnos" runat="server" ></asp:DropDownList>
-                <asp:Button ID="btnExtraerAlumnos" runat="server" Text="Extraer" CssClass="blackButtonInscripcion" />
+                <asp:Button ID="btnExtraerAlumnos" runat="server" Text="Extraer" 
+                    CssClass="blackButtonInscripcion" onclick="btnExtraerAlumnos_Click" />
             </div>
             <div id="filtroImportarPadron" runat="server" visible="false">
                 <div class="tituloContenido">

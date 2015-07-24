@@ -67,9 +67,11 @@ namespace InscripcionesCursos.Controles
             else
             {
                 rbOption4.Checked = rbOption6.Checked = rbOption8.Checked = rbOption10.Checked = rbOption12.Checked = true;
+                rbOption3.Checked = rbOption5.Checked = rbOption7.Checked = rbOption9.Checked = rbOption11.Checked = false;
                 rbOption3.Enabled = rbOption4.Enabled = rbOption5.Enabled = rbOption6.Enabled = rbOption7.Enabled = 
                     rbOption8.Enabled = rbOption9.Enabled = rbOption10.Enabled = rbOption11.Enabled = 
                     rbOption12.Enabled = txtOtras.Enabled = false;
+                txtOtras.Text = string.Empty;
             }
         }
 
@@ -94,37 +96,50 @@ namespace InscripcionesCursos.Controles
             if (loggedUser.LimitacionRelevada)
             {
                 if (loggedUser.Limitacion == SiValue)
+                {
                     rbOption1.Checked = true;
+
+                    if (loggedUser.LimitacionVision == SiValue)
+                        rbOption3.Checked = true;
+                    else
+                        rbOption4.Checked = true;
+
+                    if (loggedUser.LimitacionAudicion == SiValue)
+                        rbOption5.Checked = true;
+                    else
+                        rbOption6.Checked = true;
+
+                    if (loggedUser.LimitacionMotriz == SiValue)
+                        rbOption7.Checked = true;
+                    else
+                        rbOption8.Checked = true;
+
+                    if (loggedUser.LimitacionAgarre == SiValue)
+                        rbOption9.Checked = true;
+                    else
+                        rbOption10.Checked = true;
+
+                    if (loggedUser.LimitacionHabla == SiValue)
+                        rbOption11.Checked = true;
+                    else
+                        rbOption12.Checked = true;
+
+                    if (loggedUser.LimitacionOtra != string.Empty)
+                        txtOtras.Text = loggedUser.LimitacionOtra;
+
+                }
                 else
+                {
                     rbOption2.Checked = true;
-
-                if (loggedUser.LimitacionVision == SiValue)
-                    rbOption3.Checked = true;
-                else
-                    rbOption4.Checked = true;
-
-                if (loggedUser.LimitacionAudicion == SiValue)
-                    rbOption5.Checked = true;
-                else
-                    rbOption6.Checked = true;
-
-                if (loggedUser.LimitacionMotriz == SiValue)
-                    rbOption7.Checked = true;
-                else
-                    rbOption8.Checked = true;
-
-                if (loggedUser.LimitacionAgarre == SiValue)
-                    rbOption9.Checked = true;
-                else
-                    rbOption10.Checked = true;
-
-                if (loggedUser.LimitacionHabla == SiValue)
-                    rbOption11.Checked = true;
-                else
-                    rbOption12.Checked = true;
-
-                if (loggedUser.LimitacionOtra != string.Empty)
-                    txtOtras.Text = loggedUser.LimitacionOtra;
+                    rbOption3.Enabled =
+                        rbOption4.Enabled =
+                            rbOption5.Enabled =
+                                rbOption6.Enabled =
+                                    rbOption7.Enabled =
+                                        rbOption8.Enabled =
+                                            rbOption9.Enabled =
+                                                rbOption10.Enabled = rbOption11.Enabled = rbOption12.Enabled = false;
+                }
             }
             else
             {

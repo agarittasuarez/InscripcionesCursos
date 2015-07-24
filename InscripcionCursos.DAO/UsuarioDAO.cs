@@ -51,7 +51,15 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@IdEstado", usuario.Estado),
                 new SqlParameter("@IdCarrera", Convert.ToInt32(usuario.Carrera)),
                 new SqlParameter("@CuatrimestreAnioIngreso", usuario.CuatrimestreAnioIngreso),
-                new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion)
+                new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion),
+                new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
+				new SqlParameter("@Limitacion", usuario.Limitacion),
+				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
+				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
+				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioInsert", parameters);
@@ -79,7 +87,15 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@IdEstado", usuario.Estado),
                 new SqlParameter("@IdCarrera", Convert.ToInt32(usuario.Carrera)),
                 new SqlParameter("@CuatrimestreAnioIngreso", usuario.CuatrimestreAnioIngreso),
-                new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion)
+                new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion),
+                new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
+				new SqlParameter("@Limitacion", usuario.Limitacion),
+				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
+				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
+				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioUpdate", parameters);
@@ -429,19 +445,27 @@ namespace InscripcionesCursos.DAO
         /// <summary>
         /// Import users
         /// </summary>
-        public void ImportPadron(int dni, string apellidoNombre, int idSede, string estado, int idCarrera, string cuatrimestreIngreso, string cuatrimestreReincorporacion, int idCargo)
+        public void ImportPadron(Usuario usuario)
         {
 
 			SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dni),
-				new SqlParameter("@ApellidoNombre", apellidoNombre),
-				new SqlParameter("@IdSede", idSede),
-				new SqlParameter("@IdEstado", estado),
-				new SqlParameter("@IdCarrera", idCarrera),
-				new SqlParameter("@CuatrimestreAnioIngreso", cuatrimestreIngreso),
-				new SqlParameter("@CuatrimestreAnioReincorporacion", cuatrimestreReincorporacion),
-                new SqlParameter("@IdCargo", idCargo)
+				new SqlParameter("@DNI", usuario.DNI),
+				new SqlParameter("@ApellidoNombre", usuario.ApellidoNombre),
+				new SqlParameter("@IdSede", usuario.IdSede),
+				new SqlParameter("@IdEstado", usuario.Estado),
+				new SqlParameter("@IdCarrera", Convert.ToInt32(usuario.Carrera)),
+				new SqlParameter("@CuatrimestreAnioIngreso", usuario.CuatrimestreAnioIngreso),
+				new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion),
+                new SqlParameter("@IdCargo", usuario.IdCargo),
+                new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
+				new SqlParameter("@Limitacion", usuario.Limitacion),
+				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
+				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
+				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioImportPadron", parameters);

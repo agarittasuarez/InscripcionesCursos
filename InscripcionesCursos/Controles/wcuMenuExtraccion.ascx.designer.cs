@@ -202,15 +202,6 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.WebControls.Label lblExtraerAlumnos;
         
         /// <summary>
-        /// ddAlumnos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddAlumnos;
-        
-        /// <summary>
         /// btnExtraerAlumnos control.
         /// </summary>
         /// <remarks>
