@@ -285,7 +285,7 @@ namespace InscripcionesCursos
                             liTools.Visible = liResend.Visible = liEmailChange.Visible = liProcess.Visible = true;
 
                         if (coleccionDniStatistics.IndexOf(loggedUser.DNI.ToString()) != -1)
-                            liQueries.Visible = liTextsChange.Visible = liInterface.Visible = true;
+                            liTools.Visible = liQueries.Visible = liTextsChange.Visible = liInterface.Visible = true;
                         
                         divLoginTools.Visible = true;
                         if (Session["user"] != null && Session["userEmployee"] != null)
