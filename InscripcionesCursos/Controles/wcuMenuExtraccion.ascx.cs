@@ -465,7 +465,7 @@ namespace InscripcionesCursos
                     sbLine.Append(listAlumnos[i].ApellidoNombre + ";");
                     sbLine.Append(listAlumnos[i].IdSede + ";");
                     sbLine.Append(listAlumnos[i].Estado + ";");
-                    sbLine.Append((listAlumnos[i].Carrera != null ? listAlumnos[i].Carrera.PadLeft(2, '0') : "  ") + ";");
+                    sbLine.Append(listAlumnos[i].Carrera.PadLeft(2, '0') + ";");
                     sbLine.Append((listAlumnos[i].CuatrimestreAnioIngreso ?? "      ") + ";");
                     sbLine.Append((listAlumnos[i].CuatrimestreAnioReincorporacion ?? "      ") + ";");
                     sbLine.Append((listAlumnos[i].Email ?? "          ") + ";");
