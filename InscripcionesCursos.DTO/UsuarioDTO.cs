@@ -22,7 +22,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 return usuarioDAO.ValidateLogin(user.DNI, user.Password);
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 return usuarioDAO.UpdateGeneratedPassword(user.DNI, user.Password);
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 usuarioDAO.Update(user);
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 usuarioDAO.UpdateLimitaciones(user);
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 usuarioDAO.UpdateEmail(user);
             }
             catch (Exception ex)
@@ -105,7 +105,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 return usuarioDAO.UpdateMandatoryPasswordEmail(user.DNI, user.Password, user.Email, user.CodigoActivacion);
             }
             catch (Exception ex)
@@ -121,7 +121,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 return usuarioDAO.ActivateAccount(user.DNI, user.CodigoActivacion);
             }
             catch (Exception ex)
@@ -139,7 +139,7 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 return usuarioDAO.Select(user.DNI);
             }
             catch (Exception ex)
@@ -173,12 +173,49 @@ namespace InscripcionesCursos.DTO
         {
             try
             {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(connectionString);
+                var usuarioDAO = new UsuarioDAO(connectionString);
                 usuarioDAO.ImportPadron(user);
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Method to deactivate a student account
+        /// </summary>
+        /// <param name="dni"></param>
+        public static void DeactivateAccount(int dni)
+        {
+            try
+            {
+                var usuarioDAO = new UsuarioDAO(connectionString);
+                usuarioDAO.DeactivateAccount(dni);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Method to transfer data from old dni to new dni
+        /// </summary>
+        /// <param name="dniOld">DNI from</param>
+        /// <param name="dniNew">DNI to</param>
+        public static void TransferData(int dniOld, int dniNew)
+        {
+            try
+            {
+                var usuarioDAO = new UsuarioDAO(connectionString);
+                usuarioDAO.TransferData(dniOld, dniNew);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                throw;
             }
         }
 

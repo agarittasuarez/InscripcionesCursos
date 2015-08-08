@@ -20,13 +20,12 @@ namespace InscripcionesCursos
 
         private const string ComboTextFieldTurno = "TurnoInscripcion";
         private const string ComboValueFieldTurno = "TurnoInscripcion";
-        private const string ComboTextFieldVuelta = "IdVuelta";
-        private const string ComboValueFieldVuelta = "IdVuelta";
         private const string C_FILE_DIRECTORY = "ImportFiles\\";
         private const string C_FILE_TYPE = "text/plain";
         private const string IdTipoInscripcionPromocion = "P";
-        private const string IdTipoInscripcionExamen = "E";
         private const int IdCargoStudent = 2;
+        private const string IdMovimientoBaja = "B";
+        private const string IdMovimientoCambio = "C";
 
         private Stream sFile;
         private StreamReader srReadFile;
@@ -35,6 +34,7 @@ namespace InscripcionesCursos
         private string fileNameCatedraComision = ConfigurationManager.AppSettings["FileNameCatedraComision"];
         private string fileNameInscripcion = ConfigurationManager.AppSettings["FileNameInscripcion"];
         private string fileNamePadronAlumnos = ConfigurationManager.AppSettings["FileNamePadronAlumno"];
+        private bool changedAccount = false;
 
         #endregion
 
@@ -523,8 +523,33 @@ namespace InscripcionesCursos
                             alumno.CuatrimestreAnioIngreso = tmpArray[5].Trim().Length != 0 ? tmpArray[5].Trim() : null;
                             alumno.CuatrimestreAnioReincorporacion = tmpArray[6].Trim().Length != 0 ? tmpArray[6].Trim() : null;
                             alumno.IdCargo = 2;
+                            alumno.LimitacionRelevada = tmpArray[8].Trim().Length > 0;
+                            alumno.Limitacion = tmpArray[8].Trim().Length != 0 ? tmpArray[8].Trim() : null;
+                            alumno.LimitacionVision = tmpArray[9].Trim().Length != 0 ? tmpArray[9].Trim() : null;
+                            alumno.LimitacionAudicion = tmpArray[10].Trim().Length != 0 ? tmpArray[10].Trim() : null;
+                            alumno.LimitacionMotriz = tmpArray[11].Trim().Length != 0 ? tmpArray[11].Trim() : null;
+                            alumno.LimitacionAgarre = tmpArray[12].Trim().Length != 0 ? tmpArray[12].Trim() : null;
+                            alumno.LimitacionHabla = tmpArray[13].Trim().Length != 0 ? tmpArray[13].Trim() : null;
+                            alumno.LimitacionOtra = tmpArray[14].Trim().Length != 0 ? tmpArray[14].Trim() : null;
 
-                            UsuarioDTO.ImportPadron(alumno);
+                            if (tmpArray[15].Trim() != string.Empty)
+                            {
+                                switch(tmpArray[15].Trim().ToUpper())
+                                {
+                                    case IdMovimientoBaja:
+                                        UsuarioDTO.DeactivateAccount(Convert.ToInt32(tmpArray[0]));
+                                        changedAccount = true;
+                                        break;
+                                    case IdMovimientoCambio:
+                                        if (tmpArray[16].Trim() != string.Empty)
+                                            UsuarioDTO.TransferData(Convert.ToInt32(tmpArray[0].Trim()), Convert.ToInt32(tmpArray[16].Trim()));
+                                        changedAccount = true;
+                                        break;
+                                }
+                            }
+                            else
+                                UsuarioDTO.ImportPadron(alumno);
+
                             count++;
                         }
                         lblEstadoImportarPadron.Text = "Se ha importado el padron correctamente. Total de Registros procesados: " + count.ToString();

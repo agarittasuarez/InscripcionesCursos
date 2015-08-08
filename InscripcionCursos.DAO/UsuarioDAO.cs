@@ -447,7 +447,6 @@ namespace InscripcionesCursos.DAO
         /// </summary>
         public void ImportPadron(Usuario usuario)
         {
-
 			SqlParameter[] parameters = new SqlParameter[]
 			{
 				new SqlParameter("@DNI", usuario.DNI),
@@ -469,6 +468,38 @@ namespace InscripcionesCursos.DAO
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioImportPadron", parameters);
+            SqlConnection.ClearAllPools();
+        }
+
+        /// <summary>
+        /// Deactivate account
+        /// </summary>
+        /// <param name="dni"></param>
+        public void DeactivateAccount(int dni)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+			{
+				new SqlParameter("@DNI", dni)
+			};
+
+            SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioDeactivateAccount", parameters);
+            SqlConnection.ClearAllPools();
+        }
+
+        /// <summary>
+        /// Transfer info from old dni to new dni, and delete old dni
+        /// </summary>
+        /// <param name="dniOld">DNI from</param>
+        /// <param name="dniNew">DNI to</param>
+        public void TransferData(int dniOld, int dniNew)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+			{
+				new SqlParameter("@DNIOld", dniOld),
+                new SqlParameter("@DNINew", dniNew)
+			};
+
+            SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioTransferData", parameters);
             SqlConnection.ClearAllPools();
         }
 
