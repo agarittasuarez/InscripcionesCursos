@@ -500,11 +500,12 @@ namespace InscripcionesCursos
         {
             if (fuPadron.HasFile)
             {
+                int count = 0;
                 try
                 {
                     if (fuPadron.PostedFile.ContentType == C_FILE_TYPE)
                     {
-                        int count = 0;
+                        
                         string filename = Path.GetFileName(fuPadron.FileName);
                         fuPadron.SaveAs(Server.MapPath("~/") + C_FILE_DIRECTORY + filename);
                         sFile = fuPadron.PostedFile.InputStream;
@@ -561,7 +562,7 @@ namespace InscripcionesCursos
                 {
                     LogWriter log = new LogWriter();
                     log.WriteLog(ex.Message, "UploadPadronAlumnos", Path.GetFileName(Request.PhysicalPath));
-                    lblEstadoImportarPadron.Text = "No se pudo subir el archivo. Ocurrio el siguiente error: " + ex.Message;
+                    lblEstadoImportarPadron.Text = "No se pudo subir el archivo. Ocurrio el siguiente error en el registro " + count + ": " + ex.Message;
                 }
             }
         }
