@@ -63,7 +63,7 @@
             <div class="main">
                 <uc1:MenuNavegacion id="menuAlumnos" runat="server" Visible="false"/>
                 <uc2:MenuNavegacionSimulador id="menuSimulador" runat="server" Visible="false"/>
-                <div id="divContent" runat="server">
+                <div id="divContent" runat="server" class="contenedorCentro">
                     <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
                 </div>
             </div>

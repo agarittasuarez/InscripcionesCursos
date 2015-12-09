@@ -41,6 +41,8 @@
                             </asp:BoundField>
                             <asp:BoundField DataField="ProfesorNombreApellido">
                             </asp:BoundField>
+                            <asp:BoundField DataField="FechaHasta" DataFormatString="{0:dd/MM/yyyy}">
+                            </asp:BoundField>
                             <asp:BoundField DataField="Horario">
                             </asp:BoundField>
                             <asp:TemplateField>

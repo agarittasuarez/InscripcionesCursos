@@ -304,8 +304,9 @@ namespace InscripcionesCursos
             {
                 GridResultados.Columns[0].HeaderText = ConfigurationManager.AppSettings["ContentHeaderCatedraComision"];
                 GridResultados.Columns[1].HeaderText = ConfigurationManager.AppSettings["ContentHeaderProfesor"];
-                GridResultados.Columns[2].HeaderText = ConfigurationManager.AppSettings["ContentHeaderHorario"];
-                GridResultados.Columns[3].HeaderText = ConfigurationManager.AppSettings["ContentHeaderSeleccion"];
+                GridResultados.Columns[2].HeaderText = ConfigurationManager.AppSettings["ContentHeaderFechaExamen"];
+                GridResultados.Columns[3].HeaderText = ConfigurationManager.AppSettings["ContentHeaderHorario"];
+                GridResultados.Columns[4].HeaderText = ConfigurationManager.AppSettings["ContentHeaderSeleccion"];
             }
             catch (Exception ex)
             {
@@ -325,9 +326,10 @@ namespace InscripcionesCursos
                 ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[0].HeaderText = ConfigurationManager.AppSettings["ContentHeaderMateria"];
                 ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[1].HeaderText = ConfigurationManager.AppSettings["ContentHeaderCatedraComision"];
                 ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[2].HeaderText = ConfigurationManager.AppSettings["ContentHeaderProfesor"];
-                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[3].HeaderText = ConfigurationManager.AppSettings["ContentHeaderHorario"];
-                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[4].HeaderText = ConfigurationManager.AppSettings["ContentHeaderEstadoInscripcion"];
-                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[5].HeaderText = ConfigurationManager.AppSettings["ContentHeaderEliminar"];
+                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[3].HeaderText = ConfigurationManager.AppSettings["ContentHeaderFechaExamen"];
+                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[4].HeaderText = ConfigurationManager.AppSettings["ContentHeaderHorario"];
+                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[5].HeaderText = ConfigurationManager.AppSettings["ContentHeaderEstadoInscripcion"];
+                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[6].HeaderText = ConfigurationManager.AppSettings["ContentHeaderEliminar"];
             }
             catch (Exception ex)
             {

@@ -34,6 +34,7 @@
 		                    <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderMateria"]%></th>
                             <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderCatedraComision"]%></th>
                             <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderProfesor"]%></th>
+                            <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderFechaExamen"]%></th>
                             <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderHorario"]%></th>
                             <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderEstadoInscripcion"]%></th>
                             <th scope="col"><%= ConfigurationManager.AppSettings["ContentHeaderEliminar"] %></th>
@@ -52,6 +53,8 @@
                     <asp:BoundField DataField="CatedraComision">
                     </asp:BoundField>
                     <asp:BoundField DataField="Profesor">
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FechaDesdeHasta" DataFormatString="{0:dd/MM/yyyy}">
                     </asp:BoundField>
                     <asp:BoundField DataField="Horario">
                     </asp:BoundField>

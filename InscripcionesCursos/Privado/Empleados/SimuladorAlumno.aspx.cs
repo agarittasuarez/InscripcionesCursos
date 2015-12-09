@@ -38,7 +38,7 @@ namespace InscripcionesCursos.Privado.Empleados
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
 
                 menuControl = (wucMenuNavegacionSimulador)Master.FindControl("menuSimulador");
-                Session.Remove("user");
+                //Session.Remove("user");
                 //menuControl.BtnBackClick += new EventHandler(btnBack_Click);
             }
             catch (ThreadAbortException)
