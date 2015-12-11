@@ -63,7 +63,12 @@
             <div class="main">
                 <uc1:MenuNavegacion id="menuAlumnos" runat="server" Visible="false"/>
                 <uc2:MenuNavegacionSimulador id="menuSimulador" runat="server" Visible="false"/>
-                <div id="divContent" runat="server" class="contenedorCentro">
+                <% //VER ACA EL REQUEST Q TOMA EL POST DEL UPDATE PANEL
+                    if(Request.Url.AbsoluteUri.ToLower().IndexOf("simulador") == -1) 
+                        Response.Write(@"<div id='divContent' runat='server'>");
+                    else
+                        Response.Write(@"<div id='divContent' runat='server' class='contenedorCentro'>");
+                %>
                     <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
                 </div>
             </div>

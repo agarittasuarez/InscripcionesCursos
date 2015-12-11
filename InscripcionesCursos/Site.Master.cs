@@ -294,7 +294,7 @@ namespace InscripcionesCursos
                     else
                     {
                         menuAlumnos.Visible = true;
-                        divContent.Attributes.Add("class", "contenidoCentral");
+                        //divContent.Attributes.Add("class", "contenidoCentral");
 
                         if (!loggedUser.LimitacionRelevada)
                             EnableButtons(false);

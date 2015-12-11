@@ -24,6 +24,7 @@ namespace InscripcionesCursos
         const string COMBOTEXTFIELDMATERIA = "Descripcion";
         const string COMBOVALUEFIELDMATERIA = "IdMateria";
         const string CATEDRACOMISIONCERRADA = "N";
+        const string InscriptionTypeExam = "E";
 
         string IdEstadoBajaModificacion = ConfigurationManager.AppSettings["IdEstadoBajaModificacion"];
         string IdEstadoBajaErrorInscripcion = ConfigurationManager.AppSettings["IdEstadoBajaErrorInscripcion"];
@@ -88,6 +89,7 @@ namespace InscripcionesCursos
                     }
 
                     FillComboDeptoAndCarrera();
+                    SetFechaExamenColumn();
 
                     listCarro = new List<Carro>();
                     listCarro = (List<Carro>)Session["carro"];
@@ -337,6 +339,12 @@ namespace InscripcionesCursos
                 log.WriteLog(ex.Message, "setGridCartHeaders", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
+        }
+
+        private void SetFechaExamenColumn()
+        {
+            if (((List<InscripcionActiva>)(Session["inscripcionesActivas"]))[0].IdTipoInscripcion != InscriptionTypeExam)
+                ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[3].Visible = false;
         }
 
         /// <summary>
