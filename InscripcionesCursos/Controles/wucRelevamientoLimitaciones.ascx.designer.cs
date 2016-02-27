@@ -85,13 +85,13 @@ namespace InscripcionesCursos.Controles {
         protected global::System.Web.UI.WebControls.RadioButton rbOption4;
         
         /// <summary>
-        /// lblQuestion3 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestion3;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// rbOption5 control.
@@ -112,13 +112,13 @@ namespace InscripcionesCursos.Controles {
         protected global::System.Web.UI.WebControls.RadioButton rbOption6;
         
         /// <summary>
-        /// lblQuestion4 control.
+        /// lblQuestion3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestion4;
+        protected global::System.Web.UI.WebControls.Label lblQuestion3;
         
         /// <summary>
         /// rbOption7 control.
@@ -139,13 +139,13 @@ namespace InscripcionesCursos.Controles {
         protected global::System.Web.UI.WebControls.RadioButton rbOption8;
         
         /// <summary>
-        /// lblQuestion5 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestion5;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// rbOption9 control.
@@ -166,13 +166,13 @@ namespace InscripcionesCursos.Controles {
         protected global::System.Web.UI.WebControls.RadioButton rbOption10;
         
         /// <summary>
-        /// lblQuestion6 control.
+        /// lblQuestion4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestion6;
+        protected global::System.Web.UI.WebControls.Label lblQuestion4;
         
         /// <summary>
         /// rbOption11 control.
@@ -191,6 +191,87 @@ namespace InscripcionesCursos.Controles {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rbOption12;
+        
+        /// <summary>
+        /// lblQuestion5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuestion5;
+        
+        /// <summary>
+        /// rbOption13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption13;
+        
+        /// <summary>
+        /// rbOption14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption14;
+        
+        /// <summary>
+        /// lblQuestion6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuestion6;
+        
+        /// <summary>
+        /// rbOption15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption15;
+        
+        /// <summary>
+        /// rbOption16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption16;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// rbOption17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption17;
+        
+        /// <summary>
+        /// rbOption18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbOption18;
         
         /// <summary>
         /// lblQuestion7 control.

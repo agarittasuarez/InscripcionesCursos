@@ -17,8 +17,7 @@
             <asp:Literal ID="FailureText" runat="server" Visible="false" ></asp:Literal>
         </div>
         <div class="contenedorBotonGenerar">
-            <asp:Button ID="btnRequest" runat="server" Text="Buscar" CssClass="blackButton" 
-                onclick="btnRequest_Click"  />
+            <asp:Button ID="btnRequest" runat="server" Text="Buscar" CssClass="blackButton" OnClick="btnRequest_Click"  />
         </div>
     </div>
 </asp:Content>

@@ -190,6 +190,7 @@ namespace InscripcionesCursos
             try
             {
                 Session.Remove("user");
+                Session["isSimulador"] = false;
                 Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeSimulador"]);
             }
             catch (ThreadAbortException)

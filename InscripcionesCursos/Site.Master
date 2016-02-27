@@ -64,7 +64,7 @@
                 <uc1:MenuNavegacion id="menuAlumnos" runat="server" Visible="false"/>
                 <uc2:MenuNavegacionSimulador id="menuSimulador" runat="server" Visible="false"/>
                 <% //VER ACA EL REQUEST Q TOMA EL POST DEL UPDATE PANEL
-                    if(Request.Url.AbsoluteUri.ToLower().IndexOf("simulador") == -1) 
+                    if (Session["isSimulador"] == null || !(bool)Session["isSimulador"])
                         Response.Write(@"<div id='divContent' runat='server'>");
                     else
                         Response.Write(@"<div id='divContent' runat='server' class='contenedorCentro'>");

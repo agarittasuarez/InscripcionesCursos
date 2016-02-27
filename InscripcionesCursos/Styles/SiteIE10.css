@@ -24,7 +24,8 @@ body
 .contenedorCentro
 {
 	width: 734px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
+	float: left;
 }
 
 a:link
@@ -706,6 +707,7 @@ div.accountInfo
 {
 	width:600px;
 	padding: 35px 50px;
+	float: left;
 }
 
 .textoAngostoAlumnos p
@@ -984,32 +986,32 @@ div.accountInfo
         
 .planCodMat
 {
-    min-width: 40px;
+    background-color: #4cbb17;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #DD7DE8;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatAprob
 {
-    min-width: 40px;
+    background-color: rgba(148, 26, 99, 1);
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #4CBB17;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatAprobMini
@@ -1018,9 +1020,9 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #4CBB17;
+    background-color: rgba(148, 26, 99, 1);
     display:inline-block;
-    text-align: center;
+    text-align: right;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
@@ -1033,7 +1035,7 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #FF0000;
+    background-color: #00FFF4;
     display:inline-block;
     text-align: center;
     vertical-align:middle;
@@ -1059,45 +1061,43 @@ div.accountInfo
         
 .planDescripMat
 {
-    min-width: 150px;
+	background-color: #FFFDE8;
+    color: #000000;
+    display: inline-block;
+    height: 60px;
     max-width: 150px;
     min-height: 50px;
-    max-height: 50px;
-    display:inline-block;
-    background-color: #FFFDE8;
-    color: #000000;
+    min-width: 150px;
+    text-align: center;
     vertical-align: middle;
-    text-align:center;
-    white-space:pre-wrap
+    white-space: pre-wrap;
 }
 
-.planDescripMatMini
-{
+.planDescripMatMini {
     min-width: 150px;
-    max-width: 150px;
+	max-width: 150px;
     min-height: 40px;
     max-height: 40px;
-    display:inline-block;
-    background-color: #FFFDE8;
-    color: #000000;
+    display: inline-block;
+    color: #ffffff;
+    text-align: right;
     vertical-align: middle;
-    text-align:right;
-    white-space:pre-wrap
+    white-space: pre-wrap;
 }
 
 .planCodMatBloqueada
 {
-    min-width: 40px;
+    background-color: #00fff4;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #00fff4;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatHabilitada

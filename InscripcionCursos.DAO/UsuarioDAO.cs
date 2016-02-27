@@ -55,10 +55,13 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
 				new SqlParameter("@Limitacion", usuario.Limitacion),
 				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+                new SqlParameter("@Lentes", usuario.Lentes),
 				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+                new SqlParameter("@Audifonos", usuario.Audifonos),
 				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
 				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+                new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
@@ -91,10 +94,13 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
 				new SqlParameter("@Limitacion", usuario.Limitacion),
 				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+                new SqlParameter("@Lentes", usuario.Lentes),
 				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+                new SqlParameter("@Audifonos", usuario.Audifonos),
 				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
 				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+                new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
@@ -109,13 +115,16 @@ namespace InscripcionesCursos.DAO
             SqlParameter[] parameters = new SqlParameter[]
 			{
 				new SqlParameter("@DNI", usuario.DNI),
-				new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
+                new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
 				new SqlParameter("@Limitacion", usuario.Limitacion),
 				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+                new SqlParameter("@Lentes", usuario.Lentes),
 				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+                new SqlParameter("@Audifonos", usuario.Audifonos),
 				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
 				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+                new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
@@ -460,10 +469,13 @@ namespace InscripcionesCursos.DAO
                 new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
 				new SqlParameter("@Limitacion", usuario.Limitacion),
 				new SqlParameter("@LimitacionVision", usuario.LimitacionVision),
+                new SqlParameter("@Lentes", usuario.Lentes),
 				new SqlParameter("@LimitacionAudicion", usuario.LimitacionAudicion),
+                new SqlParameter("@Audifonos", usuario.Audifonos),
 				new SqlParameter("@LimitacionMotriz", usuario.LimitacionMotriz),
 				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
+                new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
 			};
 
@@ -526,9 +538,12 @@ namespace InscripcionesCursos.DAO
 		        LimitacionRelevada = dataReader.GetBoolean("LimitacionRelevada", false),
                 Limitacion = dataReader.GetString("Limitacion", null),
                 LimitacionVision = dataReader.GetString("LimitacionVision", null),
+                Lentes = dataReader.GetString("Lentes", null),
                 LimitacionAudicion = dataReader.GetString("LimitacionAudicion", null),
+                Audifonos = dataReader.GetString("Audifonos", null),
                 LimitacionMotriz = dataReader.GetString("LimitacionMotriz", null),
                 LimitacionHabla = dataReader.GetString("LimitacionHabla", null),
+                Dislexia = dataReader.GetString("Dislexia", null),
                 LimitacionAgarre = dataReader.GetString("LimitacionAgarre", null),
 		        LimitacionOtra = dataReader.GetString("LimitacionOtra", null)
 		    };

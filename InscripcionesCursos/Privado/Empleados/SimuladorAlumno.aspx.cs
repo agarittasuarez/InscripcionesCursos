@@ -77,6 +77,7 @@ namespace InscripcionesCursos.Privado.Empleados
             if (user != null && user.DNI != 0)
             {
                 Session.Add("user", user);
+                Session.Add("isSimulador", true);
                 divSearchBox.Visible = false;
                 menuControl.LabelUsuario(user);
                 menuControl.Visible = true;

@@ -137,9 +137,19 @@ namespace InscripcionesCursos.BE
         public string LimitacionVision { get; set; }
 
         /// <summary>
+        /// Gets or sets the LimitacionVision value.
+        /// </summary>
+        public string Lentes { get; set; }
+
+        /// <summary>
         /// Gets or sets the LimitacionAudicion value.
         /// </summary>
         public string LimitacionAudicion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionAudicion value.
+        /// </summary>
+        public string Audifonos { get; set; }
 
         /// <summary>
         /// Gets or sets the LimitacionMotriz value.
@@ -155,6 +165,11 @@ namespace InscripcionesCursos.BE
         /// Gets or sets the LimitacionHabla value.
         /// </summary>
         public string LimitacionHabla { get; set; }
+
+        /// <summary>
+        /// Gets or sets the LimitacionHabla value.
+        /// </summary>
+        public string Dislexia { get; set; }
 
         /// <summary>
         /// Gets or sets the LimitacionOtra value.

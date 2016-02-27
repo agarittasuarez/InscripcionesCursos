@@ -34,8 +34,12 @@ namespace InscripcionesCursos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
+            {
                 SetUp();
+                if (Session["isSimulador"] != null && (bool)Session["isSimulador"])
+                    divLoginTools.Visible = false;
+            }
         }
 
         #endregion
@@ -286,10 +290,10 @@ namespace InscripcionesCursos
 
                         if (coleccionDniStatistics.IndexOf(loggedUser.DNI.ToString()) != -1)
                             liTools.Visible = liQueries.Visible = liTextsChange.Visible = liInterface.Visible = true;
-                        
-                        divLoginTools.Visible = true;
+
                         if (Session["user"] != null && Session["userEmployee"] != null)
                             menuSimulador.Visible = true;
+                        divLoginTools.Visible = true;    
                     }
                     else
                     {

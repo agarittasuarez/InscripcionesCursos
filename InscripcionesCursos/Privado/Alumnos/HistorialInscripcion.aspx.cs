@@ -160,7 +160,7 @@ namespace InscripcionesCursos
                 historicoInscripcion = new Inscripcion();
                 historicoInscripcion.DNI = ((Usuario)Session["user"]).DNI;
                 historicoInscripcion.TurnoInscripcion = turno;
-                historicoInscripcion.IdTipoInscripcion = tipoInscripcion;
+                historicoInscripcion.IdTipoInscripcion = GetIdTipoInscripcion(tipoInscripcion);
 
                 GridResultados.DataSource = RemoveDuplicates(InscripcionDTO.GetStudentInscriptions(historicoInscripcion));
                 Session.Add("inscripciones", GridResultados.DataSource);
@@ -176,6 +176,17 @@ namespace InscripcionesCursos
                 log.WriteLog(ex.Message, "GetStudentInscriptions", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
+        }
+
+        private string GetIdTipoInscripcion(string tipoInscripcion)
+        {
+            switch (tipoInscripcion)
+            {
+                case "Exámenes Libres":
+                    return "E";
+                default:
+                    return "P";
+            }                
         }
 
         /// <summary>
@@ -295,7 +306,12 @@ namespace InscripcionesCursos
                     if ((Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 2) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 5) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 7) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 10))
                         dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"]).ToString() + "</div>");
                     else
-                        dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"]).ToString());
+                    {
+                        if (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 3)
+                            dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailCursoVerano"]).ToString() + "</div>");
+                        else
+                            dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmail"]).ToString());
+                    }                        
 
                     scriptingBuilder.Append("<script type='text/javascript'>");
                     scriptingBuilder.Append("var win=null;");

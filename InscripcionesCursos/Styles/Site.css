@@ -21,10 +21,11 @@ body
 	margin: 0 auto;
 }
 
-.contenedorCentro
+.contentPlan
 {
 	width: 734px;
 	margin: 0 auto;
+	float: right;
 }
 
 a:link
@@ -688,6 +689,7 @@ div.accountInfo
 {
 	width:600px;
 	padding: 35px 50px;
+	float: left;
 }
 
 .textoAngostoAlumnos p

@@ -18,13 +18,13 @@
                 <asp:Label ID="lblQuestion2" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionVision")%></asp:Label>
             </div>
             <div class="contenedorRadioButton">
-                <asp:RadioButton runat="server" ID="rbOption3" GroupName="Options2" Text="SI" />
-                <asp:RadioButton runat="server" ID="rbOption4" GroupName="Options2" Text="NO" />
+                <asp:RadioButton runat="server" ID="rbOption3" GroupName="Options2" Text="SI" OnCheckedChanged="rbOptionVision_OnCheckedChanged" AutoPostBack="True"/>
+                <asp:RadioButton runat="server" ID="rbOption4" GroupName="Options2" Text="NO" OnCheckedChanged="rbOptionVision_OnCheckedChanged" AutoPostBack="True"/>
             </div>
         </div>
         <div class="contenedorCuestionario">
             <div class="contenedorPregunta">
-                <asp:Label ID="lblQuestion3" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionAudicion")%></asp:Label>
+                <asp:Label ID="Label1" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionLentes")%></asp:Label>
             </div>
             <div class="contenedorRadioButton">
                 <asp:RadioButton runat="server" ID="rbOption5" GroupName="Options3" Text="SI" />
@@ -33,16 +33,16 @@
         </div>
         <div class="contenedorCuestionario">
             <div class="contenedorPregunta">
-                <asp:Label ID="lblQuestion4" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionMotriz")%></asp:Label>
+                <asp:Label ID="lblQuestion3" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionAudicion")%></asp:Label>
             </div>
             <div class="contenedorRadioButton">
-                <asp:RadioButton runat="server" ID="rbOption7" GroupName="Options4" Text="SI" />
-                <asp:RadioButton runat="server" ID="rbOption8" GroupName="Options4" Text="NO" />
+                <asp:RadioButton runat="server" ID="rbOption7" GroupName="Options4" Text="SI" OnCheckedChanged="rbOptionAudicion_OnCheckedChanged" AutoPostBack="True"/>
+                <asp:RadioButton runat="server" ID="rbOption8" GroupName="Options4" Text="NO" OnCheckedChanged="rbOptionAudicion_OnCheckedChanged" AutoPostBack="True"/>
             </div>
         </div>
-        <div class="contenedorCuestionario">
+                <div class="contenedorCuestionario">
             <div class="contenedorPregunta">
-                <asp:Label ID="lblQuestion5" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionAgarre")%></asp:Label>
+                <asp:Label ID="Label2" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionAudifonos")%></asp:Label>
             </div>
             <div class="contenedorRadioButton">
                 <asp:RadioButton runat="server" ID="rbOption9" GroupName="Options5" Text="SI" />
@@ -51,11 +51,38 @@
         </div>
         <div class="contenedorCuestionario">
             <div class="contenedorPregunta">
-                <asp:Label ID="lblQuestion6" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionHabla")%></asp:Label>
+                <asp:Label ID="lblQuestion4" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionMotriz")%></asp:Label>
             </div>
             <div class="contenedorRadioButton">
                 <asp:RadioButton runat="server" ID="rbOption11" GroupName="Options6" Text="SI" />
                 <asp:RadioButton runat="server" ID="rbOption12" GroupName="Options6" Text="NO" />
+            </div>
+        </div>
+        <div class="contenedorCuestionario">
+            <div class="contenedorPregunta">
+                <asp:Label ID="lblQuestion5" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionAgarre")%></asp:Label>
+            </div>
+            <div class="contenedorRadioButton">
+                <asp:RadioButton runat="server" ID="rbOption13" GroupName="Options7" Text="SI" />
+                <asp:RadioButton runat="server" ID="rbOption14" GroupName="Options7" Text="NO" />
+            </div>
+        </div>
+        <div class="contenedorCuestionario">
+            <div class="contenedorPregunta">
+                <asp:Label ID="lblQuestion6" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionHabla")%></asp:Label>
+            </div>
+            <div class="contenedorRadioButton">
+                <asp:RadioButton runat="server" ID="rbOption15" GroupName="Options8" Text="SI" OnCheckedChanged="rbOptionHabla_OnCheckedChanged" AutoPostBack="True"/>
+                <asp:RadioButton runat="server" ID="rbOption16" GroupName="Options8" Text="NO" OnCheckedChanged="rbOptionHabla_OnCheckedChanged" AutoPostBack="True"/>
+            </div>
+        </div>
+                <div class="contenedorCuestionario">
+            <div class="contenedorPregunta">
+                <asp:Label ID="Label3" runat="server"><%= ConfigurationManager.AppSettings.Get("LabelPreguntaLimitacionDislexia")%></asp:Label>
+            </div>
+            <div class="contenedorRadioButton">
+                <asp:RadioButton runat="server" ID="rbOption17" GroupName="Options9" Text="SI" />
+                <asp:RadioButton runat="server" ID="rbOption18" GroupName="Options9" Text="NO" />
             </div>
         </div>
         <div class="contenedorCuestionario">
