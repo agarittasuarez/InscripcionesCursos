@@ -471,10 +471,13 @@ namespace InscripcionesCursos
                     sbLine.Append((listAlumnos[i].Email ?? "          ") + ";");
                     sbLine.Append((listAlumnos[i].Limitacion ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionVision ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].Lentes ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionAudicion ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].Audifonos ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionMotriz ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionAgarre ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionHabla ?? " ") + ";");
+                    sbLine.Append((listAlumnos[i].Dislexia ?? " ") + ";");
                     sbLine.Append((listAlumnos[i].LimitacionOtra ?? " ") + ";");
                     sbLine.Append(" ;");
                     sbLine.Append("        ;");
@@ -524,25 +527,29 @@ namespace InscripcionesCursos
                             alumno.CuatrimestreAnioIngreso = tmpArray[5].Trim().Length != 0 ? tmpArray[5].Trim() : null;
                             alumno.CuatrimestreAnioReincorporacion = tmpArray[6].Trim().Length != 0 ? tmpArray[6].Trim() : null;
                             alumno.IdCargo = 2;
-                            alumno.LimitacionRelevada = tmpArray[8].Trim().Length > 0;
-                            alumno.Limitacion = tmpArray[8].Trim().Length != 0 ? tmpArray[8].Trim() : null;
-                            alumno.LimitacionVision = tmpArray[9].Trim().Length != 0 ? tmpArray[9].Trim() : null;
-                            alumno.LimitacionAudicion = tmpArray[10].Trim().Length != 0 ? tmpArray[10].Trim() : null;
-                            alumno.LimitacionMotriz = tmpArray[11].Trim().Length != 0 ? tmpArray[11].Trim() : null;
-                            alumno.LimitacionAgarre = tmpArray[12].Trim().Length != 0 ? tmpArray[12].Trim() : null;
-                            alumno.LimitacionHabla = tmpArray[13].Trim().Length != 0 ? tmpArray[13].Trim() : null;
-                            alumno.LimitacionOtra = tmpArray[14].Trim().Length != 0 ? tmpArray[14].Trim() : null;
+                            alumno.Email = tmpArray[8].Trim();
+                            alumno.LimitacionRelevada = tmpArray[9].Trim().Length > 0;
+                            alumno.Limitacion = tmpArray[9].Trim().Length != 0 ? tmpArray[9].Trim() : null;
+                            alumno.LimitacionVision = tmpArray[10].Trim().Length != 0 ? tmpArray[10].Trim() : null;
+                            alumno.Lentes = tmpArray[11].Trim().Length != 0 ? tmpArray[11].Trim() : null;
+                            alumno.LimitacionAudicion = tmpArray[12].Trim().Length != 0 ? tmpArray[12].Trim() : null;
+                            alumno.Audifonos = tmpArray[13].Trim().Length != 0 ? tmpArray[13].Trim() : null;
+                            alumno.LimitacionMotriz = tmpArray[14].Trim().Length != 0 ? tmpArray[14].Trim() : null;
+                            alumno.LimitacionAgarre = tmpArray[15].Trim().Length != 0 ? tmpArray[15].Trim() : null;
+                            alumno.LimitacionHabla = tmpArray[16].Trim().Length != 0 ? tmpArray[16].Trim() : null;
+                            alumno.Dislexia = tmpArray[17].Trim().Length != 0 ? tmpArray[17].Trim() : null;
+                            alumno.LimitacionOtra = tmpArray[18].Trim().Length != 0 ? tmpArray[18].Trim() : null;
 
-                            if (tmpArray[15].Trim() != string.Empty)
+                            if (tmpArray[19].Trim() != string.Empty)
                             {
-                                switch(tmpArray[15].Trim().ToUpper())
+                                switch(tmpArray[19].Trim().ToUpper())
                                 {
                                     case IdMovimientoBaja:
                                         UsuarioDTO.DeactivateAccount(Convert.ToInt32(tmpArray[0]));
                                         changedAccount = true;
                                         break;
                                     case IdMovimientoCambio:
-                                        if (tmpArray[16].Trim() != string.Empty)
+                                        if (tmpArray[20].Trim() != string.Empty)
                                             UsuarioDTO.TransferData(Convert.ToInt32(tmpArray[0].Trim()), Convert.ToInt32(tmpArray[16].Trim()));
                                         changedAccount = true;
                                         break;

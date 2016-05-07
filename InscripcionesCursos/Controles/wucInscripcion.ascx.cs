@@ -88,8 +88,7 @@ namespace InscripcionesCursos
                         }
                     }
 
-                    FillComboDeptoAndCarrera();
-                    
+                    FillComboDeptoAndCarrera();                    
 
                     listCarro = new List<Carro>();
                     listCarro = (List<Carro>)Session["carro"];
@@ -102,7 +101,8 @@ namespace InscripcionesCursos
                         ShowEmptyCartHeader(false);
                     }
                 }
-                SetFechaExamenColumn();
+                if(((List<InscripcionActiva>)(Session["inscripcionesActivas"])).Count > 0)
+                    SetFechaExamenColumn();
             }
             catch (Exception ex)
             {
@@ -344,7 +344,7 @@ namespace InscripcionesCursos
 
         private void SetFechaExamenColumn()
         {
-            if (Session["inscripcionesActivas"] == null || ((List<InscripcionActiva>)(Session["inscripcionesActivas"]))[0].IdTipoInscripcion != InscriptionTypeExam)
+            if (((List<InscripcionActiva>)(Session["inscripcionesActivas"]))[0].IdTipoInscripcion != InscriptionTypeExam)
             {
                 ((GridView)(wucCarro.FindControl("GridCarro"))).Columns[3].Visible = false;
                 GridResultados.Columns[2].Visible = false;
