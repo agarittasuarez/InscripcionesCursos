@@ -101,7 +101,7 @@ namespace InscripcionesCursos
                         ShowEmptyCartHeader(false);
                     }
                 }
-                if(((List<InscripcionActiva>)(Session["inscripcionesActivas"])).Count > 0)
+                if (Session["inscripcionesActivas"] != null && ((List<InscripcionActiva>)(Session["inscripcionesActivas"])).Count > 0)
                     SetFechaExamenColumn();
             }
             catch (Exception ex)

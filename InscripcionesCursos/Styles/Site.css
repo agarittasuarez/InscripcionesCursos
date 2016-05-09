@@ -21,6 +21,13 @@ body
 	margin: 0 auto;
 }
 
+.contenedorCentro
+{
+	width: 734px;
+	margin: 0 auto;
+	float: left;
+}
+
 .contentPlan
 {
 	width: 734px;
