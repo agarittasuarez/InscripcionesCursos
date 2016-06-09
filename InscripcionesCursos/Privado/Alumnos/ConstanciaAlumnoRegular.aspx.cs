@@ -48,7 +48,7 @@ namespace InscripcionesCursos.Privado.Alumnos
                     {
                         divDatosConstancia.Visible = false;
                         divNoDisponible.Visible = true;
-                        lblMsjNoDisponible.Text = ConfigurationManager.AppSettings["ContentHistorialInscripcionNoDisponible"];
+                        lblMsjNoDisponible.Text = ConfigurationManager.AppSettings["ContentConstanciaRegularidadNoDisponible"];
                     }
                 }
             }
