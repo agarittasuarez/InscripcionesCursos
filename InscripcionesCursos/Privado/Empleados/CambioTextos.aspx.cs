@@ -127,6 +127,16 @@ namespace InscripcionesCursos.Privado.Empleados
                     listRBHabilitaInscripcion.SelectedIndex = 0;
                     imgEstadoInscripcion.ImageUrl = IcoPlus;
                 }
+                if (Convert.ToBoolean(ConfigurationManager.AppSettings["ConstanciaRegularidadDisable"]))
+                {
+                    listRBHabilitaConstancia.SelectedIndex = 1;
+                    imgEstadoConstancia.ImageUrl = IcoMinus;
+                }
+                else
+                {
+                    listRBHabilitaConstancia.SelectedIndex = 0;
+                    imgEstadoConstancia.ImageUrl = IcoPlus;
+                }
             }
             catch (Exception ex)
             {
@@ -191,6 +201,12 @@ namespace InscripcionesCursos.Privado.Empleados
                                 break;
                             case "InscripcionDisable":
                                 if (listRBHabilitaInscripcion.SelectedIndex == 0)
+                                    childNode.Attributes["value"].Value = "false";
+                                else
+                                    childNode.Attributes["value"].Value = "true";
+                                break;
+                            case "ConstanciaRegularidadDisable":
+                                if (listRBHabilitaConstancia.SelectedIndex == 0)
                                     childNode.Attributes["value"].Value = "false";
                                 else
                                     childNode.Attributes["value"].Value = "true";

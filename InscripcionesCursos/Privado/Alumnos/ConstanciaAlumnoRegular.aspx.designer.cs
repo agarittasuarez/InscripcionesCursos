@@ -22,6 +22,15 @@ namespace InscripcionesCursos.Privado.Alumnos {
         protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
+        /// divDatosConstancia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDatosConstancia;
+        
+        /// <summary>
         /// actionForm control.
         /// </summary>
         /// <remarks>
@@ -74,5 +83,23 @@ namespace InscripcionesCursos.Privado.Alumnos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEstado;
+        
+        /// <summary>
+        /// divNoDisponible control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNoDisponible;
+        
+        /// <summary>
+        /// lblMsjNoDisponible control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsjNoDisponible;
     }
 }

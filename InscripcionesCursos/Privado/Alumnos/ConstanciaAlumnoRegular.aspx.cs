@@ -30,16 +30,25 @@ namespace InscripcionesCursos.Privado.Alumnos
             {
                 if (!IsPostBack)
                 {
-                    if (!Utils.CheckLoggedUser(Session["user"], UserTypeStudent))
-                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
-
-                    if (!Utils.CheckAccountStatus(Session["user"], UserTypeStudent))
-                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlStudentPasswordChange"]);
-
-                    if ((((Usuario)Session["user"]).Estado.IndexOf("Activo") == -1) || (((Usuario)Session["user"]).CuatrimestreAnioIngreso == null))
+                    if (!Convert.ToBoolean(ConfigurationManager.AppSettings["ConstanciaRegularidadDisable"]))
                     {
-                        lblEstado.Visible = true;
-                        actionForm.Visible = false;
+                        if (!Utils.CheckLoggedUser(Session["user"], UserTypeStudent))
+                            Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
+
+                        if (!Utils.CheckAccountStatus(Session["user"], UserTypeStudent))
+                            Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlStudentPasswordChange"]);
+
+                        if ((((Usuario)Session["user"]).Estado.IndexOf("Activo") == -1) || (((Usuario)Session["user"]).CuatrimestreAnioIngreso == null))
+                        {
+                            lblEstado.Visible = true;
+                            actionForm.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        divDatosConstancia.Visible = false;
+                        divNoDisponible.Visible = true;
+                        lblMsjNoDisponible.Text = ConfigurationManager.AppSettings["ContentHistorialInscripcionNoDisponible"];
                     }
                 }
             }

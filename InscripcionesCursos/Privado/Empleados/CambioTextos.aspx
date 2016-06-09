@@ -269,6 +269,19 @@
                                         <asp:Image ID="imgEstadoInscripcion" runat="server" />
                                     </div>
                                 </div>
+                                <br />
+                                <div class="labelRadioButton">
+                                    <asp:Label ID="lblHabilitarConstanciaRegularidad" runat="server"><%= ConfigurationManager.AppSettings["LabelHabilitaConstanciaRegularidad"]%></asp:Label>
+                                    <div class="radioButton">
+                                        <asp:RadioButtonList id="listRBHabilitaConstancia" runat="server" RepeatDirection="Horizontal">
+                                            <asp:ListItem Text="Habilitar"></asp:ListItem>
+                                            <asp:ListItem Text="Deshabilitar"></asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </div>
+                                    <div class="labelRadioButton">
+                                        <asp:Image ID="imgEstadoConstancia" runat="server" />
+                                    </div>
+                                </div>
                             </div>
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>

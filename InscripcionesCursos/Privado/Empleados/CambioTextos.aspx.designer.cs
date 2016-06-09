@@ -472,6 +472,33 @@ namespace InscripcionesCursos.Privado.Empleados {
         protected global::System.Web.UI.WebControls.Image imgEstadoInscripcion;
         
         /// <summary>
+        /// lblHabilitarConstanciaRegularidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHabilitarConstanciaRegularidad;
+        
+        /// <summary>
+        /// listRBHabilitaConstancia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList listRBHabilitaConstancia;
+        
+        /// <summary>
+        /// imgEstadoConstancia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgEstadoConstancia;
+        
+        /// <summary>
         /// btnGuardar control.
         /// </summary>
         /// <remarks>
