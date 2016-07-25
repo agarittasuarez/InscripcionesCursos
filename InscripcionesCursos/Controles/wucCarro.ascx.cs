@@ -29,6 +29,7 @@ namespace InscripcionesCursos
         private int idVuelta = 0;
         private string siValue = "S";
         private string noValue = "N";
+        const string InscriptionTypeExam = "E";
 
         #endregion
 
@@ -93,6 +94,8 @@ namespace InscripcionesCursos
                             e.Row.Enabled = false;
                             e.Row.CssClass = "filaDeshabilitada";
                         }
+                        if (((List<InscripcionActiva>)(Session["inscripcionesActivas"]))[0].IdTipoInscripcion != InscriptionTypeExam)
+                            e.Row.Cells[3].Visible = false;
                     }
                 }
             }

@@ -303,7 +303,8 @@ namespace InscripcionesCursos
                     }
                     dataPrint.Append("</table><br /><br /><br />");
 
-                    if ((Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 2) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 5) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 7) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 10))
+                    if ((Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 2 && inscripciones.Rows[0]["IdTipoInscripcion"].ToString() != IdTipoInscripcionPromocion)
+                        || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 5) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 7) || (Convert.ToDateTime(inscripciones.Rows[0]["TurnoInscripcion"]).Month == 10))
                         dataPrint.Append("<div>" + HttpUtility.HtmlDecode(ConfigurationManager.AppSettings["ContentFooterHistoricoEmailExamen"]).ToString() + "</div>");
                     else
                     {
