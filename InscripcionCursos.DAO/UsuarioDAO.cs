@@ -515,6 +515,19 @@ namespace InscripcionesCursos.DAO
             SqlConnection.ClearAllPools();
         }
 
+        /// <summary>
+        /// Export students
+        /// </summary>
+        /// <returns>List of students</returns>
+        public DataTable ExportPadron()
+        {
+            using (DataTable dt = SqlClientUtility.ExecuteDataTable(connectionStringName, CommandType.StoredProcedure, "UsuarioExportPadron"))
+            {
+                SqlConnection.ClearAllPools();
+                return dt;
+            }
+        }
+
 		/// <summary>
 		/// Creates a new instance of the Usuario class and populates it with data from the specified SqlDataReader.
 		/// </summary>

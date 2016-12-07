@@ -35,6 +35,9 @@
         }
     </script>
     <asp:UpdatePanel ID="updateProceso" runat="server" UpdateMode="Always">
+        <Triggers>
+            <asp:PostBackTrigger ControlID="tabContainer" />
+        </Triggers>
         <ContentTemplate>            
             <div class="divTabContainer">
                 <asp:Label ID="invisibleTarget" runat="server" Style="display: none" />
@@ -216,6 +219,74 @@
                                     <PagerSettings Mode="Numeric"/>
                                     <PagerStyle CssClass="gridProcessPager" />
                                 </asp:GridView>
+                            </div>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel ID="tabPanelExport" runat="server" OnDemandMode="Always" >
+                        <HeaderTemplate>
+                            <%= System.Configuration.ConfigurationManager.AppSettings["LabelTabExportFiles"]%>
+                        </HeaderTemplate>
+                        <ContentTemplate>
+                            <div style="float:left">
+                                <ajaxToolkit:Accordion
+                                    ID="MyAccordion"
+                                    runat="Server"
+                                    SelectedIndex="0"
+                                    HeaderCssClass="accordionHeader"
+                                    HeaderSelectedCssClass="accordionHeaderSelected"
+                                    ContentCssClass="accordionContent"
+                                    AutoSize="None"
+                                    FadeTransitions="true"
+                                    TransitionDuration="250"
+                                    FramesPerSecond="40"
+                                    RequireOpenedPane="false"
+                                    SuppressHeaderPostbacks="true">
+                                    <Panes>
+                                        <ajaxToolkit:AccordionPane
+                                            runat="server"
+                                            id="accordPaneAlumnos"
+                                            HeaderCssClass="accordionHeader"
+                                            HeaderSelectedCssClass="accordionHeaderSelected"
+                                            ContentCssClass="accordionContent">
+                                            <Header>
+                                                <asp:Label ID="lblAccordionAlumnos" runat="server">
+                                                    <%= System.Configuration.ConfigurationManager.AppSettings["LabelAccordionAlumnos"]%>
+                                                </asp:Label>
+                                            </Header>
+                                            <Content>
+                                                    <div style="vertical-align: middle">
+                                                        <asp:Label ID="lblExtraerAlumnos" runat="server" CssClass="labelDescripcion">
+                                                            <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionAlumnos"]%>
+                                                        </asp:Label>
+                                                        <asp:Button ID="btnExtraerAlumnos" runat="server" Text="" 
+                                                            CssClass="buttonDownload" OnClick="btnExtraerAlumnos_Click" />
+                                                    </div>
+                                            </Content>
+                                        </ajaxToolkit:AccordionPane>
+
+                                        <ajaxToolkit:AccordionPane
+                                            runat="server"
+                                            id="accordPaneInscripciones"
+                                            HeaderCssClass="accordionHeader"
+                                            HeaderSelectedCssClass="accordionHeaderSelected"
+                                            ContentCssClass="accordionContent">
+                                            <Header>
+                                                <asp:Label ID="lblAccordionInscripciones" runat="server">
+                                                    <%= System.Configuration.ConfigurationManager.AppSettings["LabelAccordionInscripciones"]%>
+                                                </asp:Label>
+                                            </Header>
+                                            <Content>
+                                                <div>
+                                                    <asp:Label ID="lblExtraerInscripciones" runat="server" CssClass="labelDescripcion">
+                                                        <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionInscripciones"]%>
+                                                    </asp:Label>
+                                                    <asp:Button ID="btnExtraerInscripciones" runat="server" Text="" 
+                                                        CssClass="buttonDownload" />
+                                                </div>
+                                            </Content>
+                                        </ajaxToolkit:AccordionPane>
+                                    </Panes>
+                                </ajaxToolkit:Accordion>
                             </div>
                         </ContentTemplate>
                     </ajaxToolkit:TabPanel>

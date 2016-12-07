@@ -112,11 +112,16 @@
     <Content Include="img\header.gif" />
     <Content Include="img\header_impresion.gif" />
     <Content Include="img\header_mail.gif" />
+    <Content Include="img\horizontal_d_blue_classic_bg.png" />
+    <Content Include="img\horizontal_d_fuschia_classic_active_bg.png" />
     <Content Include="img\horizontal_d_fuschia_classic_bg.png" />
+    <Content Include="img\horizontal_d_light_blue_classic_bg.png" />
     <Content Include="img\ico_check.png" />
     <Content Include="img\ico_delete.gif" />
     <Content Include="img\ico_detail.png" />
     <Content Include="img\ico_detail_hover.png" />
+    <Content Include="img\ico_download.png" />
+    <Content Include="img\ico_download_hover.png" />
     <Content Include="img\ico_facebook.png" />
     <Content Include="img\ico_loading.gif" />
     <Content Include="img\ico_minus.png" />

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using InscripcionesCursos.DAO;
 using InscripcionesCursos.BE;
+using System.Data;
 
 namespace InscripcionesCursos.DTO
 {
@@ -216,6 +217,23 @@ namespace InscripcionesCursos.DTO
             {
                 throw ex;
                 throw;
+            }
+        }
+
+        /// <summary>
+        /// Method to get all students who have activated account
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable ExportPadron()
+        {
+            try
+            {
+                var usuarioDAO = new UsuarioDAO(connectionString);
+                return usuarioDAO.ExportPadron();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

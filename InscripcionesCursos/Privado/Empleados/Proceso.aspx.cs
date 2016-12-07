@@ -538,6 +538,16 @@ namespace InscripcionesCursos
             UploadAsyncFile(sender, e);
         }
 
+        /// <summary>
+        /// Event to download Padron of Alumnos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExtraerAlumnos_Click(object sender, EventArgs e)
+        {
+            DownloadPadronAlumnos();
+        }
+
         #endregion
 
         #region Methods
@@ -838,6 +848,26 @@ namespace InscripcionesCursos
                     break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Method to download all active students in a xls file
+        /// </summary>
+        private void DownloadPadronAlumnos()
+        {           
+            Response.Clear();
+            Response.ClearContent();
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            Response.AddHeader("content-disposition", "attachment;filename=Export.Padron.Alumnos.xls");
+
+            // Create a dynamic control, populate and render it
+            GridView excel = new GridView();
+            excel.DataSource = UsuarioDTO.ExportPadron();
+            excel.DataBind();
+            excel.RenderControl(new HtmlTextWriter(Response.Output));
+
+            Response.Flush();
+            Response.End();
         }
 
         #endregion
