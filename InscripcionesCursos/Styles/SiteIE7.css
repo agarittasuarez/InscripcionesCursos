@@ -1563,3 +1563,83 @@ border-bottom:0px;
 #HDropdown-fuschia-classic li ul li a:hover {
     color:#941A63;
 }
+
+/* ACCORDION */
+.accordionHeader
+{
+    border: none;
+    color: white;
+    background:url(../img/horizontal_d_fuschia_classic_bg.png) repeat-x top;
+    font-family: Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 970px;
+}
+ 
+#master_content .accordionHeader a
+{
+    color: #FFFFFF;
+    background: none;
+    text-decoration: none;
+}
+ 
+#master_content .accordionHeader a:hover
+{
+    background: none;
+    text-decoration: underline;
+}
+ 
+.accordionHeaderSelected
+{
+    border: none;
+    color: white;
+    background:url(../img/horizontal_d_fuschia_classic_active_bg.png) repeat-x top;
+    font-family: Arial, Sans-Serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 970px;
+}
+
+.labelDescripcion
+{
+    margin: 20px 210px 10px 10px;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.labelDescripcionInscripciones
+{
+    margin: 20px 20px 10px 10px;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.buttonDownload
+{
+	background-image: url(../img/ico_download.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+    border-style: none;
+    font-weight: normal;
+    height: 24px;
+    margin: 14px 0px 0px 10px;
+    width: 24px;
+    position: absolute;
+}
+
+.buttonDownload:hover
+{
+	background-image: url(../img/ico_download_hover.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+}

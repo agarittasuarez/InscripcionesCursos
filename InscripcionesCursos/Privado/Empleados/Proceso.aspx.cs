@@ -21,6 +21,8 @@ namespace InscripcionesCursos
     {
         #region Constants & Variables
 
+        private string fileNameInscripcion = ConfigurationManager.AppSettings["FileNameInscripcion"];
+        private string fileNamePadron = String.Format(ConfigurationManager.AppSettings["FileNamePadron"], DateTime.Now.Year + "." + DateTime.Now.Month + "." + DateTime.Now.Day);
         private const int UserTypeEmployee = 1;
         string coleccionDNIResend = ConfigurationManager.AppSettings["UserEmployeesResend"];
         const string ClaseInicioInscripcion = "FormatoInicioInscripcion";
@@ -38,6 +40,7 @@ namespace InscripcionesCursos
 
         ServicioImportacion importacion;
         List<TipoInscripcion> listTipoInscripcion;
+        List<string> listTurnos;
 
         #endregion
 
@@ -545,7 +548,39 @@ namespace InscripcionesCursos
         /// <param name="e"></param>
         protected void btnExtraerAlumnos_Click(object sender, EventArgs e)
         {
-            DownloadPadronAlumnos();
+            DownloadExcelFile(fileNamePadron);
+        }
+
+        /// <summary>
+        /// Event to download Inscripciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnExtraerInscripciones_Click(object sender, EventArgs e)
+        {
+            if (cboInscripciones.SelectedIndex != 0)
+                DownloadTxtFiles(1, fileNameInscripcion);
+            else
+            {
+                lblMessagePopUp.Text = ConfigurationManager.AppSettings["MessageExtractSelectTurno"];
+                mpeMessage.Show();
+            }
+        }
+
+        /// <summary>
+        /// Event to fill the Vuelta Turno drop down list info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void cboInscripciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboInscripciones.SelectedIndex != 0)
+            {
+                GetVueltasTurno(cboInscripciones.SelectedValue.Split('-')[0]);
+                cboInscripcionesVuelta.Enabled = true;
+            }
+            else
+                cboInscripcionesVuelta.Enabled = false;
         }
 
         #endregion
@@ -595,6 +630,16 @@ namespace InscripcionesCursos
                 cboTipoImportacionError.Items.Insert(cboTipoImportacionError.Items.Count, new ListItem(ConfigurationManager.AppSettings["ContentComboImportacionAll"], "*"));
 
                 txtFechaProgramada.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+                //Combos Export Inscripciones
+                listTurnos = new List<string>();
+                //listTurnos = ExtractTurnos(InscripcionDTO.GetAllTurnos(new Inscripcion()));
+                listTurnos = ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion())).GroupBy(i => i).Select(group => group.Key).ToList();
+
+                cboInscripciones.DataSource = listTurnos;
+                cboInscripciones.DataBind();
+                cboInscripciones.Items.Insert(0, new ListItem(ConfigurationManager.AppSettings["ContentComboTurnoDefault"], "0"));
+                //cboInscripciones.Items.Insert(1, new ListItem(ConfigurationManager.AppSettings["ContentComboExtractAll"], "*"));
             }
             catch (Exception ex)
             {
@@ -851,14 +896,53 @@ namespace InscripcionesCursos
         }
 
         /// <summary>
+        /// Method to create and download extract txt files
+        /// </summary>
+        private void DownloadTxtFiles(int option, string fileName)
+        {
+            try
+            {
+                string FilePath = ConfigurationManager.AppSettings["FilePath"];
+
+                using (System.IO.StreamWriter sw = new System.IO.StreamWriter(FilePath + fileName))
+                {
+                    switch (option)
+                    {
+                        case 1:
+                            sw.WriteLine(ExtractInscripciones());
+                            break;
+                    }
+                    sw.Close();
+                }
+
+                System.IO.FileStream fs = null;
+                fs = System.IO.File.Open(FilePath + fileName, System.IO.FileMode.Open);
+                byte[] btFile = new byte[fs.Length];
+                fs.Read(btFile, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+
+                Response.AddHeader("Content-disposition", "attachment; filename=" + fileName);
+                Response.ContentType = "application/octet-stream";
+                Response.BinaryWrite(btFile);
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "DownloadTxtFiles", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Method to download all active students in a xls file
         /// </summary>
-        private void DownloadPadronAlumnos()
+        private void DownloadExcelFile(string fileName)
         {           
             Response.Clear();
             Response.ClearContent();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-            Response.AddHeader("content-disposition", "attachment;filename=Export.Padron.Alumnos.xls");
+            Response.AddHeader("content-disposition", "attachment;filename=" + fileName);
 
             // Create a dynamic control, populate and render it
             GridView excel = new GridView();
@@ -868,6 +952,97 @@ namespace InscripcionesCursos
 
             Response.Flush();
             Response.End();
+        }
+
+        /// <summary>
+        /// Method to load the Vuelta of TurnoInscripcion selected
+        /// </summary>
+        /// <returns></returns>
+        private void GetVueltasTurno(string turno)
+        {
+            try
+            {
+                cboInscripcionesVuelta.DataSource = InscripcionDTO.GetVueltasByTurnoInscripcion(Convert.ToDateTime(turno));
+                cboInscripcionesVuelta.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "TraerVueltasTurno", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Method to extract off TurnoInscripcion on datatable
+        /// </summary>
+        /// <returns></returns>
+        private List<string> ExtractTurnosAndTipoInscripcion(DataTable dataTable)
+        {
+            try
+            {
+                List<string> list = new List<string>();
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                    list.Add(dataTable.Rows[i]["TurnoInscripcionBreve"].ToString() + "- " + dataTable.Rows[i]["Descripcion"].ToString());
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "ExtractTurnosAndTipoInscripcion", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Method to download all Inscripciones for the Turno selected
+        /// </summary>
+        /// <returns></returns>
+        private string ExtractInscripciones()
+        {
+            try
+            {
+                List<Inscripcion> listInscripciones = new List<Inscripcion>();
+                StringBuilder sbLine = new StringBuilder();
+                StringBuilder sbFile = new StringBuilder();
+                string sFullFecha = String.Empty;
+                string sFullDni = String.Empty;
+
+                listInscripciones = InscripcionDTO.GetInscripcionesByTurnoInscripcionIdVuelta(cboInscripciones.SelectedValue.Split('-')[0], Convert.ToInt32(cboVueltaInscripcion.SelectedValue));
+                for (int i = 0; i < listInscripciones.Count; i++)
+                {
+                    sbLine.Append(listInscripciones[i].IdTipoInscripcion.ToString() + ";");
+                    sbLine.Append(listInscripciones[i].TurnoInscripcion.ToString("MM/yyyy") + ";");
+                    sbLine.Append(listInscripciones[i].IdVuelta.ToString() + ";");
+                    sbLine.Append(listInscripciones[i].IdMateria.ToString() + ";");
+                    sbLine.Append(listInscripciones[i].CatedraComision + ";");
+                    sbLine.Append(listInscripciones[i].DNI.ToString().PadLeft(8, '0') + ";");
+                    sbLine.Append(listInscripciones[i].IdEstadoInscripcion + ";");
+                    sbLine.Append(listInscripciones[i].OrigenInscripcion.PadLeft(1, ' ') + ";");
+                    sbLine.Append(listInscripciones[i].FechaAltaInscripcion.ToString("dd/MM/yyyy") + ";");
+                    sbLine.Append(listInscripciones[i].FechaAltaInscripcion.ToString("HH:mm") + ";");
+                    sbLine.Append(listInscripciones[i].OrigenModificacion.PadLeft(1, ' ') + ";");
+                    sbLine.Append(listInscripciones[i].FechaModificacionInscripcion.ToString("dd/MM/yyyy") != "01/01/0001" ? listInscripciones[i].FechaModificacionInscripcion.ToString("dd/MM/yyyy") + ";" : String.Empty.PadLeft(10, ' ') + ";");
+                    sbLine.Append(listInscripciones[i].FechaModificacionInscripcion.ToString("dd/MM/yyyy") != "01/01/0001" ? listInscripciones[i].FechaModificacionInscripcion.ToString("HH:mm") + ";" : String.Empty.PadLeft(5, ' ') + ";");
+                    sbLine.Append(listInscripciones[i].DNIEmpleadoAlta.ToString().PadLeft(8, '0') + ";");
+                    sbLine.Append(listInscripciones[i].DNIEmpleadoMod.ToString().PadLeft(8, '0'));
+
+                    if (i < listInscripciones.Count - 1)
+                        sbLine.AppendLine();
+
+                    sFullDni = String.Empty;
+                    sFullFecha = String.Empty;
+                }
+                return sbLine.ToString();
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "ExtractInscripciones", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
         }
 
         #endregion

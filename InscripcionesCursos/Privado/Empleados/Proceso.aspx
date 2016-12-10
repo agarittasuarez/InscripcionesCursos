@@ -34,9 +34,9 @@
                 $('#MainContent_tabContainer_tabPanelStart_asyncFile_ctl04').css('background-color', '#00FF00');
         }
     </script>
-    <asp:UpdatePanel ID="updateProceso" runat="server" UpdateMode="Always">
+    <asp:UpdatePanel ID="updateProceso" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
         <Triggers>
-            <asp:PostBackTrigger ControlID="tabContainer" />
+            <asp:AsyncPostBackTrigger ControlID="tabContainer" />
         </Triggers>
         <ContentTemplate>            
             <div class="divTabContainer">
@@ -254,13 +254,19 @@
                                                 </asp:Label>
                                             </Header>
                                             <Content>
-                                                    <div style="vertical-align: middle">
-                                                        <asp:Label ID="lblExtraerAlumnos" runat="server" CssClass="labelDescripcion">
-                                                            <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionAlumnos"]%>
-                                                        </asp:Label>
-                                                        <asp:Button ID="btnExtraerAlumnos" runat="server" Text="" 
-                                                            CssClass="buttonDownload" OnClick="btnExtraerAlumnos_Click" />
-                                                    </div>
+                                                    <asp:UpdatePanel ID="upExtractAlumnos" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
+                                                        <Triggers>
+                                                            <asp:PostBackTrigger ControlID="btnExtraerAlumnos" />
+                                                        </Triggers>
+                                                        <ContentTemplate>
+                                                            <div>
+                                                                <asp:Label ID="lblExtraerAlumnos" runat="server" CssClass="labelDescripcion">
+                                                                    <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionAlumnos"]%>
+                                                                </asp:Label>
+                                                                <asp:Button ID="btnExtraerAlumnos" runat="server" Text="" CssClass="buttonDownload" OnClick="btnExtraerAlumnos_Click" />
+                                                            </div>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
                                             </Content>
                                         </ajaxToolkit:AccordionPane>
 
@@ -276,13 +282,21 @@
                                                 </asp:Label>
                                             </Header>
                                             <Content>
-                                                <div>
-                                                    <asp:Label ID="lblExtraerInscripciones" runat="server" CssClass="labelDescripcion">
-                                                        <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionInscripciones"]%>
-                                                    </asp:Label>
-                                                    <asp:Button ID="btnExtraerInscripciones" runat="server" Text="" 
-                                                        CssClass="buttonDownload" />
-                                                </div>
+                                                <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
+                                                    <Triggers>
+                                                        <asp:PostBackTrigger ControlID="btnExtraerInscripciones" />
+                                                    </Triggers>
+                                                    <ContentTemplate>
+                                                        <div>
+                                                            <asp:Label ID="lblExtraerInscripciones" runat="server" CssClass="labelDescripcionInscripciones">
+                                                                <%= ConfigurationManager.AppSettings["ContentMainTitleExtraccionInscripciones"]%>
+                                                            </asp:Label>
+                                                            <asp:DropDownList ID="cboInscripciones" runat="server" onselectedindexchanged="cboInscripciones_SelectedIndexChanged" AutoPostBack="True" />
+                                                            <asp:DropDownList ID="cboInscripcionesVuelta" runat="server" Enabled="false" />
+                                                            <asp:Button ID="btnExtraerInscripciones" runat="server" Text="" CssClass="buttonDownload" OnClick="btnExtraerInscripciones_Click"/>
+                                                        </div>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
                                             </Content>
                                         </ajaxToolkit:AccordionPane>
                                     </Panes>

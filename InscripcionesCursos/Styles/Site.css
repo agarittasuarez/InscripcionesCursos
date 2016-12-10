@@ -1608,9 +1608,20 @@ border-bottom:0px;
 
 .labelDescripcion
 {
-    margin: 50px 150px 50px 10px;
+    margin: 20px 210px 10px 10px;
     font-family: Arial, Sans-Serif;
     font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.labelDescripcionInscripciones
+{
+    margin: 20px 20px 10px 10px;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .buttonDownload
@@ -1620,9 +1631,10 @@ border-bottom:0px;
 	background-color: transparent;
     border-style: none;
     font-weight: normal;
-    height: 68px;
-    margin: 6px 0;
-    width: 68px;
+    height: 24px;
+    margin: 14px 0px 0px 10px;
+    width: 24px;
+    position: absolute;
 }
 
 .buttonDownload:hover
