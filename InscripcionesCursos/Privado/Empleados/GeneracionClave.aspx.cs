@@ -17,6 +17,7 @@ namespace InscripcionesCursos
         #region Constants & Variables
 
         const int UserTypeEmployee = 1;
+        const int MinUserLevel = 3;
 
         #endregion
 
@@ -31,6 +32,10 @@ namespace InscripcionesCursos
 
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
+
+                if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
+
                 Session.Remove("user");
             }
             catch (ThreadAbortException)

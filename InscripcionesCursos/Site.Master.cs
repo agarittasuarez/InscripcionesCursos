@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using InscripcionesCursos.BE;
-using InscripcionesCursos.DTO;
 using System.IO;
 using System.Threading;
 
@@ -18,6 +14,9 @@ namespace InscripcionesCursos
 
         const int UserTypeEmployee = 1;
         const int UserTypeStudent = 2;
+        const int AdminWebUserLevel = 1;
+        const int AdminEmployeeUserLevel = 2;
+        const int BasicEmployeeUserLevel = 3;
         string coleccionDniResend = ConfigurationManager.AppSettings["UserEmployeesResend"];
         string coleccionDniExtrac = ConfigurationManager.AppSettings["UserEmployeesExtract"];
         string coleccionDniStatistics = ConfigurationManager.AppSettings["UserEmployeesStatistics"];
@@ -184,6 +183,30 @@ namespace InscripcionesCursos
             }
         }
 
+        
+        /// <summary>
+        /// Event to redirect to ConsultaInscripcionAgrupada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnQueriesGroupedInscription_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeInscripcionAgrupada"]);
+            }
+            catch (ThreadAbortException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "btnQueriesGroupedInscription_Click", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// Event to redirect to Proceso
         /// </summary>
@@ -226,6 +249,29 @@ namespace InscripcionesCursos
             {
                 LogWriter log = new LogWriter();
                 log.WriteLog(ex.Message, "btnInterface_Click", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Event to redirect to Herramientas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnContingencyTools_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeTools"]);
+            }
+            catch (ThreadAbortException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "btnContingencyTools_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
         }
@@ -281,15 +327,17 @@ namespace InscripcionesCursos
                         btnEmailChange.Text = ConfigurationManager.AppSettings["BotonEmailChange"];
                         btnProcess.Text = ConfigurationManager.AppSettings["BotonProceso"];
                         btnQueries.Text = ConfigurationManager.AppSettings["BotonConsultas"];
+                        btnQueriesGroupedInscription.Text = ConfigurationManager.AppSettings["BotonConsultaInscripcionAgrupada"];
                         btnTextsChange.Text = ConfigurationManager.AppSettings["BotonCambioTextos"];
                         btnInterface.Text = ConfigurationManager.AppSettings["BotonInterfazAlumnos"];
+                        btnContingencyTools.Text = ConfigurationManager.AppSettings["BotonContingencia"];
                         liPassword.Visible = liInscription.Visible  = true;
 
-                        if (coleccionDniResend.IndexOf(loggedUser.DNI.ToString()) != -1)
-                            liTools.Visible = liResend.Visible = liEmailChange.Visible = liProcess.Visible = true;
+                        if (loggedUser.IdPerfil <= AdminEmployeeUserLevel)
+                            liTools.Visible = true;
 
-                        if (coleccionDniStatistics.IndexOf(loggedUser.DNI.ToString()) != -1)
-                            liTools.Visible = liQueries.Visible = liTextsChange.Visible = liInterface.Visible = true;
+                        if (loggedUser.IdPerfil == AdminWebUserLevel)
+                            liContingencyTools.Visible = true;
 
                         if (Session["user"] != null && Session["userEmployee"] != null)
                             menuSimulador.Visible = true;

@@ -123,6 +123,25 @@ namespace InscripcionesCursos.DAO
             return dt;
         }
 
-		#endregion
-	}
+        /// <summary>
+        /// Selects total Inscriptions grouped by time
+        /// </summary>
+        public DataTable GetInscripcionAgrupada(DateTime turnoInscripcion, string tipoInscripcion, int vuelta, int agrupacion)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@TurnoInscripcion", turnoInscripcion),
+                new SqlParameter("@IdTipoInscripcion", tipoInscripcion),
+                new SqlParameter("@IdVuelta", vuelta),
+                new SqlParameter("@FranjaMinutos", agrupacion)
+            };
+
+            DataTable dt = new DataTable();
+            dt.Load(SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "ConsultasInscripcionesPorFranja", parameters));
+            SqlConnection.ClearAllPools();
+            return dt;
+        }
+
+        #endregion
+    }
 }

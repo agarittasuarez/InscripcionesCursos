@@ -24,16 +24,18 @@ namespace InscripcionesCursos.BE
 		/// <summary>
 		/// Initializes a new instance of the UsuarioDTO class.
 		/// </summary>
-		public Usuario(int dNI, string nombreApellido, string email, int idCargo, string password,
+		public Usuario(int dNI, string nombreApellido, string email, int idCargo, int idPerfil, string password,
             bool cambioPrimerLogin, bool cuentaActivada, int codigoActivacion, int idSede, string estado,
             string carrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion,
-            bool limitacionRelevada, string limitacion, string limitacionVision, string limitacionAudicion,
-            string limitacionMotriz, string limitacionHabla, string limitacionAgarre, string limitacionOtra)
+            bool limitacionRelevada, string limitacion, string limitacionVision, string lentes, string limitacionAudicion,
+            string audifonos, string limitacionMotriz, string limitacionHabla, string limitacionAgarre,
+            string dislexia, string limitacionOtra)
 		{
 			this.DNI = dNI;
 			this.ApellidoNombre = nombreApellido;
 			this.Email = email;
 			this.IdCargo = idCargo;
+            this.IdPerfil = idPerfil;
 			this.Password = password;
 			this.CambioPrimerLogin = cambioPrimerLogin;
 			this.CuentaActivada = cuentaActivada;
@@ -46,10 +48,13 @@ namespace InscripcionesCursos.BE
 		    this.LimitacionRelevada = limitacionRelevada;
 		    this.Limitacion = limitacion;
 		    this.LimitacionVision = limitacionVision;
+            this.Lentes = lentes;
 		    this.LimitacionAudicion = limitacionAudicion;
+            this.Audifonos = audifonos;
 		    this.LimitacionMotriz = limitacionMotriz;
 		    this.LimitacionHabla = limitacionHabla;
 		    this.LimitacionAgarre = limitacionAgarre;
+            this.Dislexia = dislexia;
 		    this.LimitacionOtra = limitacionOtra;
 		}
 
@@ -76,10 +81,15 @@ namespace InscripcionesCursos.BE
 		/// </summary>
 		public int IdCargo { get; set; }
 
-		/// <summary>
-		/// Gets or sets the Password value.
-		/// </summary>
-		public string Password { get; set; }
+        /// <summary>
+        /// Gets or sets the IdCargo value.
+        /// </summary>
+        public int IdPerfil { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Password value.
+        /// </summary>
+        public string Password { get; set; }
 
 		/// <summary>
 		/// Gets or sets the CambioPrimerLogin value.

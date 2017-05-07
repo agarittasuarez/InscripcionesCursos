@@ -19,12 +19,12 @@ namespace InscripcionesCursos.DTO
         /// <summary>
         /// Method to validate login credentials.
         /// </summary>
-        public static Usuario ValidateLogin(Usuario user)
+        public static Usuario ValidateLogin(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                return usuarioDAO.ValidateLogin(user.DNI, user.Password);
+                return usuarioDAO.ValidateLogin(usuario);
             }
             catch (Exception ex)
             {
@@ -35,12 +35,12 @@ namespace InscripcionesCursos.DTO
         /// <summary>
         /// Method to update the first password generated
         /// </summary>
-        public static Usuario UpdatePassword(Usuario user)
+        public static Usuario UpdatePassword(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                return usuarioDAO.UpdateGeneratedPassword(user.DNI, user.Password);
+                return usuarioDAO.UpdateGeneratedPassword(usuario);
             }
             catch (Exception ex)
             {
@@ -52,12 +52,12 @@ namespace InscripcionesCursos.DTO
         /// Method to update the user data
         /// </summary>
         /// <param name="user"></param>
-        public static void Update(Usuario user)
+        public static void Update(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                usuarioDAO.Update(user);
+                usuarioDAO.Update(usuario);
             }
             catch (Exception ex)
             {
@@ -69,12 +69,12 @@ namespace InscripcionesCursos.DTO
         /// Method to update the user limitations
         /// </summary>
         /// <param name="user"></param>
-        public static void UpdateLimitaciones(Usuario user)
+        public static void UpdateLimitaciones(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                usuarioDAO.UpdateLimitaciones(user);
+                usuarioDAO.UpdateLimitaciones(usuario);
             }
             catch (Exception ex)
             {
@@ -86,12 +86,12 @@ namespace InscripcionesCursos.DTO
         /// Method to update the user data
         /// </summary>
         /// <param name="user"></param>
-        public static void UpdateEmail(Usuario user)
+        public static void UpdateEmail(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                usuarioDAO.UpdateEmail(user);
+                usuarioDAO.UpdateEmail(usuario);
             }
             catch (Exception ex)
             {
@@ -102,12 +102,12 @@ namespace InscripcionesCursos.DTO
         /// <summary>
         /// Method to update mandatory
         /// </summary>
-        public static bool UpdateMandatoryPasswordEmail(Usuario user)
+        public static bool UpdateMandatoryPasswordEmail(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                return usuarioDAO.UpdateMandatoryPasswordEmail(user.DNI, user.Password, user.Email, user.CodigoActivacion);
+                return usuarioDAO.UpdateMandatoryPasswordEmail(usuario);
             }
             catch (Exception ex)
             {
@@ -118,12 +118,12 @@ namespace InscripcionesCursos.DTO
         /// <summary>
         /// Method to activate account
         /// </summary>
-        public static Usuario ActivateAccount(Usuario user)
+        public static Usuario ActivateAccount(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                return usuarioDAO.ActivateAccount(user.DNI, user.CodigoActivacion);
+                return usuarioDAO.ActivateAccount(usuario);
             }
             catch (Exception ex)
             {
@@ -136,12 +136,12 @@ namespace InscripcionesCursos.DTO
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static Usuario GetUsuario(Usuario user)
+        public static Usuario GetUsuario(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                return usuarioDAO.Select(user.DNI);
+                return usuarioDAO.Select(usuario);
             }
             catch (Exception ex)
             {
@@ -170,12 +170,12 @@ namespace InscripcionesCursos.DTO
         /// <summary>
         /// Method to import users
         /// </summary>
-        public static void ImportPadron(Usuario user)
+        public static void ImportPadron(Usuario usuario)
         {
             try
             {
                 var usuarioDAO = new UsuarioDAO(connectionString);
-                usuarioDAO.ImportPadron(user);
+                usuarioDAO.ImportPadron(usuario);
             }
             catch (Exception ex)
             {

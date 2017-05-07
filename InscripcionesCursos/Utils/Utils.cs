@@ -92,6 +92,29 @@ namespace InscripcionesCursos
         }
 
         /// <summary>
+        /// Method for check if the user has the required level for a page
+        /// </summary>
+        /// <param name="session">Logged user</param>
+        /// <param name="minUserLevel">Min level required</param>
+        public static bool CheckUserProfileLevel(object session, int minUserLevel = 10)
+        {
+            try
+            {
+                Usuario loggedUser = new Usuario();
+                loggedUser = (Usuario)session;
+
+                if (loggedUser.IdPerfil <= minUserLevel)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Method to send activation email
         /// </summary>
         /// <returns></returns>

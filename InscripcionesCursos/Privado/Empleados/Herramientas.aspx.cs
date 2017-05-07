@@ -16,7 +16,7 @@ namespace InscripcionesCursos
         #region Constants & Variables
 
         const int UserTypeEmployee = 1;
-        string coleccionDniExtract = ConfigurationManager.AppSettings["UserEmployeesExtract"];
+        const int MinUserLevel = 1;
 
         #endregion
 
@@ -32,8 +32,8 @@ namespace InscripcionesCursos
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
 
-                if (coleccionDniExtract.IndexOf(((Usuario)Session["userEmployee"]).DNI.ToString()) == -1)
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
+                if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
 
                 Session.Remove("user");
             }

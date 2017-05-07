@@ -49,6 +49,15 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.WebControls.Label lblUser;
         
         /// <summary>
+        /// liManagementStudents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liManagementStudents;
+        
+        /// <summary>
         /// btnManagement control.
         /// </summary>
         /// <remarks>
@@ -166,6 +175,24 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.WebControls.LinkButton btnQueries;
         
         /// <summary>
+        /// liQueriesGroupedInscription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liQueriesGroupedInscription;
+        
+        /// <summary>
+        /// btnQueriesGroupedInscription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnQueriesGroupedInscription;
+        
+        /// <summary>
         /// liTextsChange control.
         /// </summary>
         /// <remarks>
@@ -218,6 +245,24 @@ namespace InscripcionesCursos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnInterface;
+        
+        /// <summary>
+        /// liContingencyTools control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liContingencyTools;
+        
+        /// <summary>
+        /// btnContingencyTools control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnContingencyTools;
         
         /// <summary>
         /// btnLogout control.

@@ -17,6 +17,7 @@ namespace InscripcionesCursos.Privado.Empleados
         #region Constants & Variables
 
         const int UserTypeEmployee = 1;
+        const int MinUserLevel = 2;
         const string IcoPlus = "../../img/ico_plus.png";
         const string IcoMinus = "../../img/ico_minus.png";
 
@@ -32,7 +33,10 @@ namespace InscripcionesCursos.Privado.Empleados
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
 
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
+                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
+
+                if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
 
                 if (!IsPostBack)
                 {

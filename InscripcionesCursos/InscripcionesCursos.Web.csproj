@@ -156,7 +156,9 @@
     <Content Include="Privado\Empleados\CambioEmail.aspx" />
     <Content Include="Privado\Empleados\CambioTextos.aspx" />
     <Content Include="Privado\Empleados\ChartInscripcion.aspx" />
+    <Content Include="Privado\Empleados\ConsultaInscripcionAgrupada.aspx" />
     <Content Include="Privado\Empleados\Consultas.aspx" />
+    <Content Include="Privado\Empleados\GestionUsuarios.aspx" />
     <Content Include="Privado\Empleados\Herramientas.aspx" />
     <Content Include="Privado\Empleados\GeneracionClave.aspx" />
     <Content Include="Privado\Empleados\InscripcionCursos.aspx" />
@@ -392,12 +394,26 @@
     <Compile Include="Privado\Empleados\ChartInscripcion.aspx.designer.cs">
       <DependentUpon>ChartInscripcion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Privado\Empleados\ConsultaInscripcionAgrupada.aspx.cs">
+      <DependentUpon>ConsultaInscripcionAgrupada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\ConsultaInscripcionAgrupada.aspx.designer.cs">
+      <DependentUpon>ConsultaInscripcionAgrupada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Privado\Empleados\Consultas.aspx.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Privado\Empleados\Consultas.aspx.designer.cs">
       <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\GestionUsuarios.aspx.cs">
+      <DependentUpon>GestionUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\GestionUsuarios.aspx.designer.cs">
+      <DependentUpon>GestionUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Privado\Empleados\Herramientas.aspx.cs">
       <DependentUpon>Herramientas.aspx</DependentUpon>
@@ -496,7 +512,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5476</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/InscripcionesCursos.Web</IISUrl>
+          <IISUrl>http://localhost/InscripcionesCursos.Web_DEV</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -24,7 +24,7 @@ namespace InscripcionesCursos
         private string fileNameInscripcion = ConfigurationManager.AppSettings["FileNameInscripcion"];
         private string fileNamePadron = String.Format(ConfigurationManager.AppSettings["FileNamePadron"], DateTime.Now.Year + "." + DateTime.Now.Month + "." + DateTime.Now.Day);
         private const int UserTypeEmployee = 1;
-        string coleccionDNIResend = ConfigurationManager.AppSettings["UserEmployeesResend"];
+        private const int MinUserLevel = 2;
         const string ClaseInicioInscripcion = "FormatoInicioInscripcion";
         const string ClaseCatedra = "FormatoCatedra";
         const string ClaseInscripcion = "FormatoInscripcion";
@@ -58,8 +58,8 @@ namespace InscripcionesCursos
                     if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
 
-                    if (coleccionDNIResend.IndexOf(((Usuario)Session["userEmployee"]).DNI.ToString()) == -1)
-                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
+                    if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
 
                     SetUpPage();
                     ClearContents(asyncFile as Control);
@@ -1010,7 +1010,7 @@ namespace InscripcionesCursos
                 string sFullFecha = String.Empty;
                 string sFullDni = String.Empty;
 
-                listInscripciones = InscripcionDTO.GetInscripcionesByTurnoInscripcionIdVuelta(cboInscripciones.SelectedValue.Split('-')[0], Convert.ToInt32(cboVueltaInscripcion.SelectedValue));
+                listInscripciones = InscripcionDTO.GetInscripcionesByTurnoInscripcionIdVuelta(cboInscripciones.SelectedValue.Split('-')[0], Convert.ToInt32(cboInscripcionesVuelta.SelectedValue));
                 for (int i = 0; i < listInscripciones.Count; i++)
                 {
                     sbLine.Append(listInscripciones[i].IdTipoInscripcion.ToString() + ";");

@@ -17,7 +17,7 @@ namespace InscripcionesCursos.Privado.Empleados
         #region Constants & Variables
 
         const int UserTypeEmployee = 1;
-        string coleccionDniResend = ConfigurationManager.AppSettings["UserEmployeesResend"];
+        const int MinUserLevel = 2;
         private wucMenuNavegacionSimulador menuControl;
 
         #endregion
@@ -31,11 +31,12 @@ namespace InscripcionesCursos.Privado.Empleados
                 if (!Utils.CheckLoggedUser(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
 
+                
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
 
-                if (coleccionDniResend.IndexOf(((Usuario)Session["userEmployee"]).DNI.ToString()) == -1)
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
+                if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
 
                 menuControl = (wucMenuNavegacionSimulador)Master.FindControl("menuSimulador");
                 //Session.Remove("user");

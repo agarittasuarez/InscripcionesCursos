@@ -35,24 +35,26 @@
                     <li>
                         <asp:Label id="lblUser" runat="server"/>
                     </li>
-                    <li>
+                    <li id="liManagementStudents" runat="server">
                         <asp:LinkButton runat="server" ID="btnManagement"/>
                         <ul>
-                            <li id="liPassword" runat="server" Visible="False"><asp:LinkButton ID="btnPassword" runat="server" onclick="btnPassword_Click" CausesValidation="false"/></li>
-                            <li id="liResend" runat="server" Visible="False"><asp:LinkButton ID="btnResend" runat="server" onclick="btnResend_Click" CausesValidation="false"/></li>
-                            <li id="liEmailChange" runat="server" Visible="False"><asp:LinkButton ID="btnEmailChange" runat="server" CausesValidation="false" onclick="btnEmailChange_Click"/></li>
+                            <li id="liPassword" runat="server"><asp:LinkButton ID="btnPassword" runat="server" onclick="btnPassword_Click" CausesValidation="false"/></li>
+                            <li id="liResend" runat="server"><asp:LinkButton ID="btnResend" runat="server" onclick="btnResend_Click" CausesValidation="false"/></li>
+                            <li id="liEmailChange" runat="server"><asp:LinkButton ID="btnEmailChange" runat="server" CausesValidation="false" onclick="btnEmailChange_Click"/></li>
                         </ul>
                     </li>
-                    <li id="liInscription" runat="server"  Visible="False">
+                    <li id="liInscription" runat="server">
                         <asp:LinkButton ID="btnInscription" runat="server" onclick="btnInscription_Click" CausesValidation="false"/>
                     </li>
                     <li id="liTools" runat="server" Visible="False">
                         <asp:LinkButton runat="server" ID="btnTools"/>
                         <ul>
-                            <li id="liQueries" runat="server" Visible="False"><asp:LinkButton ID="btnQueries" runat="server" CausesValidation="false" onclick="btnQueries_Click"/></li>
-                            <li id="liTextsChange" runat="server" Visible="False"><asp:LinkButton ID="btnTextsChange" runat="server" CausesValidation="false" onclick="btnTextsChange_Click"/></li>
-                            <li id="liProcess" runat="server" Visible="False"><asp:LinkButton ID="btnProcess" runat="server" CausesValidation="false" onclick="btnProcess_Click"/></li>
-                            <li id="liInterface" runat="server" Visible="False"><asp:LinkButton ID="btnInterface" runat="server" CausesValidation="false" onclick="btnInterface_Click"/></li>
+                            <li id="liQueries" runat="server"><asp:LinkButton ID="btnQueries" runat="server" CausesValidation="false" onclick="btnQueries_Click"/></li>
+                            <li id="liQueriesGroupedInscription" runat="server"><asp:LinkButton ID="btnQueriesGroupedInscription" runat="server" CausesValidation="false" onclick="btnQueriesGroupedInscription_Click"/></li>
+                            <li id="liTextsChange" runat="server"><asp:LinkButton ID="btnTextsChange" runat="server" CausesValidation="false" onclick="btnTextsChange_Click"/></li>
+                            <li id="liProcess" runat="server"><asp:LinkButton ID="btnProcess" runat="server" CausesValidation="false" onclick="btnProcess_Click"/></li>
+                            <li id="liInterface" runat="server"><asp:LinkButton ID="btnInterface" runat="server" CausesValidation="false" onclick="btnInterface_Click"/></li>
+                            <li id="liContingencyTools" runat="server" visible="false"><asp:LinkButton ID="btnContingencyTools" runat="server" CausesValidation="false" onclick="btnContingencyTools_Click"/></li>
                         </ul>
                     </li>
                     <li>

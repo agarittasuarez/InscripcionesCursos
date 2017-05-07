@@ -22,6 +22,7 @@ namespace InscripcionesCursos.Privado.Empleados
         const string InscriptionTypeExam = "E";
         const string InscriptionTypeCourse = "P";
         const int InscriptionMonthSummerCourse = 3;
+        const int MinUserLevel = 3;
         string IdEstadoBajaModificacion = ConfigurationManager.AppSettings["IdEstadoBajaModificacion"];
         string IdEstadoBajaSorteo = ConfigurationManager.AppSettings["IdEstadoBajaSorteo"];
         string IdEstadoBajaErrorInscripcion = ConfigurationManager.AppSettings["IdEstadoBajaErrorInscripcion"];
@@ -50,6 +51,10 @@ namespace InscripcionesCursos.Privado.Empleados
                 {
                     if (!Utils.CheckLoggedUser(Session["userEmployee"], UserTypeEmployee))
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
+
+                    if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                        Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
+
                     Session.Remove("user");
                 }
 

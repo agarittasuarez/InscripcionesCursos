@@ -8,7 +8,12 @@
         <asp:Label ID="lblTitulo" runat="server" Text=""><%= ConfigurationManager.AppSettings["ContentMainTitleInscripcion"] %></asp:Label>
     </div>
     <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInscripciones" />
-    <asp:UpdatePanel ID="upInscripciones" runat="server" UpdateMode="Always">
+    <asp:UpdatePanel ID="upInscripciones" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btnRequest" />
+            <asp:AsyncPostBackTrigger ControlID="btnClean" />
+            <asp:AsyncPostBackTrigger ControlID="ddInscripciones" />
+        </Triggers>
         <ContentTemplate>
             <div>
                 <div class="contenedorInput">

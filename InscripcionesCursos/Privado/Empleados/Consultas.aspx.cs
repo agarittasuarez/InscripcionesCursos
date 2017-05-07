@@ -20,10 +20,9 @@ namespace InscripcionesCursos
         #region Constants & Variables
 
         private const int UserTypeEmployee = 1;
+        private const int MinUserLevel = 2;
         private const string ComboTextFieldTurno = "TurnoInscripcion";
         private const string ComboValueFieldTurno = "TurnoInscripcion";
-
-        string coleccionDniStatistics = ConfigurationManager.AppSettings["UserEmployeesStatistics"];
 
         #endregion
 
@@ -39,8 +38,8 @@ namespace InscripcionesCursos
                 if (!Utils.CheckAccountStatus(Session["userEmployee"], UserTypeEmployee))
                     Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeePasswordChange"]);
 
-                if (coleccionDniStatistics.IndexOf(((Usuario)Session["userEmployee"]).DNI.ToString()) == -1)
-                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployee"]);
+                if (!Utils.CheckUserProfileLevel(Session["userEmployee"], MinUserLevel))
+                    Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeGenerarClaves"]);
 
                 if (!IsPostBack)
                 {

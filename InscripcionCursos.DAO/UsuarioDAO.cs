@@ -43,7 +43,8 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@ApellidoNombre", usuario.ApellidoNombre),
 				new SqlParameter("@Email", usuario.Email),
 				new SqlParameter("@IdCargo", usuario.IdCargo),
-				new SqlParameter("@Password", usuario.Password),
+                new SqlParameter("@IdPerfil", usuario.IdPerfil),
+                new SqlParameter("@Password", usuario.Password),
 				new SqlParameter("@CambioPrimerLogin", usuario.CambioPrimerLogin),
 				new SqlParameter("@CuentaActivada", usuario.CuentaActivada),
 				new SqlParameter("@CodigoActivacion", usuario.CodigoActivacion),
@@ -82,7 +83,8 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@ApellidoNombre", usuario.ApellidoNombre),
 				new SqlParameter("@Email", usuario.Email),
 				new SqlParameter("@IdCargo", usuario.IdCargo),
-				new SqlParameter("@Password", usuario.Password),
+                new SqlParameter("@IdPerfil", usuario.IdPerfil),
+                new SqlParameter("@Password", usuario.Password),
 				new SqlParameter("@CambioPrimerLogin", usuario.CambioPrimerLogin),
 				new SqlParameter("@CuentaActivada", usuario.CuentaActivada),
 				new SqlParameter("@CodigoActivacion", usuario.CodigoActivacion),
@@ -135,11 +137,11 @@ namespace InscripcionesCursos.DAO
 		/// <summary>
 		/// Deletes a record from the Usuario table by its primary key.
 		/// </summary>
-		public void Delete(int dNI)
+		public void Delete(Usuario user)
 		{
 			SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dNI)
+				new SqlParameter("@DNI", user.DNI)
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioDelete", parameters);
@@ -177,11 +179,11 @@ namespace InscripcionesCursos.DAO
 		/// <summary>
 		/// Selects a single record from the Usuario table.
 		/// </summary>
-		public Usuario Select(int dNI)
+		public Usuario Select(Usuario usuario)
 		{
 			SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dNI)
+				new SqlParameter("@DNI", usuario.DNI)
 			};
 
 			using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "UsuarioSelect", parameters))
@@ -203,11 +205,11 @@ namespace InscripcionesCursos.DAO
 		/// <summary>
 		/// Selects a single record from the Usuario table.
 		/// </summary>
-		public string SelectJson(int dNI)
+		public string SelectJson(Usuario usuario)
 		{
 			SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dNI)
+				new SqlParameter("@DNI", usuario.DNI)
 			};
 
 			var json = SqlClientUtility.ExecuteJson(connectionStringName, CommandType.StoredProcedure, "UsuarioSelect", parameters);
@@ -322,18 +324,17 @@ namespace InscripcionesCursos.DAO
 		 /// <summary>
         /// Select user for Login.
         /// </summary>
-        /// <param name="dni"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public Usuario ValidateLogin(int dni, string password)
+        /// <param name="Usuario"></param>
+        /// <returns>Usuario</returns>
+        public Usuario ValidateLogin(Usuario usuario)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dni),
-                new SqlParameter("@Password", password)
+				new SqlParameter("@DNI", usuario.DNI),
+                new SqlParameter("@Password", usuario.Password)
 			};
 
-            Usuario user = new Usuario();
+            var user = new Usuario();
 
             using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "UsuarioValidateLogin", parameters))
             {
@@ -352,12 +353,12 @@ namespace InscripcionesCursos.DAO
         /// <param name="dni"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public Usuario UpdateGeneratedPassword(int dni, string password)
+        public Usuario UpdateGeneratedPassword(Usuario usuario)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dni),
-                new SqlParameter("@Password", password)
+				new SqlParameter("@DNI", usuario.DNI),
+                new SqlParameter("@Password", usuario.Password)
 			};
 
             Usuario user = new Usuario();
@@ -381,14 +382,14 @@ namespace InscripcionesCursos.DAO
         /// <param name="email"></param>
         /// <param name="codigoActivacion"></param>
         /// <returns></returns>
-        public bool UpdateMandatoryPasswordEmail(int dni, string password, string email, int codigoActivacion)
+        public bool UpdateMandatoryPasswordEmail(Usuario usuario)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
-				new SqlParameter("@DNI", dni),
-                new SqlParameter("@Password", password),
-                new SqlParameter("@Email", email),
-                new SqlParameter("@CodigoActivacion", codigoActivacion)
+				new SqlParameter("@DNI", usuario.DNI),
+                new SqlParameter("@Password", usuario.Password),
+                new SqlParameter("@Email", usuario.Email),
+                new SqlParameter("@CodigoActivacion", usuario.CodigoActivacion)
 			};
 
             Object objScalar = SqlClientUtility.ExecuteScalar(connectionStringName, CommandType.StoredProcedure, "UsuarioUpdateMandatoryPassword", parameters);
@@ -423,14 +424,14 @@ namespace InscripcionesCursos.DAO
         /// <param name="dni"></param>
         /// <param name="codigoActivacion"></param>
         /// <returns>Usuario</returns>
-        public Usuario ActivateAccount(int dni, int codigoActivacion)
+        public Usuario ActivateAccount(Usuario usuario)
         {
             try
             {
                 SqlParameter[] parameters = new SqlParameter[]
 			    {
-				    new SqlParameter("@DNI", dni),
-                    new SqlParameter("@CodigoActivacion", codigoActivacion)
+				    new SqlParameter("@DNI", usuario.DNI),
+                    new SqlParameter("@CodigoActivacion", usuario.CodigoActivacion)
 			    };
 
                 Usuario user = new Usuario();
@@ -539,6 +540,7 @@ namespace InscripcionesCursos.DAO
 		        ApellidoNombre = dataReader.GetString("ApellidoNombre", null),
 		        Email = dataReader.GetString("Email", null),
 		        IdCargo = dataReader.GetInt32("IdCargo", 0),
+                IdPerfil = dataReader.GetInt32("IdPerfil", 0),
 		        Password = dataReader.GetString("Password", null),
 		        CambioPrimerLogin = dataReader.GetBoolean("CambioPrimerLogin", false),
 		        CuentaActivada = dataReader.GetBoolean("CuentaActivada", false),

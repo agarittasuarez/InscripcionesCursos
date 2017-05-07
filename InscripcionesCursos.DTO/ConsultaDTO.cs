@@ -67,7 +67,20 @@ namespace InscripcionesCursos.DTO
                 throw ex;
             }
         }
-        
+
+        public static DataTable GetInscripcionAgrupada(DateTime tunoInscripcion, string tipoInscripcion, int vuelta, int agrupacion)
+        {
+            try
+            {
+                ConsultaDAO consultaDAO = new ConsultaDAO(connectionString);
+                return consultaDAO.GetInscripcionAgrupada(tunoInscripcion, tipoInscripcion, vuelta, agrupacion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }
