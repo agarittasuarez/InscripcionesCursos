@@ -16,19 +16,21 @@ namespace InscripcionesCursos.BE
 		/// <summary>
 		/// Initializes a new instance of the InscripcionActiva class.
 		/// </summary>
-		public InscripcionActiva(string idTipoInscripcion, DateTime turnoInscripcion, int idVuelta, DateTime inscripcionFechaDesde, DateTime inscripcionFechaHasta)
+		public InscripcionActiva(string idTipoInscripcion, DateTime turnoInscripcion, int idVuelta, DateTime inscripcionFechaDesde, DateTime inscripcionFechaHasta, int idSede)
 		{
 			this.IdTipoInscripcion = idTipoInscripcion;
 			this.TurnoInscripcion = turnoInscripcion;
 			this.IdVuelta = idVuelta;
 			this.InscripcionFechaDesde = inscripcionFechaDesde;
 			this.InscripcionFechaHasta = inscripcionFechaHasta;
+            this.IdSede = idSede;
+
 		}
 
 		/// <summary>
 		/// Initializes a new instance of the InscripcionActiva class.
 		/// </summary>
-		public InscripcionActiva(int idInscripcionActiva, string idTipoInscripcion, DateTime turnoInscripcion, int idVuelta, DateTime inscripcionFechaDesde, DateTime inscripcionFechaHasta)
+		public InscripcionActiva(int idInscripcionActiva, string idTipoInscripcion, DateTime turnoInscripcion, int idVuelta, DateTime inscripcionFechaDesde, DateTime inscripcionFechaHasta, int idSede)
 		{
 			this.IdInscripcionActiva = idInscripcionActiva;
 			this.IdTipoInscripcion = idTipoInscripcion;
@@ -36,6 +38,7 @@ namespace InscripcionesCursos.BE
 			this.IdVuelta = idVuelta;
 			this.InscripcionFechaDesde = inscripcionFechaDesde;
 			this.InscripcionFechaHasta = inscripcionFechaHasta;
+            this.IdSede = idSede;
 		}
 
 		#endregion
@@ -71,6 +74,11 @@ namespace InscripcionesCursos.BE
 		/// </summary>
 		public DateTime InscripcionFechaHasta { get; set; }
 
-		#endregion
-	}
+        /// <summary>
+		/// Gets or sets the IdSede value.
+		/// </summary>
+		public int IdSede { get; set; }
+
+        #endregion
+    }
 }

@@ -78,6 +78,11 @@ namespace InscripcionesCursos.Privado.Empleados
                     var idTipoInscripcion = GetIdTipoInscripcion(ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2));
                     DrawBarChartInscripciones(Convert.ToDateTime(Convert.ToDateTime(ddTurnos.SelectedValue.Substring(0, ddTurnos.SelectedValue.IndexOf("-")))), idTipoInscripcion, Convert.ToInt32(ddVueltas.SelectedValue), Convert.ToInt32(ddAgrupaciones.SelectedValue));
                 }
+                else
+                {
+                    lblMessagePopUp.Text = ConfigurationManager.AppSettings["ErrorConsultaInscripcionAgrupada"];
+                    mpeMessage.Show();
+                }
             }
             catch (Exception ex)
             {
@@ -85,6 +90,41 @@ namespace InscripcionesCursos.Privado.Empleados
                 log.WriteLog(ex.Message, "btnConsultar_Click", Path.GetFileName(Request.PhysicalPath));
                 throw ex;
             }
+        }
+
+        protected void ddTurnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ddTurnos.SelectedIndex != 0)
+                {
+                    ddVueltas.DataSource = GetVueltas(GetIdTipoInscripcion(ddTurnos.SelectedValue.Substring(ddTurnos.SelectedValue.IndexOf("-") + 2)));
+                    ddVueltas.DataBind();
+                    ddVueltas.Enabled = true;
+                    ddAgrupaciones.Enabled = true;
+                }
+                else
+                {
+                    ddVueltas.Enabled = false;
+                    ddAgrupaciones.Enabled = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "ddTurnos_SelectedIndexChanged", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Event to accept modal popup message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            mpeMessage.Hide();
         }
 
         #endregion
@@ -100,11 +140,9 @@ namespace InscripcionesCursos.Privado.Empleados
             {
                 ddTurnos.DataSource = ExtractTurnosAndTipoInscripcion(InscripcionDTO.GetAllTurnos(new Inscripcion())).GroupBy(i => i).Select(group => group.Key).ToList();
                 ddAgrupaciones.DataSource = GetAgrupaciones();
-                ddVueltas.DataSource = GetVueltas();
 
                 ddAgrupaciones.DataBind();
                 ddTurnos.DataBind();
-                ddVueltas.DataBind();
                 ddTurnos.Items.Insert(0, new ListItem(ConfigurationManager.AppSettings["ContentComboTurnoDefault"], "0"));
                 lblSeleccione.Text = ConfigurationManager.AppSettings["LabelConsultaInscripcionesAgrupadasSeleccione"];
                 lblTurno.Text = ConfigurationManager.AppSettings["LabelConsultaInscripcionesAgrupadasTurno"];
@@ -158,15 +196,20 @@ namespace InscripcionesCursos.Privado.Empleados
         /// Get list of vueltas
         /// </summary>
         /// <returns></returns>
-        private List<string> GetVueltas()
+        private List<string> GetVueltas(string tipoInscripcion)
         {
             var vueltas = new List<string>();
 
             vueltas.Add(ConfigurationManager.AppSettings["ContentComboVueltaDefault"]);
-            vueltas.Add("0");
-            vueltas.Add("1");
-            vueltas.Add("2");
-            vueltas.Add("3");
+
+            if (tipoInscripcion == "E")
+                vueltas.Add("0");
+            else
+            {
+                vueltas.Add("1");
+                vueltas.Add("2");
+                vueltas.Add("3");
+            }
 
             return vueltas;
         }
@@ -246,7 +289,29 @@ namespace InscripcionesCursos.Privado.Empleados
                 barChart.Series[0].IsValueShownAsLabel = true;
                 barChart.Series[0].LabelForeColor = Color.White;
 
-                barChart.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+                switch (Convert.ToInt32(ddAgrupaciones.SelectedItem.Value))
+                {
+                    case 60:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 0.5;
+                        break;
+                    case 30:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+                        break;
+                    case 20:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+                        break;
+                    case 15:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 4;
+                        break;
+                    case 10:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 5;
+                        break;
+                    case 5:
+                        barChart.ChartAreas["ChartArea1"].AxisX.Interval = 6;
+                        break;
+                }
+
+                
                 //barChart.ChartAreas["ChartArea1"].AxisX.Enabled = AxisEnabled.False;
                 barChart.ChartAreas["ChartArea1"].AxisY.Interval = 50;
 
@@ -256,6 +321,7 @@ namespace InscripcionesCursos.Privado.Empleados
 
                 barChart.ChartAreas["ChartArea1"].AxisX.LabelStyle.ForeColor = Color.White;
                 barChart.ChartAreas["ChartArea1"].AxisY.LabelStyle.ForeColor = Color.White;
+
 
                 barChart.Visible = true;
             }

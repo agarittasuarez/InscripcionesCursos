@@ -95,7 +95,7 @@ namespace InscripcionesCursos.Privado.Empleados
                     Session.Remove("user");
                     Session.Add("user", user);
                     listInscripcionesActivas = new List<InscripcionActiva>();
-                    listInscripcionesActivas = InscripcionActivaDTO.ValidateInscipcionesActivas(DateTime.Now, 1);
+                    listInscripcionesActivas = InscripcionActivaDTO.ValidateInscipcionesActivas(DateTime.Now, 1, ((Usuario)Session["user"]).IdSede);
                     Session.Add("inscripcionesActivas", listInscripcionesActivas);
 
                     if (listInscripcionesActivas.Count != 0)

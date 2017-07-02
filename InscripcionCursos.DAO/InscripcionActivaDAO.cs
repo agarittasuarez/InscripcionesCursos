@@ -43,8 +43,9 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@TurnoInscripcion", inscripcionActiva.TurnoInscripcion),
 				new SqlParameter("@IdVuelta", inscripcionActiva.IdVuelta),
 				new SqlParameter("@InscripcionFechaDesde", inscripcionActiva.InscripcionFechaDesde),
-				new SqlParameter("@InscripcionFechaHasta", inscripcionActiva.InscripcionFechaHasta)
-			};
+				new SqlParameter("@InscripcionFechaHasta", inscripcionActiva.InscripcionFechaHasta),
+                new SqlParameter("@IdSede", inscripcionActiva.IdSede)
+            };
 
 			SqlClientUtility.ExecuteScalar(connectionStringName, CommandType.StoredProcedure, "InscripcionActivaInsert", parameters);
             SqlConnection.ClearAllPools();
@@ -64,8 +65,9 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@TurnoInscripcion", inscripcionActiva.TurnoInscripcion),
 				new SqlParameter("@IdVuelta", inscripcionActiva.IdVuelta),
 				new SqlParameter("@InscripcionFechaDesde", inscripcionActiva.InscripcionFechaDesde),
-				new SqlParameter("@InscripcionFechaHasta", inscripcionActiva.InscripcionFechaHasta)
-			};
+				new SqlParameter("@InscripcionFechaHasta", inscripcionActiva.InscripcionFechaHasta),
+                new SqlParameter("@IdSede", inscripcionActiva.IdSede)
+            };
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "InscripcionActivaUpdate", parameters);
             SqlConnection.ClearAllPools();
@@ -279,7 +281,7 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@IdTipoInscripcion", idTipoInscripcion),
 				new SqlParameter("@IdVuelta", idVuelta),
 				new SqlParameter("@TurnoInscripcion", turnoInscripcion)
-			};
+            };
 
 			var json = SqlClientUtility.ExecuteJson(connectionStringName, CommandType.StoredProcedure, "InscripcionActivaSelectAllByIdTipoInscripcion_IdVuelta_TurnoInscripcion", parameters);
             SqlConnection.ClearAllPools();
@@ -321,13 +323,14 @@ namespace InscripcionesCursos.DAO
         /// </summary>
         /// <param name="dateNow"></param>
         /// <returns></returns>
-        public List<InscripcionActiva> ValidateInscripcionesActivas(DateTime dateNow, int rol)
+        public List<InscripcionActiva> ValidateInscripcionesActivas(DateTime dateNow, int rol, int idSede)
         {
             SqlParameter[] parameters = new SqlParameter[]
 			{
 				new SqlParameter("@FechaActual", dateNow),
-                new SqlParameter("@IdCargo", rol)
-			};
+                new SqlParameter("@IdCargo", rol),
+                new SqlParameter("@IdSede", idSede)
+            };
 
             using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "InscripcionActivaValidateFecha", parameters))
             {
@@ -354,8 +357,9 @@ namespace InscripcionesCursos.DAO
 			inscripcionActiva.IdVuelta = dataReader.GetInt32("IdVuelta", 0);
 			inscripcionActiva.InscripcionFechaDesde = dataReader.GetDateTime("InscripcionFechaDesde", new DateTime(0));
 			inscripcionActiva.InscripcionFechaHasta = dataReader.GetDateTime("InscripcionFechaHasta", new DateTime(0));
+            inscripcionActiva.IdSede = dataReader.GetInt32("IdSede", 1);
 
-			return inscripcionActiva;
+            return inscripcionActiva;
 		}
 
 		#endregion

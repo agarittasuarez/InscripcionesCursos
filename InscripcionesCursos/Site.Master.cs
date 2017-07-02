@@ -333,7 +333,7 @@ namespace InscripcionesCursos
                         btnContingencyTools.Text = ConfigurationManager.AppSettings["BotonContingencia"];
                         liPassword.Visible = liInscription.Visible  = true;
 
-                        if (loggedUser.IdPerfil <= AdminEmployeeUserLevel)
+                        if (loggedUser.IdPerfil <= AdminEmployeeUserLevel && loggedUser.IdPerfil > 0)
                             liTools.Visible = true;
 
                         if (loggedUser.IdPerfil == AdminWebUserLevel)
