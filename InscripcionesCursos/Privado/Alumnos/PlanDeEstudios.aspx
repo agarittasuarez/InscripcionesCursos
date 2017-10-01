@@ -84,7 +84,7 @@
             <div class="planBox">
                 <div class="planCorrelativa"><br /></div>
                 <div id="C4005" runat="server" class="planCodMat">6</div>
-                <div class="planDescripMat"><br />Historia Económica Social y Contemporánea</div>
+                <div class="planDescripMat"><br />Historia Económica y Social Contemporánea</div>
                 <div class="planCarga">6</div>
             </div>
         </div>
@@ -126,7 +126,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">5</div>
                 <div id="C4011" runat="server" class="planCodMat">12</div>
-                <div class="planDescripMat"><br />Lógica y Metología de las Ciencias</div>
+                <div class="planDescripMat"><br />Lógica y Metodología de las Ciencias</div>
                 <div class="planCarga">4</div>
             </div>
         </div>
@@ -154,9 +154,9 @@
 
         <div class="planLine">
             <div class="planBox">
-                <div class="planCorrelativa">12</div>
+                <div class="planCorrelativa">12-5</div>
                 <div id="C4015" runat="server" class="planCodMat">16</div>
-                <div class="planDescripMat"><br />Psicología de la Organización</div>
+                <div class="planDescripMat"><br />Psicosociología de la Organización</div>
                 <div class="planCarga">4</div>
             </div>
             <div class="planBox">
@@ -367,7 +367,7 @@
             <div class="planBox">
                 <div class="planCorrelativa"><br /></div>
                 <div id="A4005" runat="server" class="planCodMat">6</div>
-                <div class="planDescripMat"><br />Historia Económica Social y Contemporánea</div>
+                <div class="planDescripMat"><br />Historia Económica y Social Contemporánea</div>
                 <div class="planCarga">6</div>
             </div>
         </div>
@@ -409,7 +409,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">5</div>
                 <div id="A4011" runat="server" class="planCodMat">12</div>
-                <div class="planDescripMat"><br />Lógica y Metología de las Ciencias</div>
+                <div class="planDescripMat"><br />Lógica y Metodología de las Ciencias</div>
                 <div class="planCarga">4</div>
             </div>
         </div>
@@ -439,7 +439,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">12</div>
                 <div id="A4015" runat="server" class="planCodMat">16</div>
-                <div class="planDescripMat"><br />Psicología de la Organización</div>
+                <div class="planDescripMat"><br />Psicosociología de la Organización</div>
                 <div class="planCarga">4</div>
             </div>
             <div class="planBox">
@@ -481,7 +481,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">11</div>
                 <div id="A4030" runat="server" class="planCodMat">22</div>
-                <div class="planDescripMat"><br />Derecho Laboral y Previsonal</div>
+                <div class="planDescripMat"><br />Derecho Laboral y Previsional</div>
                 <div class="planCarga">4</div>
             </div>
             <div class="planBox">
@@ -491,7 +491,8 @@
                 <div class="planCarga">8</div>
             </div>
             <div class="planBox">
-                <div id="A4027" runat="server" class="planCodMat">19</div>
+                <div class="planCorrelativa">19</div>
+                <div id="A4027" runat="server" class="planCodMat">24</div>
                 <div class="planDescripMat"><br />Macroeconomía</div>
                 <div class="planCarga">6</div>
             </div>
@@ -499,7 +500,7 @@
 
         <div class="planLine">
             <div class="planBox">
-                <div class="planCorrelativa">16</div>
+                <div class="planCorrelativa">16-21</div>
                 <div id="A4224" runat="server" class="planCodMat">25</div>
                 <div class="planDescripMat"><br />Administración de Personal</div>
                 <div class="planCarga">6</div>
@@ -534,7 +535,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">9-21</div>
                 <div id="A4229" runat="server" class="planCodMat">30</div>
-                <div class="planDescripMat"><br />Administración de la Comercialización y la Distribución</div>
+                <div class="planDescripMat"><br />Administración de la Comercialización y Distribución</div>
                 <div class="planCarga">6</div>
             </div>
         </div>
@@ -597,7 +598,7 @@
             <div class="planBox">
                 <div class="planCorrelativa">33</div>
                 <div id="A4238" runat="server" class="planCodMat">39</div>
-                <div class="planDescripMat"><br />Planamiento y Evaluación de Proyectos</div>
+                <div class="planDescripMat"><br />Planeamiento y Evaluación de Proyectos</div>
                 <div class="planCarga">6</div>
             </div>
         </div>
