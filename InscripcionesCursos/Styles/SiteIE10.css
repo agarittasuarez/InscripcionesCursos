@@ -636,6 +636,7 @@ div.accountInfo
 {
 	margin-left: 30px;
 	margin-bottom: 8px;
+    width: 141px;
 }
 
 .resultadosLinea input[type="password"]

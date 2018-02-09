@@ -28,6 +28,13 @@ body
 	float: left;
 }
 
+.contentPlan
+{
+	width: 734px;
+	margin: 0 auto;
+	float: right;
+}
+
 a:link
 {
     color: #FFFFFF;
@@ -559,7 +566,7 @@ div.accountInfo
 {
     float: left;
     height: 300px;
-    width: 100%;
+    width: 72%;
     text-align:center;
     font-family: Arial,Helvetica,sans-serif;
     color: #FFFFFF;
@@ -636,6 +643,7 @@ div.accountInfo
 {
 	margin-left: 30px;
 	margin-bottom: 8px;
+    width: 141px;
 }
 
 .resultadosLinea input[type="password"]
@@ -923,7 +931,7 @@ div.accountInfo
 	float:left;
 }
 
-/*NEW MENU
+/*OLD MENU
 ----------------------------------------------------------
 
 #divLoginTools
@@ -986,32 +994,32 @@ div.accountInfo
         
 .planCodMat
 {
-    min-width: 40px;
+    background-color: #4cbb17;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #DD7DE8;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
-        
+
 .planCodMatAprob
 {
-    min-width: 40px;
+    background-color: rgba(148, 26, 99, 1);
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #4CBB17;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatAprobMini
@@ -1020,9 +1028,9 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #4CBB17;
+    background-color: rgba(148, 26, 99, 1);
     display:inline-block;
-    text-align: center;
+    text-align: right;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
@@ -1035,7 +1043,7 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #FF0000;
+    background-color: #00FFF4;
     display:inline-block;
     text-align: center;
     vertical-align:middle;
@@ -1050,7 +1058,7 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #00fff4;
+    background-color: #4CBB17;
     display:inline-block;
     text-align: center;
     vertical-align:middle;
@@ -1058,20 +1066,46 @@ div.accountInfo
     font-weight:bold;
     margin: 0px -5px 0px 8px;
 }
+        
+.planDescripMat
+{
+	background-color: #FFFDE8;
+    color: #000000;
+    display: inline-block;
+    height: 60px;
+    max-width: 150px;
+    min-height: 50px;
+    min-width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: pre-wrap;
+}
+
+.planDescripMatMini {
+    min-width: 150px;
+	max-width: 150px;
+    min-height: 40px;
+    max-height: 40px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: right;
+    vertical-align: middle;
+    white-space: pre-wrap;
+}
 
 .planCodMatBloqueada
 {
-    min-width: 40px;
+    background-color: #00fff4;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #ff0000;
-    display:inline-block;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatHabilitada
@@ -1080,41 +1114,13 @@ div.accountInfo
     max-width: 40px;
     min-height: 50px;
     max-height: 50px;        	
-    background-color: #00fff4;
+    background-color: #4CBB17;
     display:inline-block;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
     margin: 0px -5px 0px 8px;
-}
-
-.planDescripMatMini
-{
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 40px;
-    max-height: 40px;
-    display:inline-block;
-    background-color: #FFFDE8;
-    color: #000000;
-    vertical-align: middle;
-    text-align:right;
-    white-space:pre-wrap
-}
-
-.planDescripMat
-{
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 50px;
-    max-height: 50px;
-    display:inline-block;
-    background-color: #FFFDE8;
-    color: #000000;
-    vertical-align: middle;
-    text-align:center;
-    white-space:pre-wrap
 }
         
 .planCarga
@@ -1644,5 +1650,5 @@ border-bottom:0px;
 .smallLegend
 {
     font-size:0.66em;
-    margin-left: 185px;
+    margin-left: 225px;
 }

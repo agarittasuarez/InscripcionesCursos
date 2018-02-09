@@ -28,6 +28,13 @@ body
 	float: left;
 }
 
+.contentPlan
+{
+	width: 734px;
+	margin: 0 auto;
+	float: right;
+}
+
 a:link
 {
     color: #FFFFFF;
@@ -43,13 +50,20 @@ a:visited
 a:hover
 {
     color: #FFFFFF;
-    text-decoration: underline;
+    text-decoration: underline; 
 }
 
 a:active
 {
     color: #034af3;
 }
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
 
 /* HEADINGS   
 ----------------------------------------------------------*/
@@ -141,6 +155,7 @@ first child of the left and right table columns */
     margin-top: 25px;
 }
 
+
 .leftCol
 {
     padding: 6px 0px;
@@ -156,8 +171,7 @@ first child of the left and right table columns */
     height: 105px;
     position: fixed;
     float: left;
-    margin-top: 55px;
-    bottom: 0;
+    bottom: 5px;
     background: url(../img/logo_footer.png) no-repeat right top;
     z-index: -1;
 }
@@ -471,12 +485,13 @@ div.accountInfo
 .loginBox input[type="password"]
 {
 	width: 150px;
-	margin-top: 4px
+	margin-top: 6px
 }
 
 .loginBox table
 {
-    margin-top: 14px;
+	margin-left: 112px;
+    margin-top: 24px;
 }
 
 .loginTexts
@@ -551,7 +566,7 @@ div.accountInfo
 {
     float: left;
     height: 300px;
-    width: 100%;
+    width: 72%;
     text-align:center;
     font-family: Arial,Helvetica,sans-serif;
     color: #FFFFFF;
@@ -583,6 +598,7 @@ div.accountInfo
     font-family: Arial,Helvetica,sans-serif;
     text-align: center;
 }
+
 .contenedorInput span
 {
 	margin-right: 4px;
@@ -626,7 +642,8 @@ div.accountInfo
 .inputsResultadosGen
 {
 	margin-left: 30px;
-	margin-top: 8px;
+	margin-bottom: 8px;
+    width: 141px;
 }
 
 .resultadosLinea input[type="password"]
@@ -642,7 +659,7 @@ div.accountInfo
     width: 80%;
 }
 
-/*PAGINA CAMBIOCONTRASENIA
+/* PAGINA CAMBIOCONTRASENIA
 ----------------------------------------------------------*/
 
 .labelsCambioPass
@@ -674,9 +691,8 @@ div.accountInfo
 .infoCambioPass
 {
 	width:520px;
-	padding: 25px 0;
+	padding: 25px 25px;
 	font-family: Verdana;
-	margin-right: 150px;
 }
 
 .infoCambioPassEmployee
@@ -716,7 +732,7 @@ div.accountInfo
     color: #FFFFFF;
     font-weight: normal;
     height: 22px;
-    margin: 6px 4px;
+    margin: 6px 0;
     width: 76px;
 }
 
@@ -787,7 +803,7 @@ div.accountInfo
 
 .contenedorComisiones
 {
-	width: 700px;	
+	width: 700px;
 }
 
 /*CONTROL CARRO
@@ -915,19 +931,18 @@ div.accountInfo
 	float:left;
 }
 
-/*NEW MENU
+/*OLD MENU
 ----------------------------------------------------------
 
 #divLoginTools
 {
 	margin-bottom: 70px;
-	margin-left: -50px;
 }
 
 #button
 {
-	padding: 0px 50px 0px 0px;
-	width: 100%;
+	padding: 0;
+	float:left;
 }
 
 #button li
@@ -973,41 +988,38 @@ div.accountInfo
 .planBox
 {
     display:inline-block;
-    display: inline;
     font-size: 0.8em;
     font-family:Verdana, Arial;
 }
         
 .planCodMat
 {
-    min-width: 40px;
+    background-color: #4cbb17;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #DD7DE8;
-    display:inline-block;
-    display: inline;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatAprob
 {
-    min-width: 40px;
+    background-color: rgba(148, 26, 99, 1);
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #4CBB17;
-    display:inline-block;
-    display: inline;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatAprobMini
@@ -1016,10 +1028,9 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #4CBB17;
+    background-color: rgba(148, 26, 99, 1);
     display:inline-block;
-    display: inline;
-    text-align: center;
+    text-align: right;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
@@ -1032,9 +1043,8 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #FF0000;
+    background-color: #00FFF4;
     display:inline-block;
-    display: inline;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
@@ -1048,30 +1058,54 @@ div.accountInfo
     max-width: 20px;
     min-height: 20px;
     max-height: 20px;        	
-    background-color: #00fff4;
+    background-color: #4CBB17;
     display:inline-block;
-    display: inline;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
     margin: 0px -5px 0px 8px;
 }
+        
+.planDescripMat
+{
+	background-color: #FFFDE8;
+    color: #000000;
+    display: inline-block;
+    height: 60px;
+    max-width: 150px;
+    min-height: 50px;
+    min-width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: pre-wrap;
+}
+
+.planDescripMatMini {
+    min-width: 150px;
+	max-width: 150px;
+    min-height: 40px;
+    max-height: 40px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: right;
+    vertical-align: middle;
+    white-space: pre-wrap;
+}
 
 .planCodMatBloqueada
 {
-    min-width: 40px;
+    background-color: #00fff4;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    height: 60px;
+    margin: 0 -5px 0 8px;
     max-width: 40px;
     min-height: 50px;
-    max-height: 50px;        	
-    background-color: #ff0000;
-    display:inline-block;
-    display: inline;
+    min-width: 40px;
     text-align: center;
-    vertical-align:middle;
-    color: #FFFFFF;
-    font-weight:bold;
-    margin: 0px -5px 0px 8px;
+    vertical-align: middle;
 }
 
 .planCodMatHabilitada
@@ -1080,44 +1114,13 @@ div.accountInfo
     max-width: 40px;
     min-height: 50px;
     max-height: 50px;        	
-    background-color: #00fff4;
+    background-color: #4CBB17;
     display:inline-block;
-    display: inline;
     text-align: center;
     vertical-align:middle;
     color: #FFFFFF;
     font-weight:bold;
     margin: 0px -5px 0px 8px;
-}
-
-.planDescripMatMini
-{
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 40px;
-    max-height: 40px;
-    background-color: #FFFDE8;
-    color: #000000;
-    vertical-align: middle;
-    text-align:center;
-    white-space:pre-wrap;
-    display:inline-block;
-    display: inline;
-}
-       
-.planDescripMat
-{
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 50px;
-    max-height: 50px;
-    background-color: #FFFDE8;
-    color: #000000;
-    vertical-align: middle;
-    text-align:center;
-    white-space:pre-wrap;
-    display:inline-block;
-    display: inline;
 }
         
 .planCarga
@@ -1219,7 +1222,7 @@ div.accountInfo
  {
  	color: #000000;
  }
- 
+
 .procesoLineInfo
 {
 	margin-top: 10px;
@@ -1391,7 +1394,7 @@ div.accountInfo
 
 .logErrorComboLine select
 {
-	margin: 0px 30px;
+	margin: 0px 15px;
 	display: inline-block;
 	width: 130px;
 }
@@ -1647,5 +1650,5 @@ border-bottom:0px;
 .smallLegend
 {
     font-size:0.66em;
-    margin-left: 185px;
+    margin-left: 225px;
 }

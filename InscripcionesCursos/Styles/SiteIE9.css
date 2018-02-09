@@ -28,6 +28,13 @@ body
 	float: left;
 }
 
+.contentPlan
+{
+	width: 734px;
+	margin: 0 auto;
+	float: right;
+}
+
 a:link
 {
     color: #FFFFFF;
@@ -559,7 +566,7 @@ div.accountInfo
 {
     float: left;
     height: 300px;
-    width: 100%;
+    width: 72%;
     text-align:center;
     font-family: Arial,Helvetica,sans-serif;
     color: #FFFFFF;
@@ -636,6 +643,7 @@ div.accountInfo
 {
 	margin-left: 30px;
 	margin-bottom: 8px;
+    width: 141px;
 }
 
 .resultadosLinea input[type="password"]
@@ -1642,5 +1650,5 @@ border-bottom:0px;
 .smallLegend
 {
     font-size:0.66em;
-    margin-left: 185px;
+    margin-left: 225px;
 }
