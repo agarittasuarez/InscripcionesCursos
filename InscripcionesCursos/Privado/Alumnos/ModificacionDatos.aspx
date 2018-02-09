@@ -6,12 +6,12 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upModDatos" runat="server" UpdateMode="Always" ChildrenAsTriggers="True">
         <ContentTemplate>
-            <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerModificacion" />
+            <asp:ScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerModificacion" />
             <div class="contenedorFormGenerar">
                 <div class="tituloContenido">
                     <asp:Label ID="lblTitulo" runat="server" Text=""><%= ConfigurationManager.AppSettings["ContentMainTitleModificacionDatos"] %></asp:Label>
                 </div>
-                <div class="resultadosGen">
+                <div class="resultadosGen" style="margin-left: 265px;">
                     <div class="resultadosLinea">
                         <asp:Label CssClass="labelsCambioPass" ID="lblDni" runat="server" Text=""><%= ConfigurationManager.AppSettings["LabelDNI"] %></asp:Label>
                         <asp:TextBox CssClass="inputsResultadosGen" ID="txtDni" runat="server" Enabled="false"></asp:TextBox>

@@ -4,7 +4,7 @@
     <%= String.Format(ConfigurationManager.AppSettings["TitleGeneric"], ConfigurationManager.AppSettings["TitleInicio"])%>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInicio" />
+    <asp:ScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInicio" />
     <div class="textoAngostoAlumnos">
         <uc1:Relevamiento runat="server" ID="ucRelevamiento"/>
         <p><%= ConfigurationManager.AppSettings["ContentInicioInformes"]%></p>

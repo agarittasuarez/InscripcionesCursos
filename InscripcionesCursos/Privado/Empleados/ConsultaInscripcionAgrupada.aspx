@@ -7,7 +7,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         
     <div style="height: 800px">
-        <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ScriptManager1" />
+        <asp:ScriptManager runat="Server" EnablePartialRendering="true" ID="ScriptManager1" />
         <asp:UpdatePanel ID="updateResultados" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <asp:Label ID="invisibleTarget" runat="server" Style="display: none" />

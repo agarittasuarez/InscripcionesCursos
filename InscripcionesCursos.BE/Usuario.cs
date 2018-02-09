@@ -29,7 +29,7 @@ namespace InscripcionesCursos.BE
             string carrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion,
             bool limitacionRelevada, string limitacion, string limitacionVision, string lentes, string limitacionAudicion,
             string audifonos, string limitacionMotriz, string limitacionHabla, string limitacionAgarre,
-            string dislexia, string limitacionOtra)
+            string dislexia, string limitacionOtra, string domicilio, string localidad, string cp, string celular)
 		{
 			this.DNI = dNI;
 			this.ApellidoNombre = nombreApellido;
@@ -56,6 +56,10 @@ namespace InscripcionesCursos.BE
 		    this.LimitacionAgarre = limitacionAgarre;
             this.Dislexia = dislexia;
 		    this.LimitacionOtra = limitacionOtra;
+            this.Domicilio = domicilio;
+            this.Localidad = localidad;
+            this.CP = cp;
+            this.Celular = celular;
 		}
 
 		#endregion
@@ -186,6 +190,26 @@ namespace InscripcionesCursos.BE
         /// </summary>
         public string LimitacionOtra { get; set; }
 
-		#endregion
-	}
+        /// <summary>
+        /// Gets or sets the Domicilio value.
+        /// </summary>
+        public string Domicilio { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Localidad value.
+        /// </summary>
+        public string Localidad { get; set; }
+
+        /// <summary>
+        /// Gets or sets the CP value.
+        /// </summary>
+        public string CP { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Celular value.
+        /// </summary>
+        public string Celular { get; set; }
+
+        #endregion
+    }
 }

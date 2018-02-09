@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InscripcionesCursos {
+namespace InscripcionesCursos.Privado.Alumnos {
     
     
-    public partial class Inicio {
+    public partial class CuestionarioDatosPersonales {
         
         /// <summary>
         /// scriptManagerInicio control.
@@ -22,12 +22,12 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.ScriptManager scriptManagerInicio;
         
         /// <summary>
-        /// ucRelevamiento control.
+        /// relevamientoDatos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::InscripcionesCursos.Controles.wucRelevamientoLimitaciones ucRelevamiento;
+        protected global::InscripcionesCursos.Controles.wucRelevamientoDatosPersonales relevamientoDatos;
     }
 }

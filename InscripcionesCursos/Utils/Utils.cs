@@ -92,6 +92,31 @@ namespace InscripcionesCursos
         }
 
         /// <summary>
+        /// Method for check if the user did complete her personal info
+        /// </summary>
+        /// <param name="loggedUser"></param>
+        public static bool CheckCompletedPersonalInfo(object session)
+        {
+            try
+            {
+                Usuario loggedUser = new Usuario();
+                loggedUser = (Usuario)session;
+
+                if (loggedUser.Celular != String.Empty)
+                    return true;
+                else
+                    return false;
+                
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "CheckCompletedPersonalInfo", "Utils");
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Method for check if the user has the required level for a page
         /// </summary>
         /// <param name="session">Logged user</param>

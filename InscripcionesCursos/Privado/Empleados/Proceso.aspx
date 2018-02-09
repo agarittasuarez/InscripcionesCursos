@@ -3,7 +3,7 @@
     <%= String.Format(ConfigurationManager.AppSettings["TitleGeneric"], ConfigurationManager.AppSettings["TitleExtraccionDatos"])%>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="ScriptManager1" />
+    <asp:ScriptManager runat="Server" EnablePartialRendering="true" ID="ScriptManager1" />
     <script type="text/javascript">
         var HighlightAnimations = {};
         function Highlight(el) {

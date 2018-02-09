@@ -64,7 +64,11 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
                 new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
-			};
+                new SqlParameter("@Domicilio", usuario.Domicilio),
+                new SqlParameter("@Localidad", usuario.Localidad),
+                new SqlParameter("@CP", usuario.CP),
+                new SqlParameter("@Celular", usuario.Celular)
+            };
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioInsert", parameters);
             SqlConnection.ClearAllPools();
@@ -90,7 +94,7 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@CodigoActivacion", usuario.CodigoActivacion),
 				new SqlParameter("@IdSede", usuario.IdSede),
                 new SqlParameter("@IdEstado", usuario.Estado),
-                new SqlParameter("@IdCarrera", Convert.ToInt32(usuario.Carrera)),
+                //new SqlParameter("@IdCarrera", Convert.ToInt32(usuario.Carrera)),
                 new SqlParameter("@CuatrimestreAnioIngreso", usuario.CuatrimestreAnioIngreso),
                 new SqlParameter("@CuatrimestreAnioReincorporacion", usuario.CuatrimestreAnioReincorporacion),
                 new SqlParameter("@LimitacionRelevada", usuario.LimitacionRelevada),
@@ -104,7 +108,11 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
                 new SqlParameter("@Dislexia", usuario.Dislexia),
 				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
-			};
+                new SqlParameter("@Domicilio", usuario.Domicilio),
+                new SqlParameter("@Localidad", usuario.Localidad),
+                new SqlParameter("@CP", usuario.CP),
+                new SqlParameter("@Celular", usuario.Celular)
+            };
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioUpdate", parameters);
             SqlConnection.ClearAllPools();
@@ -477,7 +485,7 @@ namespace InscripcionesCursos.DAO
 				new SqlParameter("@LimitacionAgarre", usuario.LimitacionAgarre),
 				new SqlParameter("@LimitacionHabla", usuario.LimitacionHabla),
                 new SqlParameter("@Dislexia", usuario.Dislexia),
-				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra),
+				new SqlParameter("@LimitacionOtra", usuario.LimitacionOtra)
 			};
 
 			SqlClientUtility.ExecuteNonQuery(connectionStringName, CommandType.StoredProcedure, "UsuarioImportPadron", parameters);
@@ -560,8 +568,12 @@ namespace InscripcionesCursos.DAO
                 LimitacionHabla = dataReader.GetString("LimitacionHabla", null),
                 Dislexia = dataReader.GetString("Dislexia", null),
                 LimitacionAgarre = dataReader.GetString("LimitacionAgarre", null),
-		        LimitacionOtra = dataReader.GetString("LimitacionOtra", null)
-		    };
+		        LimitacionOtra = dataReader.GetString("LimitacionOtra", null),
+                Domicilio = dataReader.GetString("Domicilio", null),
+                Localidad = dataReader.GetString("Localidad", null),
+                CP = dataReader.GetString("CP", null),
+                Celular = dataReader.GetString("Celular", null)
+            };
 
 		    return Usuario;
 		}

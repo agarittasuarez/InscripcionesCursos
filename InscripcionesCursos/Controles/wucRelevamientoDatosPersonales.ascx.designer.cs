@@ -7,28 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InscripcionesCursos {
+namespace InscripcionesCursos.Controles {
     
     
-    public partial class ModificacionDatos {
+    public partial class wucRelevamientoDatosPersonales {
         
         /// <summary>
-        /// upModDatos control.
+        /// upRelevamiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upModDatos;
-        
-        /// <summary>
-        /// scriptManagerModificacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager scriptManagerModificacion;
+        protected global::System.Web.UI.UpdatePanel upRelevamiento;
         
         /// <summary>
         /// lblTitulo control.
@@ -40,129 +31,138 @@ namespace InscripcionesCursos {
         protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// lblDni control.
+        /// lblAviso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDni;
+        protected global::System.Web.UI.WebControls.Label lblAviso;
         
         /// <summary>
-        /// txtDni control.
+        /// lblDomicilio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.Label lblDomicilio;
         
         /// <summary>
-        /// lblApellidoNombre control.
+        /// txtDomicilio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApellidoNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtDomicilio;
         
         /// <summary>
-        /// txtApellidoNombre control.
+        /// lblLocalidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoNombre;
+        protected global::System.Web.UI.WebControls.Label lblLocalidad;
         
         /// <summary>
-        /// lblEmail control.
+        /// txtLocalidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtLocalidad;
         
         /// <summary>
-        /// txtEmail control.
+        /// lblCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Label lblCP;
         
         /// <summary>
-        /// EmailRequired control.
+        /// txtCP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailRequired;
+        protected global::System.Web.UI.WebControls.TextBox txtCP;
         
         /// <summary>
-        /// EmailValidate control.
+        /// lblCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailValidate;
+        protected global::System.Web.UI.WebControls.Label lblCelular;
         
         /// <summary>
-        /// lblCarrera control.
+        /// txtCaracteristica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarrera;
+        protected global::System.Web.UI.WebControls.TextBox txtCaracteristica;
         
         /// <summary>
-        /// txtCarrera control.
+        /// txtCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera;
+        protected global::System.Web.UI.WebControls.TextBox txtCelular;
         
         /// <summary>
-        /// ucRelevamientoMod control.
+        /// mskCaracteristica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::InscripcionesCursos.Controles.wucRelevamientoLimitaciones ucRelevamientoMod;
+        protected global::AjaxControlToolkit.MaskedEditExtender mskCaracteristica;
         
         /// <summary>
-        /// divMessage control.
+        /// mskValidatorCaracteristica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMessage;
+        protected global::AjaxControlToolkit.MaskedEditValidator mskValidatorCaracteristica;
         
         /// <summary>
-        /// FailureText control.
+        /// mskCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FailureText;
+        protected global::AjaxControlToolkit.MaskedEditExtender mskCelular;
         
         /// <summary>
-        /// btnActualizar control.
+        /// mskValidatorCellphone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
+        protected global::AjaxControlToolkit.MaskedEditValidator mskValidatorCellphone;
+        
+        /// <summary>
+        /// btnEnviar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
     }
 }

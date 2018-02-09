@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div  class="contenedorCentro">
-        <ajaxToolkit:ToolkitScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInscripciones" />
+        <asp:ScriptManager runat="Server" EnablePartialRendering="true" ID="scriptManagerInscripciones" />
         <div class="tituloContenido">
             <asp:Label ID="lblTitulo" runat="server" Text=""><%= ConfigurationManager.AppSettings["ContentMainTitleInscripcion"] %></asp:Label>
         </div>

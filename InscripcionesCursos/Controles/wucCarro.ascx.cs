@@ -385,14 +385,14 @@ namespace InscripcionesCursos
                     if (Session["userEmployee"] == null)
                         Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"] + "?result=ok&email=ok");
                     else
-                        ToolkitScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
+                        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
                 }
                 else
                 {
                     if (Session["userEmployee"] == null)
                         Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"] + "?result=ok&email=error");
                     else
-                        ToolkitScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
+                        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "jsPrint", scriptingBuilder.ToString(), false);
                 }
             }
             catch (ThreadAbortException)

@@ -603,7 +603,7 @@ namespace InscripcionesCursos
                             if (!ValidateStudentsInPadron(Convert.ToInt32(tmpArray[5])))
                             {
                                 Usuario missedUser = new Usuario(Convert.ToInt32(tmpArray[5]), "Sin Datos", null, 2, 0, null, false, false, -1, -1, null,
-                                    null, null, null, false, null, null, null, null, null, null, null, null, null, null);
+                                    null, null, null, false, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
                                 UsuarioDTO.ImportPadron(missedUser);
 
                                 if (dniError.ToString().IndexOf(tmpArray[5]) == -1)

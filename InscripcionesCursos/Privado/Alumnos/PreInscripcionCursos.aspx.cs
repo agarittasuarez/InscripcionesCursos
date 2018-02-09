@@ -51,7 +51,10 @@ namespace InscripcionesCursos
         {
             try
             {
-                Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"]);
+                if(Utils.CheckCompletedPersonalInfo(Session["user"]))
+                    Response.Redirect(ConfigurationManager.AppSettings["UrlStudentInscripcion"]);
+                else
+                    Response.Redirect(ConfigurationManager.AppSettings["UrlStudentRequestPersonalInfo"]);
             }
             catch (ThreadAbortException)
             {

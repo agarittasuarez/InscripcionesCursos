@@ -1643,3 +1643,9 @@ border-bottom:0px;
 	background-repeat: no-repeat;
 	background-color: transparent;
 }
+
+.smallLegend
+{
+    font-size:0.66em;
+    margin-left: 185px;
+}
