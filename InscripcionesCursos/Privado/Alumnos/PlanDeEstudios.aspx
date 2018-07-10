@@ -8,7 +8,7 @@
         <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
     </div>
 
-    <div class="planLine" style="margin-left:265px" id="contentCarrera" runat="server" >
+    <div class="planLine" style="margin-left:265px" id="contentCarrera" runat="server" visible="false" >
             <asp:Label CssClass="labelsCambioPass" ID="lblCarrera" runat="server" Text=""><%= ConfigurationManager.AppSettings["LabelCarrera"] %></asp:Label>
             <asp:DropDownList ID="ddlCarrera" runat="server" OnSelectedIndexChanged="ddlCarrera_SelectedIndexChanged" AutoPostBack="true" />
     </div>

@@ -36,10 +36,6 @@ namespace InscripcionesCursos.Privado.Alumnos
             {
                 if (!IsPostBack)
                 {
-                    int idCarrera;
-                    string codCarrera = string.Empty;
-                    HtmlGenericControl containerControl;
-
                     if (!Utils.CheckLoggedUser(Session["user"], USERTYPESTUDENT))
                         Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlLogin"]);
 
