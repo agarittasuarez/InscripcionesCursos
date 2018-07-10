@@ -572,7 +572,8 @@ namespace InscripcionesCursos.DAO
                 Domicilio = dataReader.GetString("Domicilio", null),
                 Localidad = dataReader.GetString("Localidad", null),
                 CP = dataReader.GetString("CP", null),
-                Celular = dataReader.GetString("Celular", null)
+                Celular = dataReader.GetString("Celular", null),
+                IdCarrera = dataReader.GetInt32("IdCarrera", 0)
             };
 
 		    return Usuario;

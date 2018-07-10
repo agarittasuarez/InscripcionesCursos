@@ -3,31 +3,14 @@
     <%= String.Format(ConfigurationManager.AppSettings["TitleGeneric"], ConfigurationManager.AppSettings["TitlePlanDeEstudio"])%>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<asp:Repeater ID="rptMateria" runat="server">
-        <ItemTemplate>
-            <div class="planLine" style="display:block">
-              <div class="planBox">
-                <div class="planCodMat">1</div>
-                <div class="planDescripMat">Matemática I</div>
-              </div>
-              <div class="planBox">
-                <div class="planCodMat">2</div>
-                <div class="planDescripMat">Contabilidad Básica</div>
-              </div>
-              <div class="planBox">
-                <div class="planCodMat">3</div>
-                <div class="planDescripMat">Derecho Constitucional</div>
-              </div>
-              <div class="planBox">
-                <div class="planCodMat">4</div>
-                <div class="planDescripMat"></div>
-              </div>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>--%>
-
+    
     <div class="tituloContenido">
         <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
+    </div>
+
+    <div class="planLine" style="margin-left:265px" id="contentCarrera" runat="server" >
+            <asp:Label CssClass="labelsCambioPass" ID="lblCarrera" runat="server" Text=""><%= ConfigurationManager.AppSettings["LabelCarrera"] %></asp:Label>
+            <asp:DropDownList ID="ddlCarrera" runat="server" OnSelectedIndexChanged="ddlCarrera_SelectedIndexChanged" AutoPostBack="true" />
     </div>
 
     <div class="planLine" style="text-align:center" >

@@ -1142,25 +1142,37 @@ div.accountInfo
 	color:#FFFFFF;
 }
 
- .fancy-fuschia .ajax__tab_header
+ .fancy-fuschia.ajax__tab_default .ajax__tab_header
  {
 	background: url(../img/fuschia_bg_Tab.png) repeat-x;
 	cursor:pointer;
  }
- 
- .fancy-fuschia .ajax__tab_hover .ajax__tab_outer, .fancy-fuschia .ajax__tab_active .ajax__tab_outer
+
+ .fancy-fuschia.ajax__tab_default .ajax__tab {
+
+    display: block;
+    float: left;
+    height: 42px;
+    margin-top: 0px;
+}
+
+.ajax__tab_xp .ajax__tab_header .ajax__tab_tab {
+    background-image: none !important;
+}
+
+ .fancy-fuschia.ajax__tab_default .ajax__tab_header .ajax__tab_hover .ajax__tab_outer, .fancy-fuschia.ajax__tab_default .ajax__tab_header .ajax__tab_active .ajax__tab_outer
  {
-	background: url(../img/fuschia_left_Tab.png) no-repeat left top;
+	background: url(../img/fuschia_left_Tab.png) no-repeat left top !important;
 	color: #FFFFFF;
 	font-weight: bold;
  }
  
- .fancy-fuschia .ajax__tab_hover .ajax__tab_inner, .fancy-fuschia .ajax__tab_active .ajax__tab_inner
+ .fancy-fuschia.ajax__tab_default .ajax__tab_header .ajax__tab_hover .ajax__tab_inner, .fancy-fuschia.ajax__tab_default .ajax__tab_header .ajax__tab_active .ajax__tab_inner
  {
-	background: url(../img/fuschia_right_Tab.png) no-repeat right top;
+	background: url(../img/fuschia_right_Tab.png) no-repeat right top !important;
  }
- 
- .fancy .ajax__tab_header
+
+ .fancy.ajax__tab_default .ajax__tab_header
  {
 	font-size: 13px;
 	font-weight: bold;
@@ -1169,29 +1181,31 @@ div.accountInfo
 	text-align: left;
  }
  
- .fancy .ajax__tab_active .ajax__tab_outer, .fancy .ajax__tab_header .ajax__tab_outer, .fancy .ajax__tab_hover .ajax__tab_outer
+ .fancy.ajax__tab_default .ajax__tab_active .ajax__tab_outer, .fancy.ajax__tab_default .ajax__tab_header .ajax__tab_outer, .fancy.ajax__tab_default .ajax__tab_hover .ajax__tab_outer
  {
 	height: 46px;
+    background: url(../img/fuschia_bg_Tab.png) repeat-x;
  }
  
- .fancy .ajax__tab_active .ajax__tab_inner, .fancy .ajax__tab_header .ajax__tab_inner, .fancy .ajax__tab_hover .ajax__tab_inner
+ .fancy.ajax__tab_default .ajax__tab_active .ajax__tab_inner, .fancy.ajax__tab_default .ajax__tab_header .ajax__tab_inner, .fancy.ajax__tab_default .ajax__tab_hover .ajax__tab_inner
  {
 	height: 46px;
-	margin-left: 16px; /* offset the width of the left image */
+	margin-left: 16px;
+    background: url(../img/fuschia_bg_Tab.png) repeat-x;
  }
  
- .fancy .ajax__tab_active .ajax__tab_tab, .fancy .ajax__tab_hover .ajax__tab_tab, .fancy .ajax__tab_header .ajax__tab_tab
+ .fancy.ajax__tab_default .ajax__tab_active .ajax__tab_tab, .fancy.ajax__tab_default .ajax__tab_hover .ajax__tab_tab, .fancy.ajax__tab_default .ajax__tab_header .ajax__tab_tab
  {
 	margin: 16px 16px 0px 0px;
  }
  
- .fancy .ajax__tab_hover .ajax__tab_tab, .fancy .ajax__tab_active .ajax__tab_tab
+ .fancy.ajax__tab_default .ajax__tab_hover .ajax__tab_tab, .fancy.ajax__tab_default .ajax__tab_active .ajax__tab_tab
  {
 	font-weight: bold;
 	color: #FFFFFF !important;
  }
  
- .fancy .ajax__tab_body
+ .fancy.ajax__tab_default .ajax__tab_body
  {
 	font-family: Arial;
 	font-size: 10pt;
@@ -1202,7 +1216,7 @@ div.accountInfo
 	color: #000000;
 	text-align:left;
  }
- 
+
  .ajax__tab_inner a:link
  {
  	color: #000000;

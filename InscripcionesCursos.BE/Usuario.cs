@@ -26,7 +26,7 @@ namespace InscripcionesCursos.BE
 		/// </summary>
 		public Usuario(int dNI, string nombreApellido, string email, int idCargo, int idPerfil, string password,
             bool cambioPrimerLogin, bool cuentaActivada, int codigoActivacion, int idSede, string estado,
-            string carrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion,
+            string carrera, int idCarrera, string cuatrimestreAnioIngreso, string cuatrimestreAnioReincorporacion,
             bool limitacionRelevada, string limitacion, string limitacionVision, string lentes, string limitacionAudicion,
             string audifonos, string limitacionMotriz, string limitacionHabla, string limitacionAgarre,
             string dislexia, string limitacionOtra, string domicilio, string localidad, string cp, string celular)
@@ -60,6 +60,7 @@ namespace InscripcionesCursos.BE
             this.Localidad = localidad;
             this.CP = cp;
             this.Celular = celular;
+            this.IdCarrera = idCarrera;
 		}
 
 		#endregion
@@ -119,6 +120,11 @@ namespace InscripcionesCursos.BE
         /// Gets or sets the Estado value.
         /// </summary>
         public string Estado { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IdCarrera value.
+        /// </summary>
+        public int IdCarrera { get; set; }
 
         /// <summary>
         /// Gets or sets the Carrera value.

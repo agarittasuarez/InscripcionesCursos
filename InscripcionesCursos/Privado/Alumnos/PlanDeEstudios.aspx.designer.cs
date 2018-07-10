@@ -22,6 +22,33 @@ namespace InscripcionesCursos.Privado.Alumnos {
         protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
+        /// contentCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contentCarrera;
+        
+        /// <summary>
+        /// lblCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCarrera;
+        
+        /// <summary>
+        /// ddlCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCarrera;
+        
+        /// <summary>
         /// divRef1 control.
         /// </summary>
         /// <remarks>
