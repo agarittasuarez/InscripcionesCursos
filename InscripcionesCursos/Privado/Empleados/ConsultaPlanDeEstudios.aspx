@@ -976,7 +976,7 @@
                     <div class="planCarga">6</div>
                 </div>
                 <div class="planBox">
-                    <div class="planCorrelativa">6</div>
+                    <div class="planCorrelativa">6-8</div>
                     <div id="A7015" runat="server" class="planCodMat">11</div>
                     <div class="planDescripMat"><br />Comportamiento Organizacional</div>
                     <div class="planCarga">3</div>
