@@ -55,6 +55,30 @@ namespace InscripcionesCursos.DAO
         }
 
         /// <summary>
+        /// Selects all records from the MateriaCorrelativa new plan table by idCarrera and DNI.
+        /// </summary>
+        public List<MateriaCorrelativa> MateriasCorrelativasNuevoPlanSelectByUser(int DNI, int idCarrera)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@DNI", DNI),
+                new SqlParameter("@idCarrera", idCarrera)
+            };
+
+            using (SqlDataReader dataReader = SqlClientUtility.ExecuteReader(connectionStringName, CommandType.StoredProcedure, "MateriasCorrelativasNuevoPlanSelectByUser", parameters))
+            {
+                List<MateriaCorrelativa> materiaList = new List<MateriaCorrelativa>();
+                while (dataReader.Read())
+                {
+                    MateriaCorrelativa materia = MapDataReader(dataReader);
+                    materiaList.Add(materia);
+                }
+                SqlConnection.ClearAllPools();
+                return materiaList;
+            }
+        }
+
+        /// <summary>
         /// Creates a new instance of the MateriaCorrelativa class and populates it with data from the specified SqlDataReader.
         /// </summary>
         private MateriaCorrelativa MapDataReader(SqlDataReader dataReader)

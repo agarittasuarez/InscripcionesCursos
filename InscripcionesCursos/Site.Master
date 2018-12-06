@@ -46,6 +46,9 @@
                     <li id="liInscription" runat="server">
                         <asp:LinkButton ID="btnInscription" runat="server" onclick="btnInscription_Click" CausesValidation="false"/>
                     </li>
+                    <li id="liPlanQuery" runat="server">
+                        <asp:LinkButton ID="btnQueryPlan" runat="server" CausesValidation="false" onclick="btnQueryPlan_Click"/>
+                    </li>
                     <li id="liTools" runat="server" Visible="False">
                         <asp:LinkButton runat="server" ID="btnTools"/>
                         <ul>

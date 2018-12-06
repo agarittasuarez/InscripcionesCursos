@@ -25,6 +25,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -170,6 +171,7 @@
     <Content Include="Privado\Empleados\Herramientas.aspx" />
     <Content Include="Privado\Empleados\GeneracionClave.aspx" />
     <Content Include="Privado\Empleados\InscripcionCursos.aspx" />
+    <Content Include="Privado\Empleados\ConsultaPlanDeEstudios.aspx" />
     <Content Include="Privado\Empleados\Proceso.aspx" />
     <Content Include="Privado\Empleados\ReenvioEmail.aspx" />
     <Content Include="Privado\Empleados\SimuladorAlumno.aspx" />
@@ -457,6 +459,13 @@
     </Compile>
     <Compile Include="Privado\Empleados\InscripcionCursos.aspx.designer.cs">
       <DependentUpon>InscripcionCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\Empleados\ConsultaPlanDeEstudios.aspx.cs">
+      <DependentUpon>ConsultaPlanDeEstudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privado\Empleados\ConsultaPlanDeEstudios.aspx.designer.cs">
+      <DependentUpon>ConsultaPlanDeEstudios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Privado\Empleados\Proceso.aspx.cs">
       <DependentUpon>Proceso.aspx</DependentUpon>

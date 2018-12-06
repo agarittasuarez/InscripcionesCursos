@@ -30,6 +30,19 @@ namespace InscripcionesCursos.DTO
             }
         }
 
+        public static List<MateriaCorrelativa> GetMateriasCorrelativasNuevoPlanByUser(int DNI, int idCarrera)
+        {
+            try
+            {
+                MateriaCorrelativaDAO materiasDAO = new MateriaCorrelativaDAO(connectionString);
+                return materiasDAO.MateriasCorrelativasNuevoPlanSelectByUser(DNI, idCarrera);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

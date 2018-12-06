@@ -300,6 +300,29 @@ namespace InscripcionesCursos
             }
         }
 
+        /// <summary>
+        /// Event to query students plan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnQueryPlan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect(Page.ResolveUrl("~") + ConfigurationManager.AppSettings["UrlEmployeeConsultaPlan"]);
+            }
+            catch (ThreadAbortException)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LogWriter log = new LogWriter();
+                log.WriteLog(ex.Message, "btnQueryPlan_Click", Path.GetFileName(Request.PhysicalPath));
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -331,6 +354,7 @@ namespace InscripcionesCursos
                         btnTextsChange.Text = ConfigurationManager.AppSettings["BotonCambioTextos"];
                         btnInterface.Text = ConfigurationManager.AppSettings["BotonInterfazAlumnos"];
                         btnContingencyTools.Text = ConfigurationManager.AppSettings["BotonContingencia"];
+                        btnQueryPlan.Text = ConfigurationManager.AppSettings["BotonConsultaPlan"];
                         liPassword.Visible = liInscription.Visible  = true;
 
                         if (loggedUser.IdPerfil <= AdminEmployeeUserLevel && loggedUser.IdPerfil > 0)
@@ -338,7 +362,7 @@ namespace InscripcionesCursos
 
                         if (loggedUser.IdPerfil == AdminWebUserLevel)
                             liContingencyTools.Visible = true;
-
+                        
                         if (Session["user"] != null && Session["userEmployee"] != null)
                             menuSimulador.Visible = true;
                         divLoginTools.Visible = true;    
